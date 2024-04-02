@@ -1,0 +1,61 @@
+.e-commerce-login {
+  display: flex;
+  gap: 129px;
+}
+
+.e-commerce-login-img {
+  margin-top: 50px;
+  max-width: 65%;
+  height: auto;
+}
+
+.e-commerce-login-form {
+  margin: auto;
+  width: 65%;
+}
+
+.e-commerce-login-input {
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 15px;
+  display: flex;
+  width: 371px;
+  height: 25px;
+}
+
+.e-commerce-login-button {
+  border: transparent;
+  background-color: rgba(219, 68, 68, 1);
+  padding: 15px;
+  width: 160px;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 40px;
+  font-family: "poppins";
+}
+
+.e-commerce-login-title {
+  font-size: 35px;
+  max-width: 350px;
+  font-family: "Inter";
+}
+
+.e-commerce-login-subtitle {
+  font-family: "poppins";
+  display: flex;
+}
+
+.e-commerce-login-pass {
+  background-color: white;
+  color: rgba(219, 68, 68, 1);
+  width: 160px;
+  border: solid white;
+  font-family: "poppins";
+  text-align: end;
+}
+
+@media screen and (max-width: 805px) {
+  .e-commerce-login-img {
+    width: 50%;
+  }
+}
