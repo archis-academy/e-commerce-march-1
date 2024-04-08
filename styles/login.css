@@ -1,26 +1,34 @@
 .e-commerce-login {
   display: flex;
-  gap: 129px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .e-commerce-login-img {
-  margin-top: 50px;
-  max-width: 65%;
-  height: auto;
+  flex: 1;
 }
 
 .e-commerce-login-form {
-  margin: auto;
-  width: 65%;
+  flex: 1;
+}
+
+.e-commerce-login-inputs {
+  gap: 40px;
 }
 
 .e-commerce-login-input {
   border: none;
-  border-bottom: 3px solid gray;
+  border-bottom: 1px solid #a0a0a0;
   padding: 15px;
   display: flex;
   width: 371px;
   height: 25px;
+  font-family: "poppins";
+  font-size: 16px;
+}
+.e-commerce-login-buttons {
+  gap: 87px;
+  margin-top: 30px;
 }
 
 .e-commerce-login-button {
@@ -30,12 +38,17 @@
   width: 160px;
   border-radius: 3px;
   text-align: center;
-  margin-top: 40px;
   font-family: "poppins";
+  color: aliceblue;
+}
+
+.e-commerce-login-titles {
+  gap: 24px;
+  padding: 20px;
 }
 
 .e-commerce-login-title {
-  font-size: 35px;
+  font-size: 36px;
   max-width: 350px;
   font-family: "Inter";
 }
@@ -43,6 +56,7 @@
 .e-commerce-login-subtitle {
   font-family: "poppins";
   display: flex;
+  font-size: 22px;
 }
 
 .e-commerce-login-pass {
@@ -51,11 +65,5 @@
   width: 160px;
   border: solid white;
   font-family: "poppins";
-  text-align: end;
-}
-
-@media screen and (max-width: 805px) {
-  .e-commerce-login-img {
-    width: 50%;
-  }
+  margin: 90px;
 }
