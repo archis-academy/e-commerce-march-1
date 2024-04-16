@@ -1,3 +1,4 @@
+//Best Selling Starts
 const sellingProductsContainer = document.querySelector("#best-selling-api-products");
 
 let bestSellingProducts = [];
@@ -30,3 +31,4 @@ function discount(any_products) {
     return any_products.price - (any_products.price*30/100);  
 };
 GetProducts();
+//Best Selling Ends
