@@ -1,0 +1,229 @@
+.new-arrivals-icon-container {
+}
+.new-arrivals-icon-img {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.new-arrivals-icon-text-box {
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-icon-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+  color: #db4444;
+}
+.new-arrivals-tittle {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #000;
+}
+.new-arrivals-images-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+.new-arrivals-playstation-img {
+  background-color: #000;
+  padding: 20px 20px 0 20px;
+  position: relative;
+}
+.na-playstation-img-aling {
+  margin-top: 68px;
+}
+.new-arrivals-playstation-align-text {
+  top: 400px;
+  color: white;
+  position: absolute;
+}
+.na-playstation-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-playstation-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  margin: 0;
+}
+.na-button {
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+}
+.new-arrivals-womens-collections-img {
+}
+.new-arrivals-womens-img {
+  margin-left: 150px;
+}
+.new-arrivals-womens-container {
+  background-color: black;
+  padding: 20px;
+  position: relative;
+}
+.new-arrivals-woman-align-text {
+  color: white;
+  position: absolute;
+  top: 150px;
+  width: 50%;
+}
+.na-woman-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-woman-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-speakers-img {
+  gap: 10px;
+  display: flex;
+  margin-top: 10px;
+}
+.new-arrivals-speakers-container {
+  background-color: black;
+  padding: 20px;
+  position: relative;
+  flex-basis: 100%;
+}
+.new-arrivals-speakers-align-text {
+  color: white;
+  position: absolute;
+  top: 150px;
+}
+.na-spekers-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-spekers-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: white;
+  margin: 0;
+}
+.new-arrivals-perfume-img {
+  flex-basis: 100%;
+}
+.new-arrivals-perfume-container {
+  background-color: black;
+  padding: 20px;
+  position: relative;
+  height: 85%;
+}
+.new-arrivals-perfume-align-text {
+  color: white;
+  position: absolute;
+  top: 150px;
+}
+.na-perfume-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-perfume-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-navbar-container {
+}
+.new-arrivals-delivey-box {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border: 20px solid gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-delivery-case {
+}
+.na-delivery-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+.na-delivery-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+.new-arrivals-service-box {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border: 20px solid gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-service-case {
+}
+.na-service-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+.na-service-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+.new-arrivals-secure-box {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border: 20px solid gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-secure-case {
+}
+.na-secure-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+.na-secure-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
