@@ -28,24 +28,33 @@ function DisplayProducts(any_Products) {
             </div>`
   }).join("");
 
-   wishlistButtons = sellingProductsContainer.querySelectorAll("#selling-products-wishlist-button");
+  wishlistButtons = sellingProductsContainer.querySelectorAll("#selling-products-wishlist-button");
 
-   wishlistButtons.forEach(button => {
+
+  wishlistButtons.forEach(button => {
+    let buttonClicked = false;
     button.addEventListener("click", () => {
-      button.style.background = "#DB4444";
+      if (!buttonClicked) {
+        button.style.background = "#DB4444";
+        buttonClicked = true;
+      } else {
+        button.style.background = "none";
+       buttonClicked = false;
+      }
     });
   });
+
 };
 
 async function GetProducts() {
   const apiResponse = await fetch("https://fakestoreapi.com/products?limit=4");
-  const apiProducts =  await apiResponse.json();
+  const apiProducts = await apiResponse.json();
   bestSellingProducts = apiProducts;
   DisplayProducts(apiProducts);
 };
 
 function discount(any_products) {
-    return any_products.price - (any_products.price*30/100);  
+  return any_products.price - (any_products.price * 30 / 100);
 };
 
 GetProducts();

@@ -5,6 +5,14 @@
     width: 1000px;
     margin-top: 50px;
 }
+.best-selling-orange-box-container {
+    display: flex;
+    gap: 5px;
+}
+.best-selling-orange-box{
+  background-color: #DB4444;
+  width: 20px;
+}
 .best-selling-first-title {
     color: #DB4444;
     font-size: 16px;
