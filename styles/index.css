@@ -85,7 +85,7 @@
   padding: 5% 0;
   flex-wrap: wrap;
 }
-.box {
+.browse {
   width: clamp(145px, 25vw, 170px);
   height: 145px;
   border: 2px solid #0000004d;
@@ -97,7 +97,7 @@
   flex-direction: column-reverse;
   position: relative;
 }
-.box::before {
+.browse::before {
   content: "";
   position: absolute;
   top: 0;
@@ -108,12 +108,14 @@
   animation: showRight 1s ease forwards;
   animation-delay: 0.2s;
 }
-#camera-box,
-.box:hover {
+#camera-box{
   background-color: #db4444;
-  color: white;
+  color: #fff;
 }
-.hompage-box .box .hompage-browse-box-text {
+.browse img{
+  color: #000000;
+}
+.hompage-box .browse .hompage-browse-box-text {
   font-family: "poppins", sans;
   font-size: clamp(12px, 4vw, 16px);
   font-weight: 400;
