@@ -4,20 +4,37 @@ const sellingProductsContainer = document.querySelector("#best-selling-api-produ
 let bestSellingProducts = [];
 
 function DisplayProducts(any_Products) {
-  sellingProductsContainer.innerHTML = any_Products.map((item) => {
+  sellingProductsContainer.innerHTML = any_Products.map((product) => {
     return `<div class="best-selling-api-products">
-              <img class="best-selling-products-img" src="${item.image}"/>
-              <div class="best-selling-products-features">
-                <p>${item.title}</p>
-                <div class="best-selling-discount">
-                  <p class="discount-price">${discount(item).toFixed(2)}</p> 
-                  <s>${item.price}</s>
+              <div class="best-selling-img-container">
+               <img class="best-selling-products-img" src="${product.image}"/>
+                <div class="best-selling-products-icons-container">
+                 <div class="selling-wishlist-icon">             
+                  <button id="selling-products-wishlist-button" class="selling-products-button"><img id="selling-wishlist-icon-img" class="best-selling-products-icons" src="images/wishlist-icon.svg"/></button>
+                 </div>
+                 <div class="best-selling-eye-icon">
+                  <button id="selling-products-eye-button" class="selling-products-button"><img class="best-selling-products-icons" src="images/icon-eye.svg"/></button>
+                 </div> 
                 </div>  
-                <p> Rating : ${item.rating.rate}</p>
+              </div>
+              <div class="best-selling-products-features">
+                <p>${product.title}</p>
+                <div class="best-selling-discount">
+                  <p class="discount-price">${discount(product).toFixed(2)}</p> 
+                  <s>${product.price}</s>
+                </div>  
+                <p> Rating : ${product.rating.rate}</p>
               </div>
             </div>`
   }).join("");
 
+   wishlistButtons = sellingProductsContainer.querySelectorAll("#selling-products-wishlist-button");
+
+   wishlistButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      button.style.background = "#DB4444";
+    });
+  });
 };
 
 async function GetProducts() {
@@ -30,5 +47,11 @@ async function GetProducts() {
 function discount(any_products) {
     return any_products.price - (any_products.price*30/100);  
 };
+
 GetProducts();
+
+
+
+
+
 //Best Selling Ends
