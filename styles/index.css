@@ -30,11 +30,13 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
+  flex-wrap: wrap;
 }
 .new-arrivals-playstation-img {
   background-color: #000;
   padding: 20px 20px 0 20px;
   position: relative;
+  width: 578px;
 }
 .na-playstation-img-aling {
   margin-top: 68px;
@@ -54,7 +56,7 @@
 .na-playstation-text {
   font-family: "Poppins" sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 22px;
   margin: 0;
 }
@@ -90,7 +92,7 @@
 .na-woman-text {
   font-family: "Poppins" sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 22px;
   margin: 0;
 }
@@ -115,18 +117,20 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 24px;
+
   margin: 0;
 }
 .na-spekers-text {
   font-family: "Poppins" sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 22px;
   color: white;
   margin: 0;
 }
 .new-arrivals-perfume-img {
   flex-basis: 100%;
+  background-color: #d9d9d9e5 90%;
 }
 .new-arrivals-perfume-container {
   background-color: black;
@@ -149,21 +153,25 @@
 .na-perfume-text {
   font-family: "Poppins" sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 22px;
   margin: 0;
 }
 .new-arrivals-navbar-container {
-}
-.new-arrivals-delivey-box {
-  width: 50px;
-  height: 50px;
-  background-color: #000;
-  border: 20px solid gray;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+}
+.new-arrivals-delivery-box,
+.new-arrivals-service-box,
+.new-arrivals-secure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 .new-arrivals-delivery-case {
 }
@@ -179,23 +187,16 @@
   font-size: 14px;
   line-height: 22px;
 }
-.new-arrivals-service-box {
-  width: 50px;
-  height: 50px;
-  background-color: #000;
-  border: 20px solid gray;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .new-arrivals-service-case {
+  margin-top: 20px;
 }
 .na-service-title {
   font-family: "Poppins" sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
+  margin: 0;
 }
 .na-service-text {
   font-family: "Poppins" sans-serif;
@@ -203,16 +204,7 @@
   font-size: 14px;
   line-height: 22px;
 }
-.new-arrivals-secure-box {
-  width: 50px;
-  height: 50px;
-  background-color: #000;
-  border: 20px solid gray;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .new-arrivals-secure-case {
 }
 .na-secure-title {
@@ -220,6 +212,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
+  margin: 20px 0 0;
 }
 .na-secure-text {
   font-family: "Poppins" sans-serif;
