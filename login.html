@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/shared.css">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <script src="login.js" defer type="module"></script>
   </head>
   <body>
    <div class="e-commerce-login">
@@ -18,12 +19,12 @@
         <p class="e-commerce-login-subtitle">Enter your details below</p>
       </div>
         <div class="e-commerce-login-inputs">
-          <input class="e-commerce-login-input" type="email" placeholder="Email or Phone Number" />
-        <input class="e-commerce-login-input" type="password" placeholder="Password" >
+          <input id="login-input" class="e-commerce-login-input" type="email" placeholder="Email or Phone Number" />
+        <input id="password-input" class="e-commerce-login-input" type="password" placeholder="Password" >
       </div>
       </div>
         <div class="e-commerce-login-buttons">
-        <button class="e-commerce-login-button">Log in</button>
+        <button  id="login-button" class="e-commerce-login-button">Log in</button>
         <a class="e-commerce-login-pass">Forget Password?</a>
         </div>
         </div>
