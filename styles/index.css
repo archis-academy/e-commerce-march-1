@@ -81,6 +81,7 @@
 }
 .hompage-box {
   display: flex;
+  justify-content: center;
   gap: 30px;
   padding: 5% 0;
   flex-wrap: wrap;
@@ -108,11 +109,7 @@
   animation: showRight 1s ease forwards;
   animation-delay: 0.2s;
 }
-#camera-box{
-  background-color: #db4444;
-  color: #fff;
-}
-.browse img{
+.browse img {
   color: #000000;
 }
 .hompage-box .browse .hompage-browse-box-text {
