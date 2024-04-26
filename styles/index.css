@@ -100,4 +100,25 @@
 .discount-price{
     color: #DB4444;
 }
+
+.bestselling-rating-container {
+    width: 50%;
+}
+
+.bestselling-rating-container {
+    display: flex;
+    position: relative;
+}
+
+.bestselling-stars-img {
+    width: 100%;
+}
+
+.bestselling-transparent-div {
+    background-color: white;
+    height: 20px;
+    position: absolute;
+    right: 0;
+
+}
 /*Best selling ends*/
