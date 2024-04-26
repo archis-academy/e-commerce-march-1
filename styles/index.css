@@ -207,6 +207,7 @@
 }
 .featured-jbl-image img {
   width: 100%;
+  filter: drop-shadow(6px 6px 40px white);
 }
 .featured-jbl-image {
   max-width: 700px;
