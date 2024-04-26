@@ -183,10 +183,8 @@
   padding: 12px 0;
 }
 .hompage-time {
-  width: 320px;
-  height: 62px;
   display: flex;
-  justify-content: space-between;
+  gap: 25px;
   margin: 4% 7%;
   flex-wrap: wrap;
 }
@@ -208,6 +206,8 @@
   color: #fff;
 }
 .featured-jbl-image img {
-  width: clamp(420px, 50vw, 555px);
-  height: 420px;
+  width: 100%;
+}
+.featured-jbl-image {
+  max-width: 700px;
 }
