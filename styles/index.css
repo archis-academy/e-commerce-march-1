@@ -34,6 +34,7 @@
     padding: 16px 48px;
     color: white;
     border-radius: 15px;
+    border-style: none;
 }
 .best-selling-api-products-container {
     display: grid;
@@ -58,7 +59,7 @@
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .selling-card-icon-container {
@@ -72,6 +73,7 @@
 .selling-card-icon{
     width: 75%;
 }
+
 .best-selling-products-icons{
     color:#DB4444 ;
 }
@@ -120,6 +122,5 @@
     height: 20px;
     position: absolute;
     right: 0;
-
 }
 /*Best selling ends*/
