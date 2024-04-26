@@ -48,7 +48,6 @@
     grid-template-columns: 200px 5px;
     justify-items: center;
     border: 2px solid #F5F5F5; 
-    /*background-color: aqua;*/
 }
 .best-selling-products-icons-container{
     justify-self: center;
@@ -56,20 +55,22 @@
     margin-right: 10px;
 }
 .selling-wishlist-icon {
-    border: 1px solid black;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.best-selling-eye-icon {
-    border: 1px solid black;
+.selling-card-icon-container {
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7px 0;
-    margin-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 10px;
+}
+.selling-card-icon{
+    width: 75%;
 }
 .best-selling-products-icons{
     color:#DB4444 ;
@@ -115,7 +116,7 @@
 }
 
 .bestselling-transparent-div {
-    background-color: white;
+    background-color: rgba(255,255,255,0.8);
     height: 20px;
     position: absolute;
     right: 0;
