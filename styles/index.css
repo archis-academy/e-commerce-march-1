@@ -230,7 +230,7 @@
     }
 
     .best-selling-img-container{
-        grid-template-columns: minmax(100px,280px) 20px;
+        grid-template-columns: minmax(100px,275px) 1px;
     }
 
     .best-selling-orange-box-container{
