@@ -5,30 +5,52 @@
     width: 1000px;
     margin-top: 50px;
 }
+
 .best-selling-orange-box-container {
     display: flex;
     gap: 5px;
 }
+
 .best-selling-orange-box{
   background-color: #DB4444;
   width: 15px;
   height: 30px;
 }
+
 .best-selling-first-title {
     color: #DB4444;
     font-size: 16px;
     line-height: 20px;
 }
+
 .best-selling-titles-container{
  display: flex;
  justify-content: space-between;
  align-items: center;
  margin-top: 20px;
 }
+
+.best-selling-titles {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.best-selling-titles:hover {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
 .best-selling-main-title {
     font-size: 36px;
     line-height: 48px;
 }
+
 .best-selling-button{
     background-color: #DB4444;
     padding: 16px 48px;
@@ -36,25 +58,29 @@
     border-radius: 15px;
     border-style: none;
 }
+
 .best-selling-api-products-container {
     display: grid;
-    grid-template-columns: repeat(4,minmax(100px,220px));
-    grid-template-rows: minmax(150px,360px);
-    gap: 40px;
+    grid-template-columns: repeat(4, minmax(100px,220px));
+    gap: clamp(10px, 3vw, 40px);
     margin-top: 50px;
+    justify-content: center;
 }
+
 .best-selling-img-container{
     height: 250px;
     display: grid;
-    grid-template-columns: 200px 5px;
+    grid-template-columns: minmax(100px,200px) 5px;
     justify-items: center;
     border: 2px solid #F5F5F5; 
 }
+
 .best-selling-products-icons-container{
     justify-self: center;
     margin-top: 10px;
     margin-right: 10px;
 }
+
 .selling-wishlist-icon {
     border-radius: 50%;
     display: flex;
@@ -62,6 +88,7 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .selling-card-icon-container {
     border-radius: 50%;
     display: flex;
@@ -70,6 +97,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 10px;
 }
+
 .selling-card-icon{
     width: 75%;
 }
@@ -77,6 +105,7 @@
 .best-selling-products-icons{
     color:#DB4444 ;
 }
+
 .selling-products-button{
     border: none;
     background-color: transparent;
@@ -90,6 +119,7 @@
     flex-direction: column;
     gap: 8px;
 }
+
 .best-selling-products-img{
     height: 200px;
     align-self: center;
@@ -100,6 +130,7 @@
     gap: 10px;
     align-items: center;
 }
+
 .discount-price{
     color: #DB4444;
 }
@@ -119,12 +150,87 @@
 
 .bestselling-transparent-div {
     background-color: rgba(255,255,255,0.8);
-    height: 20px;
+    height: 100%;
     position: absolute;
     right: 0;
 }
 
 .best-selling-rating{
     margin-left: 20px;
+}
+
+@media(max-width:968px) {
+    .best-selling-api-products-container {
+        grid-template-columns: repeat(2,250px);
+        gap: clamp(10px,4vw,45px);
+        row-gap: 35px;
+    }
+    
+    .best-selling-container{
+        width: 600px;
+    }
+
+    .best-selling-product-container{
+        width: 235px;
+    }
+
+    .best-selling-img-container{
+        grid-template-columns: minmax(100px,200px) 20px;
+    }
+
+    .best-selling-main-title{
+     font-size: 34px;
+    }
+
+    .best-selling-titles-container{
+      margin-top: 5px;
+    }
+    
+    .best-selling-button {
+      padding: 15px 40px;
+    }
+}
+
+@media(max-width:650px) {
+    .best-selling-main-title{
+        font-size: 30px;
+       }
+   
+    .best-selling-titles-container{
+        margin-top: 5px;
+        justify-content: space-around;
+     }
+       
+   .best-selling-button {
+      padding: 12px 28px;
+    }
+
+    .best-selling-orange-box-container{
+        margin-left: 50px;
+    }
+}
+
+@media(max-width:550px) {
+    .best-selling-api-products-container {
+        grid-template-columns: repeat(1,300px);
+        gap: clamp(10px,4vw,45px);
+        row-gap: 45px;
+    }
+    
+    .best-selling-container{
+        width: 500px;
+    }
+
+    .best-selling-product-container{
+        width: 300px;
+    }
+
+    .best-selling-img-container{
+        grid-template-columns: minmax(100px,280px) 20px;
+    }
+
+    .best-selling-orange-box-container{
+        margin-left: 26px;
+    }
 }
 /*Best selling ends*/
