@@ -21,6 +21,7 @@
     color: #DB4444;
     font-size: 16px;
     line-height: 20px;
+    font-family:  "Poppins" , sans-serif;
 }
 
 .best-selling-titles-container{
@@ -37,6 +38,7 @@
     line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    font-family:  "Poppins" , sans-serif;
 }
 
 .best-selling-titles:hover {
@@ -49,6 +51,7 @@
 .best-selling-main-title {
     font-size: 36px;
     line-height: 48px;
+    font-family: Inter;
 }
 
 .best-selling-button{
@@ -57,6 +60,7 @@
     color: white;
     border-radius: 15px;
     border-style: none;
+    font-family:  "Poppins" , sans-serif;;
 }
 
 .best-selling-api-products-container {
