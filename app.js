@@ -5,7 +5,7 @@ let wishListProducts = [];
 let cardProducts = [];
 let bestSellingProducts;
 
-async function DisplayProducts() {
+async function DisplayBestSellingProducts() {
   const apiResponse = await fetch("https://fakestoreapi.com/products?limit=4");
   const apiProducts = await apiResponse.json();
   bestSellingProducts = apiProducts;
@@ -108,7 +108,7 @@ function hideStars(product) {
     return starRatio
 };
 
-DisplayProducts();
+DisplayBestSellingProducts();
 
 function addToWishlist(productId) {
   wishListProducts = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
@@ -162,4 +162,8 @@ function removeFromCard(productId) {
 
 //Best Selling Ends
 
-//Wishlist starts
+
+
+
+
+
