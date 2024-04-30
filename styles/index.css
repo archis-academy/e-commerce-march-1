@@ -129,6 +129,7 @@
 }
 /* hompage-browse-by-category style end*/
 
+/* homepage-new-arrivals start */
 .homepage-new-arrivals {
   max-width: 1254px;
   margin: auto;
@@ -402,3 +403,5 @@
     width: 400px;
   }
 }
+
+/*homepage-new-arrivals end */
