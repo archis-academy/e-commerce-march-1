@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wishlist-top {
+  padding: 2% 8%;
+  width: 100%;
+}
+.wishlist-page-top-section {
+  max-width: 1170px;
+  display: flex;
+  justify-content: space-between;
+}
+.wishlist-page-top-section h3 {
+  font-family: "poppins", sans;
+  font-weight: 400;
+  font-size: clamp(14px, 4vw, 20px);
+  line-height: 26px;
+}
+.wishlist-page-top-section button {
+  padding: 16px 48px 16px 48px;
+  background-color: #fff;
+  border: 1px solid #00000080;
+  cursor: pointer;
+}
+.wishlist-page-top-section button h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: black;
+}
+.wishlist-page{
+    width: 100%;
+    padding: 2% 8%;
+}
+.wishlist-products{
+    max-width: 1170px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.wishlist-products-page{
+    width: 270px;
+    height: 322px;
+    
+}
+.wishlist-bag{
+    background-color: #F5F5F5;
+    width: 270px;
+    height: 250px;
+    text-align: center; 
+    position: relative;
+    padding: 72px 0;
+}
+.wishlist-bag .gammax{
+  width: 137px;
+}
+.wishlist-bag span{
+   position: absolute;
+    top:20px;
+    right: 22px;
+    width: 34px;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.wishlist-bag span i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.wishlist-bag .ad-to-cart{
+    width: 270px;
+    height: 41px;
+    background-color: #000000;
+    color: #fff;
+    font-family: "poppins", sans;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.bag-text{
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.bag-text h4{
+    font-family: "poppins", sans;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000000;
+}
+.bag-text p{
+    font-family: "poppins", sans;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #DB4444;
+}

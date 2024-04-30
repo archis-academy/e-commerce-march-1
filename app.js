@@ -71,3 +71,93 @@ const countdown = setInterval(() => {
 buyNowButton.addEventListener("click", () => {
   console.log(`"${randomProduct.name}" added to cart`);
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  renderWishlist(); // Sayfa yüklendiğinde wishlist'i render et
+
+  // Wishlist'ten bir ürünü silme işlemi için event listener ekle
+  document.querySelectorAll(".wishlist-bag").forEach(function(item) {
+      item.addEventListener("click", function() {
+          removeItemFromWishlist(item);
+      });
+  });
+});
+
+
+function renderWishlist() {
+  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
+
+  var wishlistContainer = document.getElementById("wishlist-container");
+
+  wishlistContainer.innerHTML = ""; 
+
+  wishlistItems.forEach(function(item) {
+      var itemHTML = `
+          <div class="wishlist-products-page">
+              <div class="wishlist-bag">
+                  <span><i class="far fa-trash-alt"></i></span>
+                  <img src="${item.image}" alt="">
+                  <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
+              </div>
+              <div class="bag-text">
+                  <h4>${item.name}</h4>
+                  <p>$${item.price}</p>
+              </div>
+          </div>
+      `;
+      wishlistContainer.innerHTML += itemHTML;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  renderWishlist(); 
+
+  
+  document.querySelectorAll(".wishlist-bag").forEach(function(item) {
+      item.addEventListener("click", function() {
+          removeItemFromWishlist(item);
+      });
+  });
+});
+
+
+function renderWishlist() {
+  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
+
+  var wishlistContainer = document.getElementById("wishlist-container");
+
+  wishlistContainer.innerHTML = ""; 
+
+  wishlistItems.forEach(function(item) {
+      var itemHTML = `
+          <div class="wishlist-products-page">
+              <div class="wishlist-bag">
+                  <span><i class="far fa-trash-alt"></i></span>
+                  <img src="${item.image}" alt="">
+                  <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
+              </div>
+              <div class="bag-text">
+                  <h4>${item.name}</h4>
+                  <p>$${item.price}</p>
+              </div>
+          </div>
+      `;
+      wishlistContainer.innerHTML += itemHTML;
+  });
+}
+
+
+function removeItemFromWishlist(itemElement) {
+  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
+ 
+  var indexToRemove = Array.prototype.indexOf.call(itemElement.parentElement.children, itemElement.parentElement);
+
+  
+  wishlistItems.splice(indexToRemove, 1);
+
+  
+  localStorage.setItem("wishlist", json.stringify(wishlistItems));
+
+  renderWishlist();
+}
