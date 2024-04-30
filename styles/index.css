@@ -202,6 +202,7 @@
   border: none;
   color: white;
   border-bottom: 1px solid white;
+  cursor: pointer;
 }
 .new-arrivals-womens-collections-img {
 }
@@ -267,18 +268,17 @@
 }
 .new-arrivals-perfume-img {
   flex-basis: 100%;
-  background-color: #d9d9d9e5 90%;
 }
 .new-arrivals-perfume-container {
-  background-color: black;
   padding: 20px;
   position: relative;
-  height: 85%;
+  height: 100%;
+  background-color: black;
 }
 .new-arrivals-perfume-align-text {
   color: white;
   position: absolute;
-  top: 150px;
+  bottom: 40px;
 }
 .na-perfume-title {
   font-family: "Inter" sans-serif;
@@ -309,6 +309,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  gap: 25px;
 }
 .new-arrivals-delivery-case {
 }
