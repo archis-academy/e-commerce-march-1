@@ -1,20 +1,20 @@
 /*Best selling starts*/
 .best-selling-container{
-    margin-left:auto;
-    margin-right: auto;
-    width: 1000px;
+    margin: auto;
+    max-width: 1170px;
     margin-top: 50px;
+    padding: 18px;
 }
 
 .best-selling-orange-box-container {
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 
 .best-selling-orange-box{
   background-color: #DB4444;
-  width: 15px;
-  height: 30px;
+  padding: 15px 7.5px;
 }
 
 .best-selling-first-title {
@@ -51,7 +51,7 @@
 .best-selling-main-title {
     font-size: 36px;
     line-height: 48px;
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
 }
 
 .best-selling-button{
@@ -65,25 +65,23 @@
 
 .best-selling-api-products-container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px,220px));
+    grid-template-columns: repeat(auto-fit, minmax(100px,253px));
     gap: clamp(10px, 3vw, 40px);
     margin-top: 50px;
     justify-content: center;
 }
 
 .best-selling-img-container{
-    height: 250px;
-    display: grid;
-    grid-template-columns: minmax(100px,200px) 5px;
-    justify-items: center;
+    padding: 15px 0;
     border: 2px solid #F5F5F5; 
     border-radius: 15px;
+    position: relative;
 }
 
 .best-selling-products-icons-container{
-    justify-self: center;
-    margin-top: 10px;
-    margin-right: 10px;
+    top: 10px;
+    right: 8px;
+    position: absolute;
 }
 
 .selling-wishlist-icon {
@@ -101,10 +99,11 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 10px;
+    padding: 4px;
 }
 
-.selling-card-icon{
-    width: 75%;
+.selling-card-tick-icon{
+    padding: 3px 5px;
 }
 
 .best-selling-products-icons{
@@ -126,8 +125,9 @@
 }
 
 .best-selling-products-img{
+    object-fit: contain;
+    width: 100%;
     height: 200px;
-    align-self: center;
 }
 
 .best-selling-discount {
@@ -164,23 +164,10 @@
     margin-left: 20px;
 }
 
-@media(max-width:968px) {
+@media(max-width:1161px) {
     .best-selling-api-products-container {
-        grid-template-columns: repeat(2,250px);
+        grid-template-columns: repeat(2,255px);
         gap: clamp(10px,4vw,45px);
-        row-gap: 35px;
-    }
-    
-    .best-selling-container{
-        width: 600px;
-    }
-
-    .best-selling-product-container{
-        width: 235px;
-    }
-
-    .best-selling-img-container{
-        grid-template-columns: minmax(100px,200px) 20px;
     }
 
     .best-selling-main-title{
@@ -199,43 +186,30 @@
 @media(max-width:650px) {
     .best-selling-main-title{
         font-size: 30px;
-       }
+    }
    
     .best-selling-titles-container{
         margin-top: 5px;
-        justify-content: space-around;
-     }
+    }
        
    .best-selling-button {
       padding: 12px 28px;
-    }
-
-    .best-selling-orange-box-container{
-        margin-left: 50px;
     }
 }
 
 @media(max-width:550px) {
     .best-selling-api-products-container {
-        grid-template-columns: repeat(1,300px);
-        gap: clamp(10px,4vw,45px);
-        row-gap: 45px;
-    }
-    
-    .best-selling-container{
-        width: 500px;
+        grid-template-columns: 300px;
+        gap: 35px;
+        justify-items: center;
     }
 
-    .best-selling-product-container{
-        width: 300px;
+    .best-selling-main-title{
+        font-size: 28px;
     }
 
-    .best-selling-img-container{
-        grid-template-columns: minmax(100px,275px) 1px;
-    }
-
-    .best-selling-orange-box-container{
-        margin-left: 26px;
+    .best-selling-products-icons-container{
+      right: 15px;
     }
 }
 /*Best selling ends*/
