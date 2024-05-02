@@ -130,8 +130,17 @@
 /* hompage-browse-by-category style end*/
 
 /* homepage-new-arrivals start */
+.homepage {
+  max-width: 1440px;
+  overflow: hidden;
+}
 .homepage-new-arrivals {
   max-width: 1254px;
+  margin: auto;
+}
+
+.new-arrivals-header {
+  width: 1200px;
   margin: auto;
 }
 
@@ -365,10 +374,21 @@
   max-width: 1550px;
 }
 
+@media (max-width: 1230px) {
+  .new-arrivals-header {
+    width: 600px;
+  }
+}
+
 @media (max-width: 650px) {
   .new-arrivals-navbar-container {
     flex-wrap: wrap;
   }
+
+  /*.new-arrivals-header {
+    width: 400px;
+    margin: auto;
+  } */
 
   .new-arrivals-perfume-container,
   .new-arrivals-speakers-container {
