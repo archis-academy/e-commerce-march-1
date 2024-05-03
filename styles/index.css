@@ -219,6 +219,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  padding-top: 75px;
 }
 .explore-products-title-and-orange-box {
   max-width: 1320px;
