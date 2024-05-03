@@ -43,6 +43,7 @@ const buyNowButton = document.querySelector(".hompage-featured-button button");
 smallTitle.textContent = "Featured Product";
 bigTitle.innerHTML = `Enhance Your <br />${randomProduct.name} Experience`;
 
+
 const countdownDate = new Date().getTime() + 24 * 60 * 60 * 1000;
 
 const countdown = setInterval(() => {
@@ -72,92 +73,84 @@ buyNowButton.addEventListener("click", () => {
   console.log(`"${randomProduct.name}" added to cart`);
 });
 
+document.addEventListener("DOMContentLoaded", 
+function() {
+  renderWishlist();
 
-document.addEventListener("DOMContentLoaded", function() {
-  renderWishlist(); // Sayfa yüklendiğinde wishlist'i render et
-
-  // Wishlist'ten bir ürünü silme işlemi için event listener ekle
   document.querySelectorAll(".wishlist-bag").forEach(function(item) {
-      item.addEventListener("click", function() {
-          removeItemFromWishlist(item);
-      });
+    item.addEventListener("click", function() {
+      removeItemFromWishlist(item);
+    });
+  });
+
+  document.querySelectorAll(".ad-to-cart").forEach(function(item) {
+    item.addEventListener("click", function() {
+      addToCart(item);
+    });
+  });
+
+  document.querySelectorAll("#move-all-to-bag").addEventListener("click", function() {
+    moveAllToBag();
   });
 });
 
-
 function renderWishlist() {
-  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
+  var wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+  var wishlistContainer = document.querySelectorAll(".wishlist-products");
 
-  var wishlistContainer = document.getElementById("wishlist-container");
-
-  wishlistContainer.innerHTML = ""; 
+  wishlistContainer.innerHTML = "";
 
   wishlistItems.forEach(function(item) {
-      var itemHTML = `
-          <div class="wishlist-products-page">
-              <div class="wishlist-bag">
-                  <span><i class="far fa-trash-alt"></i></span>
-                  <img src="${item.image}" alt="">
-                  <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
-              </div>
-              <div class="bag-text">
-                  <h4>${item.name}</h4>
-                  <p>$${item.price}</p>
-              </div>
-          </div>
-      `;
-      wishlistContainer.innerHTML += itemHTML;
+    var itemHTML = `
+      <div class="wishlist-products-page">
+        <div class="wishlist-bag">
+          <span><i class="far fa-trash-alt"></i></span>
+          <img src="${item.image}" alt="">
+          <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
+        </div>
+        <div class="bag-text">
+          <h4>${item.name}</h4>
+          <p>$${item.price}</p>
+        </div>
+      </div>
+    `;
+    wishlistContainer.innerHTML += itemHTML;
   });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  renderWishlist(); 
-
-  
-  document.querySelectorAll(".wishlist-bag").forEach(function(item) {
-      item.addEventListener("click", function() {
-          removeItemFromWishlist(item);
-      });
-  });
-});
+function addToCart(itemElement) {
+  var wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+  var indexToAdd = Array.from(itemElement.closest('.wishlist-products-page').parentElement.children).indexOf(itemElement.closest('.wishlist-products-page'));
+  var selectedItem = wishlistItems[indexToAdd];
 
 
-function renderWishlist() {
-  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
-
-  var wishlistContainer = document.getElementById("wishlist-container");
-
-  wishlistContainer.innerHTML = ""; 
-
-  wishlistItems.forEach(function(item) {
-      var itemHTML = `
-          <div class="wishlist-products-page">
-              <div class="wishlist-bag">
-                  <span><i class="far fa-trash-alt"></i></span>
-                  <img src="${item.image}" alt="">
-                  <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
-              </div>
-              <div class="bag-text">
-                  <h4>${item.name}</h4>
-                  <p>$${item.price}</p>
-              </div>
-          </div>
-      `;
-      wishlistContainer.innerHTML += itemHTML;
-  });
-}
-
-
-function removeItemFromWishlist(itemElement) {
-  var wishlistItems = json.parse(localStorage.getItem("wishlist")) || []; 
- 
-  var indexToRemove = Array.prototype.indexOf.call(itemElement.parentElement.children, itemElement.parentElement);
-
-  
-  wishlistItems.splice(indexToRemove, 1);
-
-  
-  localStorage.setItem("wishlist", json.stringify(wishlistItems));
-
+  wishlistItems.splice(indexToAdd, 1);
+  localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
   renderWishlist();
 }
+
+function removeItemFromWishlist(itemElement) {
+  var wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+  var indexToRemove = Array.from(itemElement.closest('.wishlist-products-page').parentElement.children).indexOf(itemElement.closest('.wishlist-products-page'));
+
+  wishlistItems.splice(indexToRemove, 1);
+  localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
+  renderWishlist();
+}
+
+function moveAllToBag() {
+  var wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+  
+  wishlistItems.forEach(function(item) {
+    
+  });
+
+  
+  localStorage.removeItem("wishlist");
+  renderWishlist();
+}
+
+
+
+
+
