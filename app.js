@@ -23,14 +23,14 @@ function changeColor(browse) {
 
 //Cart starts
 
-const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+const cartPageProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 const cartProductsContainer = document.getElementById("card-local-storage-container");
 
 function displayCartProducts() {
-  if(cartProducts.length === 0) {
+  if(cartPageProducts.length === 0) {
     cartProductsContainer.innerHTML = `<div class="cart-products-features-container" style="padding: 30px">
                                          <div class="cart-empty-text-svg-container">
-                                          <p class="cart-empty-text"> You do not have any products in your Cart </p>
+                                          <p class="cart-empty-text"> You do not have any products in your cart </p>
                                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,7 +41,7 @@ function displayCartProducts() {
                                        </div>`
   }
   else {
-    cartProductsContainer.innerHTML = cartProducts.map((product) => {
+    cartProductsContainer.innerHTML = cartPageProducts.map((product) => {
       return `<div class="cart-products-features-container">  
                <div class="cart-products-image-container">
                 <img src="${product.image}" class="cart-products-images"/>
@@ -59,7 +59,7 @@ function displayCartProducts() {
 displayCartProducts();
 
 function totalCalculations() {
-  cartProducts.map((product) => {
+  cartPageProducts.map((product) => {
     const quentities = cartProductsContainer.querySelector(`#product-quantity-${product.id}`);  
 
     quentities.addEventListener(("keyup") , () => {    
@@ -71,7 +71,7 @@ function totalCalculations() {
  
 function updateSubtotals() {
   const updateButton = document.querySelector("#cart-update-button");
-  cartProducts.map((product) => {
+  cartPageProducts.map((product) => {
     const subtotals = cartProductsContainer.querySelector(`#price-${product.id}`);
     const  storedQuentities = JSON.parse(localStorage.getItem(`quentity-${product.id}`)) || [];
     updateButton.addEventListener(("click") , () => {
@@ -80,12 +80,10 @@ function updateSubtotals() {
       }
     });
     const updatedSubtotals = subtotals.textContent;
-    console.log(updatedSubtotals);
   });
 };
 
 
 totalCalculations();
-
 
 //Cart Ends
