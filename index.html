@@ -9,13 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -131,14 +125,52 @@
           </div>
         </div>
 
-        <div class="hompage-featured-button ">
+        <div class="hompage-featured-button">
           <button><a href="cart.html">Buy Now!</a></button>
         </div>
-        
       </div>
       <div class="featured-jbl-image">
-        <img src="images/Frame 694.png" alt="">
+        <img src="images/Frame 694.png" alt="" />
       </div>
+    </div>
+
+    <div class="homepage-explore-products">
+      <div class="explore-products-title-and-orange-box">
+        <div class="explore-orange-box"></div>
+        <h2 class="explore-title-h2">Our Products</h2>
+      </div>
+      <div class="explore-products-title-and-arrow-box">
+        <h2 class="explore-title">Explore Our Products</h2>
+        <div class="explore-arrow-icons">
+          <img
+            class="explore-left-arrow"
+            src="images/Fill With Left Arrow.svg"
+            alt="left-arrow"
+          />
+          <img
+            class="explore-right-arrow"
+            src="images/Fill with Right Arrow.svg"
+            alt="left-arrow"
+          />
+        </div>
+      </div>
+      <div class="explore-products-container">
+        <div id="explore-products-box" class="explore-products-box"></div>
+      </div>
+      <button
+        onclick="ViewAllProducts()"
+        id="explore-view-all-btn"
+        class="explore-view-btn"
+      >
+        View All Products
+      </button>
+      <button
+        onclick="ViewLessProduct()"
+        id="explore-view-less-btn"
+        class="explore-view-btn"
+      >
+        View Less Product
+      </button>
     </div>
 
     <script src="app.js"></script>
