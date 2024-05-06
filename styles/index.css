@@ -140,12 +140,10 @@
 }
 
 .new-arrivals-header {
-  width: 1200px;
+  max-width: 1350px;
   margin: auto;
 }
 
-.new-arrivals-icon-container {
-}
 .new-arrivals-icon-img {
   display: flex;
   gap: 10px;
@@ -173,22 +171,26 @@
 }
 .new-arrivals-images-container {
   display: flex;
-  justify-content: center;
+
   gap: 10px;
-  width: 100%;
+
   flex-wrap: wrap;
 }
+
+.new-arrivals-images-container img {
+  display: block;
+  width: 100%;
+}
 .new-arrivals-playstation-img {
-  background-color: #000;
-  padding: 20px 20px 0 20px;
   position: relative;
-  width: 578px;
+  display: flex;
+  flex: 1 1 0;
 }
-.na-playstation-img-aling {
-  margin-top: 68px;
-}
+
 .new-arrivals-playstation-align-text {
-  top: 400px;
+  left: 5%;
+  bottom: 5%;
+
   color: white;
   position: absolute;
 }
@@ -213,21 +215,31 @@
   border-bottom: 1px solid white;
   cursor: pointer;
 }
+
 .new-arrivals-womens-collections-img {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  gap: 10px;
 }
-.new-arrivals-womens-img {
-  margin-left: 150px;
+
+.na-womens-img-box {
+  display: flex;
+  flex: 1 1 0;
 }
 .new-arrivals-womens-container {
-  background-color: black;
-  padding: 20px;
   position: relative;
+  flex: 1 1 0;
+}
+.new-arrivals-womens-container img {
+  object-fit: cover;
+  height: 100%;
 }
 .new-arrivals-woman-align-text {
   color: white;
   position: absolute;
-  top: 150px;
-  width: 50%;
+  left: 5%;
+  bottom: 5%;
 }
 .na-woman-title {
   font-family: "Inter" sans-serif;
@@ -244,20 +256,19 @@
   margin: 0;
 }
 .new-arrivals-speakers-img {
-  gap: 10px;
   display: flex;
-  margin-top: 10px;
+  gap: 10px;
+  flex: 1 1 0;
 }
 .new-arrivals-speakers-container {
-  background-color: black;
-  padding: 20px;
+  flex: 1 1 0;
   position: relative;
-  flex-basis: 100%;
 }
 .new-arrivals-speakers-align-text {
   color: white;
   position: absolute;
-  top: 150px;
+  left: 5%;
+  bottom: 5%;
 }
 .na-spekers-title {
   font-family: "Inter" sans-serif;
@@ -276,18 +287,19 @@
   margin: 0;
 }
 .new-arrivals-perfume-img {
-  flex-basis: 100%;
+  display: flex;
+  gap: 10px;
+  flex: 1 1 0;
 }
 .new-arrivals-perfume-container {
-  padding: 20px;
+  flex: 1 1 0;
   position: relative;
-  height: 100%;
-  background-color: black;
 }
 .new-arrivals-perfume-align-text {
   color: white;
   position: absolute;
-  bottom: 40px;
+  left: 5%;
+  bottom: 5%;
 }
 .na-perfume-title {
   font-family: "Inter" sans-serif;
@@ -320,8 +332,7 @@
   text-align: center;
   gap: 25px;
 }
-.new-arrivals-delivery-case {
-}
+
 .na-delivery-title {
   font-family: "Poppins" sans-serif;
   font-weight: 600;
@@ -352,8 +363,6 @@
   line-height: 22px;
 }
 
-.new-arrivals-secure-case {
-}
 .na-secure-title {
   font-family: "Poppins" sans-serif;
   font-weight: 600;
@@ -374,54 +383,18 @@
   max-width: 1550px;
 }
 
-@media (max-width: 1230px) {
-  .new-arrivals-header {
-    width: 600px;
-  }
-}
-
 @media (max-width: 650px) {
   .new-arrivals-navbar-container {
     flex-wrap: wrap;
   }
-
-  /*.new-arrivals-header {
-    width: 400px;
-    margin: auto;
-  } */
-
-  .new-arrivals-perfume-container,
-  .new-arrivals-speakers-container {
-    display: flex;
-    justify-content: center;
-  }
-  .new-arrivals-speakers-img {
-    flex-wrap: wrap;
-  }
-  .new-arrivals-woman-align-text {
-    left: 130px;
-  }
-  .new-arrivals-playstation-align-text {
-    left: 100px;
+  .new-arrivals-images-container {
+    flex-direction: column;
   }
 }
+
 @media (max-width: 500px) {
-  .new-arrivals-womens-img {
-    margin-left: 100px;
-  }
-  .new-arrivals-playstation-img {
-    width: 500px;
-  }
-}
-@media (max-width: 430px) {
-  .new-arrivals-womens-img {
-    margin-left: 50px;
-  }
-  .new-arrivals-woman-align-text {
-    left: 150px;
-  }
-  .new-arrivals-playstation-img {
-    width: 400px;
+  .new-arrivals-speakers-img {
+    flex-direction: column;
   }
 }
 
