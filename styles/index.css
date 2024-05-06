@@ -369,3 +369,273 @@
   }
 }
 /* Homepage-Explore-Products-END*/
+/* homepage-new-arrivals start */
+.homepage {
+  max-width: 1440px;
+  overflow: hidden;
+}
+.homepage-new-arrivals {
+  max-width: 1254px;
+  margin: auto;
+}
+
+.new-arrivals-header {
+  max-width: 1350px;
+  margin: auto;
+}
+
+.new-arrivals-icon-img {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.new-arrivals-icon-text-box {
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-icon-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+  color: #db4444;
+}
+.new-arrivals-tittle {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #000;
+}
+.new-arrivals-images-container {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.new-arrivals-images-container img {
+  display: block;
+  width: 100%;
+}
+.new-arrivals-playstation-img {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+}
+
+.new-arrivals-playstation-align-text {
+  left: 5%;
+  bottom: 5%;
+
+  color: white;
+  position: absolute;
+}
+.na-playstation-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-playstation-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.na-button {
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.new-arrivals-womens-collections-img {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  gap: 10px;
+}
+
+.na-womens-img-box {
+  display: flex;
+  flex: 1 1 0;
+}
+.new-arrivals-womens-container {
+  position: relative;
+  flex: 1 1 0;
+}
+.new-arrivals-womens-container img {
+  object-fit: cover;
+  height: 100%;
+}
+.new-arrivals-woman-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-woman-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-woman-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-speakers-img {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 0;
+}
+.new-arrivals-speakers-container {
+  flex: 1 1 0;
+  position: relative;
+}
+.new-arrivals-speakers-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-spekers-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+
+  margin: 0;
+}
+.na-spekers-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: white;
+  margin: 0;
+}
+.new-arrivals-perfume-img {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 0;
+}
+.new-arrivals-perfume-container {
+  flex: 1 1 0;
+  position: relative;
+}
+.new-arrivals-perfume-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-perfume-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-perfume-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+}
+.new-arrivals-delivery-box,
+.new-arrivals-service-box,
+.new-arrivals-secure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+}
+
+.na-delivery-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+.na-delivery-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.new-arrivals-service-case {
+  margin-top: 20px;
+}
+.na-service-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+.na-service-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.na-secure-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 20px 0 0;
+}
+.na-secure-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.hna-arrow-container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1550px;
+}
+
+@media (max-width: 650px) {
+  .new-arrivals-navbar-container {
+    flex-wrap: wrap;
+  }
+  .new-arrivals-images-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .new-arrivals-speakers-img {
+    flex-direction: column;
+  }
+}
+
+/*homepage-new-arrivals end */
