@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exclusive E-Commerce Cart</title>
-  <link rel="stylesheet" href="styles/shared.css" />
   <link rel="stylesheet" href="styles/cart.css">
+  <link rel="stylesheet" href="styles/shared.css" />
+
 </head>
 
 <body>
@@ -23,28 +24,28 @@
 
       </div>
       <div class="cart-buttons-container">
-        <button class="cart-button">Return To Shop</button>
+        <a href="index.html"><button class="cart-button" >Return To Shop</button></a>
         <button class="cart-button" id="cart-update-button">Update Cart</button>
       </div>
     </div>
     <div class="cart-products-coupon-total-container">
       <div class="cart-input-button-container">
-        <input type="text" placeholder="Coupon Code" class="cart-products-input">
-        <button class="cart-products-coupon-button"> Apply Coupon </button>
+        <input type="text" placeholder="Coupon Code" class="cart-products-input" id="cart-coupon-input">
+        <button class="cart-products-coupon-button" id="cart-coupon-apply-button"> Apply Coupon </button>
       </div>
       <div class="cart-total-container">
         <p class="cart-total-title"> Cart Total </p>
         <div class="cart-subtotal-container">
           <p class="cart-subtotal"> Subtotal </p>
-          <p class="cart-subtotal-number" id="cart-calculate-subtotal">number</p>
+          <p class="cart-subtotal-number" id="cart-calculate-subtotal"></p>
         </div>
         <div class="cart-shipping-container">
           <p class="cart-shipping"> Shipping </p>
-          <p class="cart-shipping-number" id="cart-shipping-subtotal">number</p>
+          <p class="cart-shipping-number" id="cart-shipping-subtotal"></p>
         </div>
         <div class="cart-calculated-total-container">
           <p class="cart-total"> Total </p>
-          <p class="cart-total-number" id="cart-calculate-total">number</p>
+          <p class="cart-total-number" id="cart-calculate-total"></p>
         </div>
         <div class="cart-total-button-container">
           <button class="cart-total-button"> Procees to checkout </button>
