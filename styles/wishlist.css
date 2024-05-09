@@ -8,7 +8,8 @@
   width: 100%;
 }
 .wishlist-page-top-section {
-  max-width: 1170px;
+  max-width: 1350px;
+    margin: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -35,12 +36,22 @@
     padding: 2% 8%;
 }
 .wishlist-products{
-    max-width: 1170px;
+    
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
     
+}
+#wishlist-container{
+  display: flex;
+  gap: 40px;
+  max-width: 1350px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.wishlist-images{
+  width: 137px;
 }
 .wishlist-products-page{
     width: 270px;
