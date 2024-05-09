@@ -212,3 +212,430 @@
 .featured-jbl-image {
   max-width: 700px;
 }
+
+/* Homepage-Explore-Products-START*/
+.homepage-explore-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 75px;
+}
+.explore-products-title-and-orange-box {
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.explore-orange-box {
+  width: 20px;
+  height: 40px;
+  background-color: #db4444;
+  border: none;
+  border-radius: 4px;
+}
+.explore-title-h2 {
+  font-family: "Poppins", sans-serif;
+  color: #db4444;
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 600;
+  line-height: 20px;
+}
+.explore-products-title-and-arrow-box {
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.explore-title {
+  font-family: "Inter", serif;
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: 600;
+  line-height: 48px;
+}
+.explore-products-container {
+  max-width: 1320px;
+  overflow: hidden;
+}
+.explore-products-box {
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: repeat(2, 350px);
+  grid-auto-flow: column;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+.explore-product {
+  width: 300px;
+}
+.explore-img-and-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #f5f5f5;
+  position: relative;
+}
+.explore-product-img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+.explore-wishlist-and-cart-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.wishlist-icon-box {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.explore-wishlist-icon {
+  width: 38px;
+  height: 38px;
+}
+.explore-cart-icon-box {
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.explore-product-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+}
+.explore-price-and-rating-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 30px;
+}
+.explore-product-price {
+  color: #db4444;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+}
+.explore-product-count {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.explore-view-btn {
+  margin-top: 60px;
+  max-width: 310px;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 4px;
+  background-color: #db4444;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fafafa;
+}
+@media (max-width: 1352px) {
+  .explore-products-box {
+    max-width: 980px;
+  }
+}
+@media (max-width: 1012px) {
+  .explore-products-box {
+    max-width: 640px;
+  }
+}
+@media (max-width: 672px) {
+  .explore-products-box {
+    max-width: 300px;
+  }
+}
+/* Homepage-Explore-Products-END*/
+/* homepage-new-arrivals start */
+.homepage {
+  max-width: 1440px;
+  overflow: hidden;
+}
+.homepage-new-arrivals {
+  max-width: 1254px;
+  margin: auto;
+}
+
+.new-arrivals-header {
+  max-width: 1350px;
+  margin: auto;
+}
+
+.new-arrivals-icon-img {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.new-arrivals-icon-text-box {
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-icon-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+  color: #db4444;
+}
+.new-arrivals-tittle {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #000;
+}
+.new-arrivals-images-container {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.new-arrivals-images-container img {
+  display: block;
+  width: 100%;
+}
+.new-arrivals-playstation-img {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+}
+
+.new-arrivals-playstation-align-text {
+  left: 5%;
+  bottom: 5%;
+
+  color: white;
+  position: absolute;
+}
+.na-playstation-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-playstation-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.na-button {
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.new-arrivals-womens-collections-img {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  gap: 10px;
+}
+
+.na-womens-img-box {
+  display: flex;
+  flex: 1 1 0;
+}
+.new-arrivals-womens-container {
+  position: relative;
+  flex: 1 1 0;
+}
+.new-arrivals-womens-container img {
+  object-fit: cover;
+  height: 100%;
+}
+.new-arrivals-woman-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-woman-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-woman-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-speakers-img {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 0;
+}
+.new-arrivals-speakers-container {
+  flex: 1 1 0;
+  position: relative;
+}
+.new-arrivals-speakers-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-spekers-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+
+  margin: 0;
+}
+.na-spekers-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: white;
+  margin: 0;
+}
+.new-arrivals-perfume-img {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 0;
+}
+.new-arrivals-perfume-container {
+  flex: 1 1 0;
+  position: relative;
+}
+.new-arrivals-perfume-align-text {
+  color: white;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+.na-perfume-title {
+  font-family: "Inter" sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+.na-perfume-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+.new-arrivals-navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+}
+.new-arrivals-delivery-box,
+.new-arrivals-service-box,
+.new-arrivals-secure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+}
+
+.na-delivery-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+.na-delivery-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.new-arrivals-service-case {
+  margin-top: 20px;
+}
+.na-service-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+.na-service-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.na-secure-title {
+  font-family: "Poppins" sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 20px 0 0;
+}
+.na-secure-text {
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.hna-arrow-container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1550px;
+}
+
+@media (max-width: 650px) {
+  .new-arrivals-navbar-container {
+    flex-wrap: wrap;
+  }
+  .new-arrivals-images-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .new-arrivals-speakers-img {
+    flex-direction: column;
+  }
+}
+
+/*homepage-new-arrivals end */

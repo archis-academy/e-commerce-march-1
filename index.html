@@ -9,13 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -131,14 +125,145 @@
           </div>
         </div>
 
-        <div class="hompage-featured-button ">
+        <div class="hompage-featured-button">
           <button><a href="cart.html">Buy Now!</a></button>
         </div>
-        
       </div>
       <div class="featured-jbl-image">
-        <img src="images/Frame 694.png" alt="">
+        <img src="images/Frame 694.png" alt="" />
       </div>
+    </div>
+
+    <div class="homepage-explore-products">
+      <div class="explore-products-title-and-orange-box">
+        <div class="explore-orange-box"></div>
+        <h2 class="explore-title-h2">Our Products</h2>
+      </div>
+      <div class="explore-products-title-and-arrow-box">
+        <h2 class="explore-title">Explore Our Products</h2>
+        <div class="explore-arrow-icons">
+          <img
+            class="explore-left-arrow"
+            src="images/Fill With Left Arrow.svg"
+            alt="left-arrow"
+          />
+          <img
+            class="explore-right-arrow"
+            src="images/Fill with Right Arrow.svg"
+            alt="left-arrow"
+          />
+        </div>
+      </div>
+      <div class="explore-products-container">
+        <div id="explore-products-box" class="explore-products-box"></div>
+      </div>
+      <button
+        onclick="ViewAllProducts()"
+        id="explore-view-all-btn"
+        class="explore-view-btn"
+      >
+        View All Products
+      </button>
+      <button
+        onclick="ViewLessProduct()"
+        id="explore-view-less-btn"
+        class="explore-view-btn"
+      >
+        View Less Product
+      </button>
+    </div>
+    <section class="homepage-new-arrivals">
+      <div class="new-arrivals-header">
+        <div class="new-arrivals-icon-container">
+          <div class="new-arrivals-icon-img">
+            <img
+              class="red-box"
+              src="images/Rectangle 17.png"
+              alt="Rectangle"
+            />
+            <div class="new-arrivals-icon-text-box">
+              <div id="featured" class="new-arrivals-icon-text">Featured</div>
+            </div>
+          </div>
+        </div>
+        <div class="new-arrivals-tittle">New Arrival</div>
+      </div>
+      <div class="new-arrivals-images-container">
+        <div class="new-arrivals-playstation-img">
+          <img src="images/01-playstation.jpg" alt="playstation5" />
+          <div class="new-arrivals-playstation-align-text">
+            <h3 class="na-playstation-title">PlayStation 5</h3>
+            <p class="na-playstation-text">
+              Black and White version of the PS5 coming out on sale.
+            </p>
+            <button class="na-button">Shop Now</button>
+          </div>
+        </div>
+
+        <div class="new-arrivals-womens-collections-img">
+          <div class="na-womens-img-box">
+            <div class="new-arrivals-womens-container">
+              <img src="images/02-woman-black-hat.jpg" alt="woman-with-hat" />
+              <div class="new-arrivals-woman-align-text">
+                <h4 class="na-woman-title">Women’s Collections</h4>
+                <p class="na-woman-text">
+                  Featured woman collections that give you another vibe.
+                </p>
+                <button class="na-button">Shop Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-arrivals-speakers-img">
+            <div class="new-arrivals-speakers-container">
+              <img src="images/03-speaker.jpg" alt="speakers" />
+              <div class="new-arrivals-speakers-align-text">
+                <h5 class="na-spekers-title">Speakers</h5>
+                <p class="na-spekers-text">Amazon wireless speakers</p>
+                <button class="na-button">Shop Now</button>
+              </div>
+            </div>
+            <div class="new-arrivals-perfume-img">
+              <div class="new-arrivals-perfume-container">
+                <img src="images/04-perfume.jpg" alt="gucci-perfume" />
+                <div class="new-arrivals-perfume-align-text">
+                  <h6 class="na-perfume-title">Perfume</h6>
+                  <p class="na-perfume-text">GUCCI INTENSE OUD EDP</p>
+                  <button class="na-button">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="new-arrivals-navbar-container">
+      <div class="new-arrivals-delivery-box">
+        <img src="images/delivery.svg" alt="icon-delivery" />
+        <div class="new-arrivals-delivery-case">
+          <h3 class="na-delivery-title">FREE AND FAST DELIVERY</h3>
+          <p class="na-delivery-text">Free delivery for all orders over $140</p>
+        </div>
+      </div>
+      <div class="new-arrivals-service-box">
+        <img src="images/customer.svg" alt="icon-customer-service" />
+        <div class="new-arrivals-service-case">
+          <h4 class="na-service-title">24/7 CUSTOMER SERVICE</h4>
+          <p class="na-service-text">Friendly 24/7 customer support</p>
+        </div>
+      </div>
+      <div class="new-arrivals-secure-box">
+        <img src="images/security.svg" alt="icon-secure" />
+        <div class="new-arrivals-secure-text-case">
+          <h5 class="na-secure-title">MONEY BACK GUARANTEE</h5>
+          <p class="na-secure-text">We reurn money within 30 days</p>
+        </div>
+      </div>
+    </section>
+    <div class="hna-arrow-container">
+      <a href="#home-click">
+        <img src="images/arrow.svg" alt="arrow" />
+      </a>
     </div>
 
     <script src="app.js"></script>
