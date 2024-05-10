@@ -1,12 +1,11 @@
+//hompage wishlist page js start//
+
 const wishlistContainer = document.querySelector("#wishlistContainer");
 const wishlistCount = document.querySelector("#wishlistCount");
-
 function renderWishlistProducts() {
   const wishlistProducts =
     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
-
   wishlistCount.innerHTML = `Wishlist (${wishlistProducts.length})`;
-
   wishlistContainer.innerHTML = wishlistProducts
     .map((item) => {
       const { id, image, title, price } = item;
@@ -26,21 +25,17 @@ function renderWishlistProducts() {
     })
     .join("");
 }
-
 function deleteFromWishlist(productId) {
   const wishlistProducts =
     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
-
   const updatedWishlistProducts = wishlistProducts.filter(
     (product) => product.id !== productId
   );
-
   localStorage.setItem(
     "wishlistProducts",
     JSON.stringify(updatedWishlistProducts)
   );
-
   renderWishlistProducts();
 }
-
 renderWishlistProducts();
+//hompage wishlist page js end//
