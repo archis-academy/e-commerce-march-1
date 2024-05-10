@@ -57,6 +57,7 @@
   font-weight: 500;
   line-height: 24px;
   color: #fafafa;
+  cursor: pointer;
 }
 .register-login-btn {
   font-family: "Poppins", sans-serif;

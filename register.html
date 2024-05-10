@@ -29,20 +29,33 @@
             </div>
           </div>
           <div class="register-input-box">
-            <input class="register-inputs" type="text" placeholder="Fullname" />
-            <input class="register-inputs" type="email" placeholder="Email" />
             <input
+              id="fullname-input"
+              class="register-inputs"
+              type="text"
+              placeholder="Fullname"
+            />
+            <input
+              id="email-input"
+              class="register-inputs"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              id="password-input"
               class="register-inputs"
               type="password"
               placeholder="Password"
             />
           </div>
           <div class="register-btn-box">
-            <button class="register-btn">Register</button>
+            <button onclick="IsEntered()" class="register-btn">Register</button>
             <a class="register-login-btn" href="login.html">Log In</a>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="register.js"></script>
   </body>
 </html>
