@@ -8,7 +8,7 @@ let bestSellingProducts;
 async function DisplayBestSellingProducts() {
   const apiResponse = await fetch("https://fakestoreapi.com/products?limit=4");
   const apiProducts = await apiResponse.json();
-  bestSellingProducts = apiProducts;
+  bestSellingProducts = [];
 
   sellingProductsContainer.innerHTML = bestSellingProducts.map((product) => {
     return `<div class="best-selling-api-products">
