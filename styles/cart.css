@@ -302,9 +302,11 @@
         display: none;
     }
     .cart-local-storage-products-container{
-        display: grid;
-        grid-template-columns: repeat(3, minmax(100px,253px));
+        display: flex;
+        flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
+
     }
      
     .cart-empty-text-svg-container{
@@ -320,6 +322,7 @@
         gap: 10px;
         padding: 15px;
         border-radius: 10px;
+        width: 240px;
     }
 
     .cart-quantity-subtotal-container {
@@ -340,10 +343,6 @@
 }
 
 @media(max-width:600px){
-    .cart-local-storage-products-container{
-        grid-template-columns: repeat(2, minmax(100px,210px));
-        justify-content: center;
-    }
 
     .cart-products-coupon-total-container{
         margin-top: 40px;
