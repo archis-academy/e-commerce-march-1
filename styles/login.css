@@ -66,6 +66,7 @@
   line-height: 24px;
   color: #db4444;
   text-decoration: none;
+  cursor: pointer;
 }
 @media (max-width: 950px) {
   .login-page-container {
