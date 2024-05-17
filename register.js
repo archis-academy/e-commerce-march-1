@@ -40,7 +40,9 @@ function AddNewUser() {
     userList.push(newUser);
     localStorage.setItem("userList", JSON.stringify(userList));
     alert("Successfully registered. Please log in.");
+    window.location.assign("login.html");
   } else {
-    alert("This email is already in use.");
+    alert("This email is already in use. Please log in.");
+    window.location.assign("login.html");
   }
 }
