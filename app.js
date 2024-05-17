@@ -9,7 +9,7 @@ let scrollAmount = 0;
 const productBox = document.getElementById("explore-products-box");
 
 async function getApıProducts() {
-  const apiResponse = await fetch("https://fakestoreapi.com/products");
+  const apiResponse = await fetch("https://fakestoreapi.com/products",{mode: 'cors'});
   const apiProducts = await apiResponse.json();
   return apiProducts;
 };
