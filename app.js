@@ -359,9 +359,11 @@ const countdown = setInterval(() => {
   };
    
   const timeArray = [days,hours,minutes,seconds];
+  const stringTime = ["days" , "hours" , "minutes" ,"seconds"];
 
   for (let i = 0; i < timeArray.length; i++) {
-     timeBoxes[i].textContent = formatTime(timeArray[i]);
+     timeBoxes[i].innerHTML = `<p> ${formatTime(timeArray[i])} </p>
+                               <p> ${stringTime[i]} </p>`;
   }
 
   if (distance < 0) {
