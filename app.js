@@ -1,6 +1,8 @@
 //Best Selling and Explore Products Starts
 const sellingProductsContainer = document.querySelector("#best-selling-api-products");
 
+let tempBestSelling = [];
+let tempExploreProducts = [];
 let wishListProducts = [];
 let cartProducts = [];
 let bestSellingProducts = [];
@@ -21,7 +23,7 @@ async function displayProducts() {
     bestSellingProducts[(i-5)] = allProducts[i];
   };
     
-  sellingProductsContainer.innerHTML = bestSellingProducts.map((product) => {
+  tempBestSelling = bestSellingProducts.map((product) => {
     return `<div class="best-selling-api-products">
              <div class="best-selling-product-container">
               <div class="best-selling-img-container">
@@ -57,12 +59,13 @@ async function displayProducts() {
               </div> 
             </div>`
   }).join("");
+  sellingProductsContainer.innerHTML = tempBestSelling;
 
  changeCartSvg(sellingProductsContainer);
  changeWishlistSvg(sellingProductsContainer);
 
   products = allProducts;
-  productBox.innerHTML =  products.map((product) => {
+  tempExploreProducts =  products.map((product) => {
    return `
    <div>
     <div id="${product.id}" class="explore-product">
@@ -97,6 +100,7 @@ async function displayProducts() {
          </div>        
      </div>
    </div> ` }).join("");
+   productBox.innerHTML = tempExploreProducts;
  
  checkStoredCartSvgs(products,productBox);
  checkStoredWishlistSvgs(products,productBox);
