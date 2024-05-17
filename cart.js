@@ -23,35 +23,44 @@ function displayCartProducts() {
                <div class="cart-products-image-container">
                 <img src="${product.image}" class="cart-products-images"/>
                 <p class="cart-products-names cart-p"> ${product.title} </p>
-               </div>      
-               <p class="cart-p"> ${product.price}$ </p>
+               </div>  
+               <div class="cart-products-responsive-p-container">
+                  <p class="cart-p cart-products-responsive-p">Price : </p>
+                  <p class="cart-p"> ${product.price}$ </p>
+               </div>
                <div class ="cart-quantity-subtotal-container">
-                <div class="cart-select-appearance-container">   
-                 <select id="product-quantity-${product.id}" class="cart-products-quantity">
-                  <option>0</option>
-                  <option selected>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                 </select> 
-                 <div class="cart-select-buttons-container">
-                  <?xml version="1.0" encoding="utf-8"?>
-                  <svg width="11px" height="11px" id="select-increment-button-${product.id}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289L19.7071 14.2929C20.0976 14.6834 20.0976 15.3166 19.7071 15.7071C19.3166 16.0976 18.6834 16.0976 18.2929 15.7071L12 9.41421L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z" fill="#000000"/>
-                  </svg>
-                  <?xml version="1.0" encoding="utf-8"?>
-                  <svg width="11px" height="11px" id="select-decrement-button-${product.id}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289Z" fill="#000000"/>
-                  </svg>
-                 </div>
+                <div class="cart-products-responsive-p-container">
+                 <p class="cart-p cart-products-responsive-p"> Quantity : </p>
+                 <div class="cart-select-appearance-container">   
+                  <select id="product-quantity-${product.id}" class="cart-products-quantity">
+                   <option>0</option>
+                   <option selected>1</option>
+                   <option>2</option>
+                   <option>3</option>
+                   <option>4</option>
+                   <option>5</option>
+                   <option>6</option>
+                   <option>7</option>
+                   <option>8</option>
+                   <option>9</option>
+                   <option>10</option>
+                  </select> 
+                  <div class="cart-select-buttons-container">
+                   <?xml version="1.0" encoding="utf-8"?>
+                   <svg width="11px" height="11px" id="select-increment-button-${product.id}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289L19.7071 14.2929C20.0976 14.6834 20.0976 15.3166 19.7071 15.7071C19.3166 16.0976 18.6834 16.0976 18.2929 15.7071L12 9.41421L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z" fill="#000000"/>
+                   </svg>
+                   <?xml version="1.0" encoding="utf-8"?>
+                   <svg width="11px" height="11px" id="select-decrement-button-${product.id}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289Z" fill="#000000"/>
+                   </svg>
+                  </div>
+                 </div> 
                 </div>
-                <p id="price-${product.id}" class="cart-p"> ${product.price.toFixed(2)}$ </p>
+                <div class="cart-products-responsive-p-container">
+                  <p class="cart-p cart-products-responsive-p"> Subtotal : </p>
+                  <p id="price-${product.id}" class="cart-p"> ${product.price.toFixed(2)}$ </p>
+                </div>  
                </div> 
               </div>`
     }).join("");  
@@ -67,7 +76,9 @@ function subtotalCalculations() {
     const quantity = cartProductsContainer.querySelector(`#product-quantity-${product.id}`);
    quantity.addEventListener(("click") , () => {  
      updateSubtotals(product,parseInt(quantity.value));
-     console.log(quantity.value)
+     if(parseInt(quantity.value) === 0) {
+      deleteFromCart();
+     }
    });
    incrementButton.addEventListener(("click") , () => {
     let intQuantity = parseInt(quantity.value);
@@ -83,13 +94,15 @@ function subtotalCalculations() {
 
    decrementButton.addEventListener(("click") , () => {
     let intQuantity = parseInt(quantity.value);
-    if (intQuantity > 0) {
+    if (intQuantity > 1) {
      intQuantity -= 1;
      quantity.value = intQuantity;
      updateSubtotals(product,intQuantity);   
     }
-    else {
-      alert("Quantity cannot be smaller than 0");
+    else if(intQuantity === 1) {
+      intQuantity -= 1;
+      quantity.value = intQuantity;
+      deleteFromCart();
     }
    });
  }); 
@@ -98,6 +111,19 @@ function subtotalCalculations() {
 function updateSubtotals(product,any_quantity) {
   const subtotal = cartProductsContainer.querySelector(`#price-${product.id}`);
   subtotal.textContent = `${(product.price*any_quantity).toFixed(2)}$`;
+};
+
+function deleteFromCart() {
+  cartPageProducts.map((product) => {
+    const quantity = cartProductsContainer.querySelector(`#product-quantity-${product.id}`); 
+    if(parseInt(quantity.value) === 0){
+       const deletedProduct = cartPageProducts.findIndex((productToDelete) => productToDelete.id === product.id);
+       cartPageProducts.splice(deletedProduct,1);
+       localStorage.setItem("cartProducts", JSON.stringify([...cartPageProducts]));
+       localStorage.removeItem(`productFeatures-${product.id}`);
+       window.location.reload();
+     } 
+  });
 };
 
 let productFeatures = {
@@ -112,18 +138,10 @@ function updateCart() {
     const subtotal = cartProductsContainer.querySelector(`#price-${product.id}`);
     
     updateButton.addEventListener(("click") , () => {
-     if(parseInt(quantity.value) >= 1){
       productFeatures.quantity = parseInt(quantity.value);
       productFeatures.subtotal = subtotal.textContent;
       localStorage.setItem(`productFeatures-${product.id}` , JSON.stringify(productFeatures));
-     }
-     else if(parseInt(quantity.value) === 0){
-       const deletedProduct = cartPageProducts.findIndex((productToDelete) => productToDelete.id === product.id);
-       cartPageProducts.splice(deletedProduct,1);
-       localStorage.setItem("cartProducts", JSON.stringify([...cartPageProducts]));
-       localStorage.removeItem(`productFeatures-${product.id}`);
-     }
-     window.location.reload();
+      window.location.reload();
    });
  });
 };
