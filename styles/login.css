@@ -60,13 +60,25 @@
   color: #fafafa;
   cursor: pointer;
 }
-.login-forget-password-btn {
+.register-text-and-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.register-text {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(14px, 3vw, 16px);
+  line-height: 24px;
+  margin: 0;
+}
+.login-register-btn {
   font-family: "Poppins", sans-serif;
   font-size: clamp(14px, 3vw, 16px);
   line-height: 24px;
   color: #db4444;
   text-decoration: none;
-  cursor: pointer;
 }
 @media (max-width: 950px) {
   .login-page-container {
