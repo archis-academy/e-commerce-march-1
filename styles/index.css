@@ -1,4 +1,5 @@
 /* hompage-browse-by-category style start*/
+
 .homepage-browse-by-category {
   width: 100%;
   display: flex;
@@ -199,7 +200,7 @@ margin-top: 20px;
 }
 
 .best-selling-img-container{
-  padding: 15px 0;
+  padding: 20px 10px;
   border: 2px solid #F5F5F5; 
   border-radius: 15px;
   position: relative;
@@ -227,6 +228,7 @@ margin-top: 20px;
   box-shadow: 0px 2px 5px 3px rgba(0,0,0,0.1);
   margin-top: 10px;
   padding: 4px;
+  background-color: white;
 }
 
 .selling-card-tick-icon{
@@ -248,7 +250,7 @@ margin-top: 20px;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .best-selling-products-img{
@@ -267,28 +269,31 @@ margin-top: 20px;
   color: #DB4444;
 }
 
-.bestselling-rating-container {
+.products-rating-container {
   width: 50%;
-}
-
-.bestselling-rating-container {
   display: flex;
   position: relative;
+  align-items: center;
 }
 
-.bestselling-stars-img {
+.explore-products-rating-container{
+  margin-top: 3px;
+  width: 39%;
+}
+
+.products-stars-img {
   width: 100%;
 }
 
-.bestselling-transparent-div {
+.rating-transparent-div {
   background-color: rgba(255,255,255,0.8);
   height: 100%;
   position: absolute;
   right: 0;
 }
 
-.best-selling-rating{
-  margin-left: 20px;
+.products-rating{
+  margin-left: 17px;
 }
 
 @media(max-width:1161px) {
@@ -536,25 +541,29 @@ margin-top: 20px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin: 10px 0;
+  margin-top: 10px;
 }
-.explore-price-and-rating-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  height: 30px;
-}
+
 .explore-product-price {
   color: #db4444;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   line-height: 24px;
+  margin-top: 5px;
 }
+ 
+.explore-products-rating-price-container{
+  display: flex;
+  gap: 12px;
+  margin-top: 3px;
+}
+ 
 .explore-product-count {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
+  margin-left: 10px;
 }
 .explore-view-btn {
   margin-top: 60px;
