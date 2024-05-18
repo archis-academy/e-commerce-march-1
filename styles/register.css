@@ -1,16 +1,16 @@
-.login-page-container {
+.register-page-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
-.login-img-box {
+.register-img-box {
   max-width: 1075px;
 }
-.login-img {
+.register-img {
   width: clamp(300px, 67vw, 1075px);
 }
-.login-title-h2 {
+.register-title-h2 {
   font-family: "Inter", serif;
   font-size: clamp(24px, 5vw, 36px);
   font-weight: 500;
@@ -18,37 +18,36 @@
   margin-top: 0;
   margin-bottom: 20px;
 }
-.login-title-h5 {
+.register-title-h5 {
   font-family: "Poppins", sans-serif;
   font-size: clamp(14px, 3vw, 16px);
   font-weight: 400;
   line-height: 24px;
   margin-top: 0;
 }
-.login-content-box {
+.register-content-box {
   width: 820px;
   display: flex;
   justify-content: center;
 }
-.login-input-box {
+.register-input-box {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
 }
-.login-inputs {
+.register-inputs {
   height: 32px;
   border: none;
   border-bottom: 1px solid #a0a0a0;
 }
-.login-btn-box {
+.register-btn-box {
   padding-top: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 10px;
 }
-.login-btn {
+.register-btn {
   max-width: 190px;
   padding: 16px 48px;
   border: none;
@@ -60,20 +59,7 @@
   color: #fafafa;
   cursor: pointer;
 }
-.register-text-and-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.register-text {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(14px, 3vw, 16px);
-  line-height: 24px;
-  margin: 0;
-}
-.login-register-btn {
+.register-login-btn {
   font-family: "Poppins", sans-serif;
   font-size: clamp(14px, 3vw, 16px);
   line-height: 24px;
@@ -81,24 +67,24 @@
   text-decoration: none;
 }
 @media (max-width: 950px) {
-  .login-page-container {
+  .register-page-container {
     flex-wrap: wrap;
   }
-  .login-img {
+  .register-img {
     width: 100%;
   }
-  .login-content-box {
+  .register-content-box {
     width: 950px;
   }
 }
 @media (max-width: 550px) {
-  .login-title-h2 {
+  .register-title-h2 {
     margin-bottom: 5px;
   }
-  .login-input-box {
+  .register-input-box {
     gap: 25px;
   }
-  .login-btn {
+  .register-btn {
     padding: 12px 36px;
   }
 }
