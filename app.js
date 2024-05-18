@@ -1,6 +1,8 @@
 //Best Selling and Explore Products Starts
 const sellingProductsContainer = document.querySelector("#best-selling-api-products");
 
+let tempBestSelling = [];
+let tempExploreProducts = [];
 let wishListProducts = [];
 let cartProducts = [];
 let bestSellingProducts = [];
@@ -9,7 +11,7 @@ let scrollAmount = 0;
 const productBox = document.getElementById("explore-products-box");
 
 async function getApıProducts() {
-  const apiResponse = await fetch("https://fakestoreapi.com/products");
+  const apiResponse = await fetch("https://fakestoreapi.com/products",{mode: 'cors'});
   const apiProducts = await apiResponse.json();
   return apiProducts;
 };
@@ -21,7 +23,7 @@ async function displayProducts() {
     bestSellingProducts[(i-5)] = allProducts[i];
   };
     
-  sellingProductsContainer.innerHTML = bestSellingProducts.map((product) => {
+  tempBestSelling = bestSellingProducts.map((product) => {
     return `<div class="best-selling-api-products">
              <div class="best-selling-product-container">
               <div class="best-selling-img-container">
@@ -57,12 +59,13 @@ async function displayProducts() {
               </div> 
             </div>`
   }).join("");
+  sellingProductsContainer.innerHTML = tempBestSelling;
 
  changeCartSvg(sellingProductsContainer);
  changeWishlistSvg(sellingProductsContainer);
 
   products = allProducts;
-  productBox.innerHTML =  products.map((product) => {
+  tempExploreProducts =  products.map((product) => {
    return `
    <div>
     <div id="${product.id}" class="explore-product">
@@ -97,6 +100,7 @@ async function displayProducts() {
          </div>        
      </div>
    </div> ` }).join("");
+   productBox.innerHTML = tempExploreProducts;
  
  checkStoredCartSvgs(products,productBox);
  checkStoredWishlistSvgs(products,productBox);
@@ -355,9 +359,11 @@ const countdown = setInterval(() => {
   };
    
   const timeArray = [days,hours,minutes,seconds];
+  const stringTime = ["days" , "hours" , "minutes" ,"seconds"];
 
   for (let i = 0; i < timeArray.length; i++) {
-     timeBoxes[i].textContent = formatTime(timeArray[i]);
+     timeBoxes[i].innerHTML = `<p> ${formatTime(timeArray[i])} </p>
+                               <p> ${stringTime[i]} </p>`;
   }
 
   if (distance < 0) {

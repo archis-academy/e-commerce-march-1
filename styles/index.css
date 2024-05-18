@@ -210,6 +210,7 @@ margin-top: 20px;
   top: 10px;
   right: 8px;
   position: absolute;
+  cursor: pointer;
 }
 
 .selling-wishlist-icon {
@@ -228,6 +229,8 @@ margin-top: 20px;
   box-shadow: 0px 2px 5px 3px rgba(0,0,0,0.1);
   margin-top: 10px;
   padding: 4px;
+  background-color: white;
+ 
 }
 
 .selling-card-tick-icon{
@@ -510,6 +513,7 @@ margin-top: 20px;
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  cursor: pointer;
 }
 .wishlist-icon-box {
   border-radius: 50%;
@@ -863,146 +867,3 @@ margin-top: 20px;
 
 /*homepage-new-arrivals end */
 
-/*Footer Starts*/
-.footer-container {
-  background-color: rgba(0, 0, 0, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
-}
-
-.footer-content-container{
-  display: flex;
-  gap: 90px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.footer-poppins-p {
-  font-family: "poppins", sans;
-  font-weight: 400;
-  size: 16px;
-  line-height: 24px;
-  color: rgba(250, 250, 250, 1);
-
-}
-
-.footer-title-ınput-container{
-  display: grid;
-  gap: 18px;
-  margin-bottom: 50px;
-}
-
-.footer-exclusive-title{
-  font-family: Inter;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-  color: rgba(250, 250, 250, 1);
-}
-
-.footer-titles-p {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 28px;
-}
-
-.footer-input {
-  border: 1.5px solid rgba(250, 250, 250, 1);
-  border-radius: 5px;
-  padding: 12px 16px;
-  background-color: rgba(0, 0, 0, 1);
-  width: 100%;
-}
-
-.footer-input::placeholder {
-  color:rgba(250, 250, 250, 1);
-  font-family: "poppins", sans;
-  font-weight: 400;
-  size: 16px;
-  line-height: 24px;
-}
-
-.footer-subscribe-p{
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.footer-input-send-svg-container{
-  position: relative;
-}
-
-.footer-send-svg{
-  position: absolute;
-  top: 7px;
-  right: 12px;
-}
-
-.footer-support-container{
-  display: grid;
-  gap: 16px;
-  margin-bottom: 50px;
-}
-
-.footer-account-container{
-  display: grid;
-  gap: 16px;
-}
-
-.footer-links{
-  color: rgba(250, 250, 250, 1);
-  text-decoration: none;
-}
-
-.footer-quick-lik-container{
-  margin-bottom: 40px;
-  display: grid;
-  gap: 16px;
-}
-
-.footer-svg-qr-container{
-  display: flex;
-  gap: 10px;
-}
-
-.footer-downlad-container{
-  display: grid;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-.footer-app-imgs-container{
-  display: grid;
-}
-
-.footer-svg-qr-container{
-  margin-top: 5px;
-}
-
-.footer-download-imgs-container{
-  margin-top: 7px;
-}
-
-.footer-save-p{
-  font-size: 12px;
-}
-
-.footer-play-app-img {
-  width: 110px;
-  object-fit: contain;
-  height: 40px;
-}
-
-.footer-apple-app-img {
-  width: 110px;
-  object-fit: contain;
-  height: 42px;
-}
-
-.footer-social-media-svgs-container{
-  display: flex;
-  justify-content: space-between;
-}
