@@ -89,6 +89,7 @@
   }
   .login-content-box {
     width: 950px;
+    margin-top: 50px;
   }
 }
 @media (max-width: 550px) {
