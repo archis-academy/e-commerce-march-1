@@ -1,4 +1,18 @@
-//Best Selling and Explore Products Starts
+//Header Starts
+
+let advertiseCounter = 1;
+setInterval(() => {
+  const advertiseRadio = document.getElementById(`radio${advertiseCounter}`);
+  advertiseRadio.checked = true;
+ 
+  advertiseCounter++;
+  if (advertiseCounter > 5) {
+    advertiseCounter = 1;
+  }
+},5000);
+
+
+//Best Selling and Explore Products Start
 const sellingProductsContainer = document.querySelector("#best-selling-api-products");
 
 let tempBestSelling = [];
@@ -298,7 +312,7 @@ function removeFromCart(productId) {
    );
 };
 
-//Best Selling and Explore Products Ends
+//Best Selling and Explore Products End
 
 function changeColor(browse) {
   let hompageBrowseBox = browse;
@@ -358,12 +372,32 @@ const countdown = setInterval(() => {
     return time < 10 ? `0${time}` : `${time}`;
   };
    
-  const timeArray = [days,hours,minutes,seconds];
-  const stringTime = ["days" , "hours" , "minutes" ,"seconds"];
+  const timeArray = [
+    {
+     time: days ,
+     stringTime: "days"
+    },
+
+    {
+      time:hours,
+      stringTime : "hours"
+    },
+
+    {
+      time: minutes,
+      stringTime: "minutes"
+     },
+ 
+     {
+       time: seconds,
+       stringTime : "seconds"
+     }
+  ];
+ 
 
   for (let i = 0; i < timeArray.length; i++) {
-     timeBoxes[i].innerHTML = `<p> ${formatTime(timeArray[i])} </p>
-                               <p> ${stringTime[i]} </p>`;
+     timeBoxes[i].innerHTML = `<p> ${formatTime(timeArray[i].time)} </p>
+                               <p> ${timeArray[i].stringTime} </p>`;
   }
 
   if (distance < 0) {

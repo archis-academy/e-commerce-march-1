@@ -1,3 +1,240 @@
+/*Homepage Header Starts*/
+*Homepage Header Starts*/
+
+.header-black-div {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.header-poppins-p{
+  font-family: "poppins", sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.header-sale-p-container{
+  color: rgba(250, 250, 250, 1);
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 1000px;
+}
+
+.header-sale-p{
+  font-size: 14px;
+  text-align: center;
+}
+
+.header-link{
+  text-decoration: none;
+  color: rgba(250, 250, 250, 1);
+  font-size: 14px;
+}
+
+.header-language-choose{
+  background-color: rgba(0, 0, 0, 1);
+  border: none;
+  border-radius: 1px;
+  color: rgba(250, 250, 250, 1);
+  font-size: 14px;
+}
+
+.header-navbar-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid rgb(202 201 201);
+  padding: 25px;
+
+}
+
+.header-navbar{
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin-top: 10px;
+}
+
+.navbar-exclusive-p{
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.navbar-center-content-container{
+  display: flex;
+  gap: 48px;
+}
+
+.navbar-input-container{
+  display: flex;
+  gap: 24px;
+}
+
+.input-search-icon-container{
+  position: relative;
+  width: 240px;
+}
+
+.header-input{
+  width: 100%;
+  background-color: rgba(245, 245, 245, 1);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.header-search-icon{
+  position: absolute;
+  top: 4px;
+  right: 8px;
+}
+
+.header-categories-advertise-container{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
+  position: relative;
+}
+
+
+.header-categories-and-dropdown {
+  margin-top: 16px;
+  display: flex;
+  margin-right: 40px;
+}
+
+.header-first-category{
+  margin-top: 30px;
+}
+
+.header-categories{
+  border-right: 1px solid rgb(202 201 201);
+}
+
+.header-right-dropdown{
+ /* display: none;*/
+}
+
+.header-categories-p{
+  width: 170px;
+}
+
+.header-advertise-img{
+  object-fit: contain;
+  height: 340px;
+}
+
+.header-advertisment-slider{
+  width: 900px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.header-sliding-advertives-container{
+  display: flex;
+  width: 500%;
+}
+
+.advertise-radio{
+  display: none;
+}
+
+.header-advertise-img-container{
+  width: 20%;
+  transition: 3s;
+}
+
+.header-advertise-click-radio-container{
+  position: absolute;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  gap: 20px;
+}
+
+.header-advertise-time-radio-container{
+  position: absolute;
+  margin-top: 304px;
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  gap: 20px;
+}
+
+.click-radio{
+  border: 3px solid rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1.5s ease-in-out;
+}
+
+.time-radio{
+  border: 3px solid rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1.5s ease-in-out;
+}
+
+.click-radio:hover {
+  background-color: #DB4444;
+}
+
+#radio1:checked ~ .header-first-advertise{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .header-first-advertise{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .header-first-advertise{ 
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .header-first-advertise{
+  margin-left: -60%;
+}
+
+#radio5:checked ~ .header-first-advertise{
+  margin-left: -80%;
+}
+
+/*////////////////////////////////// */
+
+#radio1:checked ~ .header-advertise-time-radio-container .time-radio1{
+ background-color: #DB4444;
+}
+
+#radio2:checked ~ .header-advertise-time-radio-container .time-radio2{
+  background-color: #DB4444;
+}
+
+#radio3:checked ~ .header-advertise-time-radio-container .time-radio3{
+  background-color: #DB4444;
+}
+
+#radio4:checked ~ .header-advertise-time-radio-container .time-radio4{
+  background-color: #DB4444;
+}
+
+#radio5:checked ~ .header-advertise-time-radio-container .time-radio5{
+  background-color: #DB4444;
+}
+
+
+
+
 /* hompage-browse-by-category style start*/
 
 .homepage-browse-by-category {
