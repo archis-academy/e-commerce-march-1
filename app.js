@@ -24,14 +24,11 @@ function startCountdown() {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    document.getElementById("todays-countdown-days").innerHTML =
-      days + ":" + hours + ":" + minutes + ":" + seconds;
-    document.getElementById("todays-countdown-haurs").innerHTML =
-      days + ":" + hours + ":" + minutes + ":" + seconds;
+    document.getElementById("todays-countdown-days").innerHTML = days + ":";
+    document.getElementById("todays-countdown-hours").innerHTML = hours + ":";
     document.getElementById("todays-countdown-minutes").innerHTML =
-      days + ":" + hours + ":" + minutes + ":" + seconds;
-    document.getElementById("todays-countdown-seconds").innerHTML =
-      days + ":" + hours + ":" + minutes + ":" + seconds;
+      minutes + ":";
+    document.getElementById("todays-countdown-seconds").innerHTML = seconds;
 
     if (distance < 0) {
       clearInterval(x);
