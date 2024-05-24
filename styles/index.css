@@ -66,6 +66,17 @@
   justify-content: center;
   gap: 30px;
 }
+
+.hm-todays-products {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hm-todays-products img {
+  cursor: pointer;
+  width: 46px;
+  height: 46px;
+}
 .hm-todays-cart-discont {
   width: 270px;
   height: 350px;

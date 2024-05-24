@@ -39,6 +39,45 @@ function startCountdown() {
 
 startCountdown();
 
+const productsContainer = document.querySelector("#productsContainer");
+
+function renderProductStars(rating) {
+  const roundedRating = Math.round(rating);
+  let stars = "";
+  for (let i = 0; i < roundedRating; i++) {
+    stars += '<img class="hm-todays-star" src="images/star-img.svg">';
+  }
+  return stars;
+}
+
+async function getProducts() {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const products = await res.json();
+
+  renderTodaysProducts(products);
+}
+
+getProducts();
+
+function renderTodaysProducts(products) {
+  const firstFourProducts = products.slice(0, 4);
+  const productsHTML = firstFourProducts
+    .map((product) => {
+      return `<div class="product-card">
+                <img src="${product.image}" />
+                <h3>${product.title}</h3>
+                <p>${product.price - (product.price * 50) / 100} - 0%</p>
+                <s>${product.price} </s>
+                <p>${renderProductStars(product.rating.rate)}</p>
+            </div>`;
+    })
+    .join("");
+
+  productsContainer.innerHTML = productsHTML;
+
+  console.log(productsHTML);
+}
+
 //Homepage Today's-Products Finish
 
 //Best Selling Starts
