@@ -1,15 +1,78 @@
 //Header Starts
+const firstAdvertise = document.querySelector("#header-first-advertise");
+let existingInterval;
+let intervalTime = 6000;
+
+function setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,time) {
+  if (existingInterval) {
+    clearInterval(existingInterval);
+  }
+
+  existingInterval = setInterval(() => {
+   if (advertiseCounter === 6) {
+     let lastRadioCounter = (advertiseCounter - 1 );
+     advertiseCounter = 1;
+     firstAdvertise.style.marginLeft = "0";
+     const lastRadio = document.querySelector(`.click-radio${(lastRadioCounter)}`);
+     lastRadio.style.backgroundColor = "transparent";
+     transparentCounter = 1;
+   }
+
+   const showRadio = document.querySelector(`.click-radio${advertiseCounter}`);
+   clickRadios.forEach(radio => radio.style.backgroundColor = 'transparent');
+   showRadio.style.backgroundColor = "#DB4444";
+  
+   if (advertiseCounter > 1) {
+     const currentMarginLeft = parseFloat(firstAdvertise.style.marginLeft) || 0;
+     firstAdvertise.style.marginLeft = `${currentMarginLeft - 20}%`;
+     const transparentRadio = document.querySelector(`.click-radio${transparentCounter}`)
+     transparentRadio.style.backgroundColor = "transparent";
+     transparentCounter++;
+   }
+   advertiseCounter++;
+ }, time );
+
+};
 
 let advertiseCounter = 1;
-setInterval(() => {
-  const advertiseRadio = document.getElementById(`radio${advertiseCounter}`);
-  advertiseRadio.checked = true;
- 
-  advertiseCounter++;
-  if (advertiseCounter > 5) {
-    advertiseCounter = 1;
-  }
-},5000);
+let transparentCounter = 1;
+const showRadio = document.querySelector(`.click-radio${advertiseCounter}`);
+const hiddenRadios = document.querySelectorAll(".advertise-radio");
+const clickRadios = document.querySelectorAll(`.click-radio`);
+showRadio.style.backgroundColor = "#DB4444";
+setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,intervalTime);
+
+function setClickToSlides() {
+   clickRadios.forEach((radio) => {
+     radio.addEventListener(("click") , () => {
+        firstAdvertise.style.marginLeft = `${(parseInt(radio.id) - 1) * -20}%`;
+        clickRadios.forEach(radio => radio.style.backgroundColor = 'transparent');
+        radio.style.backgroundColor = "#DB4444";
+
+        let tempRadioId = parseInt(radio.id);
+        let radioId;
+        let tempTransparentCounter = parseInt(radio.id);
+        let transparentCounter;
+           
+        if (tempTransparentCounter === 1) {
+          transparentCounter = 1;
+        }
+        else {
+          transparentCounter = (tempTransparentCounter - 1);
+        }
+
+        if (tempRadioId === 1) {
+          radioId = 1;
+        } else {
+          radioId = (tempRadioId + 1)
+        }
+        setTimeToSlides( radioId ,transparentCounter,clickRadios,intervalTime);
+     });
+   });
+};
+
+setClickToSlides();
+
 
 
 //Best Selling and Explore Products Start

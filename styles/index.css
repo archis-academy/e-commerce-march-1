@@ -1,5 +1,4 @@
 /*Homepage Header Starts*/
-*Homepage Header Starts*/
 
 .header-black-div {
   width: 100%;
@@ -29,12 +28,14 @@
 .header-sale-p{
   font-size: 14px;
   text-align: center;
+  cursor: pointer;
 }
 
 .header-link{
   text-decoration: none;
   color: rgba(250, 250, 250, 1);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .header-language-choose{
@@ -50,7 +51,6 @@
   justify-content: center;
   border-bottom: 2px solid rgb(202 201 201);
   padding: 25px;
-
 }
 
 .header-navbar{
@@ -70,6 +70,7 @@
 .navbar-center-content-container{
   display: flex;
   gap: 48px;
+  cursor: pointer;
 }
 
 .navbar-input-container{
@@ -109,6 +110,7 @@
   margin-top: 16px;
   display: flex;
   margin-right: 40px;
+  cursor: pointer;
 }
 
 .header-first-category{
@@ -147,6 +149,12 @@
   display: none;
 }
 
+.radio-center-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header-advertise-img-container{
   width: 20%;
   transition: 3s;
@@ -157,18 +165,9 @@
   margin-top: -40px;
   display: flex;
   justify-content: center;
-  width: 900px;
   gap: 20px;
 }
 
-.header-advertise-time-radio-container{
-  position: absolute;
-  margin-top: 304px;
-  display: flex;
-  justify-content: center;
-  width: 900px;
-  gap: 20px;
-}
 
 .click-radio{
   border: 3px solid rgb(255, 255, 255);
@@ -178,57 +177,8 @@
   transition: 1.5s ease-in-out;
 }
 
-.time-radio{
-  border: 3px solid rgb(255, 255, 255);
-  padding: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 1.5s ease-in-out;
-}
 
 .click-radio:hover {
-  background-color: #DB4444;
-}
-
-#radio1:checked ~ .header-first-advertise{
-  margin-left: 0;
-}
-
-#radio2:checked ~ .header-first-advertise{
-  margin-left: -20%;
-}
-
-#radio3:checked ~ .header-first-advertise{ 
-  margin-left: -40%;
-}
-
-#radio4:checked ~ .header-first-advertise{
-  margin-left: -60%;
-}
-
-#radio5:checked ~ .header-first-advertise{
-  margin-left: -80%;
-}
-
-/*////////////////////////////////// */
-
-#radio1:checked ~ .header-advertise-time-radio-container .time-radio1{
- background-color: #DB4444;
-}
-
-#radio2:checked ~ .header-advertise-time-radio-container .time-radio2{
-  background-color: #DB4444;
-}
-
-#radio3:checked ~ .header-advertise-time-radio-container .time-radio3{
-  background-color: #DB4444;
-}
-
-#radio4:checked ~ .header-advertise-time-radio-container .time-radio4{
-  background-color: #DB4444;
-}
-
-#radio5:checked ~ .header-advertise-time-radio-container .time-radio5{
   background-color: #DB4444;
 }
 
