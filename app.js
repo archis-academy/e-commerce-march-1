@@ -39,16 +39,11 @@ function startCountdown() {
 
 startCountdown();
 
-const productsContainer = document.querySelector("#productsContainer");
-
-function renderProductStars(rating) {
-  const roundedRating = Math.round(rating);
-  let stars = "";
-  for (let i = 0; i < roundedRating; i++) {
-    stars += '<img class="hm-todays-star" src="images/star-img.svg">';
-  }
-  return stars;
-}
+const todaysProductsContainer = document.querySelector(
+  "#todaysProductsContainer"
+);
+let temptodays = [];
+let todaysProducts = [];
 
 async function getProducts() {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -61,21 +56,67 @@ getProducts();
 
 function renderTodaysProducts(products) {
   const firstFourProducts = products.slice(0, 4);
+
   const productsHTML = firstFourProducts
     .map((product) => {
-      return `<div class="product-card">
-                <img src="${product.image}" />
-                <h3>${product.title}</h3>
-                <p>${product.price - (product.price * 50) / 100} - 0%</p>
-                <s>${product.price} </s>
-                <p>${renderProductStars(product.rating.rate)}</p>
-            </div>`;
+      return `<div class="todaysProductsContainer">
+          <div class="hm-todays-products">
+            <div class="hm-todays-products-img">
+              <img class="todays-products-img" src="${product.Image}" />
+              <div class="todays-icons-container">
+                <div
+                  onclick="addToWishlist(${product.id}, todaysProducts)"
+                  class="todays-card-add-btn"
+                >
+                  <svg
+                    width="32"
+                    id="wishlist_${product.id}"
+                    class="products-wishlist-svg"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
+                      stroke="black"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="todays-products-features">
+              <p class="todays-titles">${product.Title}</p>
+              <div class="todays-discount">
+                <p class="discount-price">
+                  ${product.price - (product.price * 50) / 100}$
+                </p>
+                <s>${product.price}$</s>
+              </div>
+              <div class="products-rating-box">
+                <img src="images/stars.png" class="products-stars-img" />
+
+                <div
+                  class="rating-crystal-div"
+                  id="transparent-div"
+                  style="width:${hideStars(product)}%"
+                ></div>
+                <p class="todays-rating">(${product.rating.count})</p>
+              </div>
+            </div>
+          </div>
+        </div>`;
     })
     .join("");
+  todaysProductsContainer.innerHTML = temptodays;
 
-  productsContainer.innerHTML = productsHTML;
+  changeCartSvg(todaysProductsContainer);
+  changeWishlistSvg(todaysProductsContainer);
 
-  console.log(productsHTML);
+  console.log(product);
 }
 
 //Homepage Today's-Products Finish
