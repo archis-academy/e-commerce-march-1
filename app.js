@@ -78,6 +78,7 @@ async function displayProducts() {
           <div class="hm-todays-products">
             <div class="hm-todays-products-img">
               <img class="todays-products-img" src="${product.image}" />
+              <button class= "todays-product-cart-add-btn">Add to Cart</button>
               <div class="todays-icons-container">
                 <div
                   onclick="addToWishlist(${
