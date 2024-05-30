@@ -80,8 +80,10 @@ async function displayProducts() {
               <img class="todays-products-img" src="${product.image}" />
               <div class="todays-icons-container">
                 <div
-                  onclick="addToWishlist(${product.id}, todaysProducts)"
-                  class="todays-card-add-btn"
+                  onclick="addToWishlist(${
+                    product.id
+                  }, todaysProductsContainer)"
+                  class="todays-wishlist-icon"
                 >
                   <svg
                     width="32"
