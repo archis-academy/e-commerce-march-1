@@ -1,7 +1,31 @@
 //Header Starts
-const firstAdvertise = document.querySelector("#header-first-advertise");
+let firstAdvertise;
 let existingInterval;
 let intervalTime = 6000;
+
+function checkAdvertiseImages() {
+  const advertiseContainer = document.querySelector("#slides-imgs-container");
+  advertiseContainer.innerHTML = 
+  ` <div class="header-advertise-img-container header-first-advertise" id="header-first-advertise">
+     <img class="header-advertise-img" src="images/advertise1.png" alt="">
+   </div>
+   <div class="header-advertise-img-container">
+     <img class="header-advertise-img" src="images/advertise2.png" alt="">
+   </div>
+   <div class="header-advertise-img-container">
+      <img class="header-advertise-img" src="images/advertise3.png" alt="">
+   </div>
+   <div class="header-advertise-img-container">
+      <img class="header-advertise-img" src="images/advertise4.png" alt="">
+   </div>
+   <div class="header-advertise-img-container">
+      <img class="header-advertise-img" src="images/advertise5.png" alt="">
+    </div>`
+
+  firstAdvertise =  advertiseContainer.querySelector("#header-first-advertise");
+}
+
+checkAdvertiseImages();
 
 function setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,time) {
   if (existingInterval) {
@@ -30,6 +54,7 @@ function setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,time) {
      transparentCounter++;
    }
    advertiseCounter++;
+  
    setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,intervalTime);
  }, time);
 };
@@ -79,6 +104,8 @@ function setClickToSlides() {
 
 setClickToSlides();
 
+
+
 function sidebarActivities() {
   const sidebarOpener = document.querySelector("#sidebar-opener");
   const sidebarCloser = document.querySelector("#sidebar-closer");
@@ -97,6 +124,7 @@ function sidebarActivities() {
      document.documentElement.style.overflow = 'scroll';
      document.body.style.overflow = 'scroll';
   });
+
 }
 
 sidebarActivities();

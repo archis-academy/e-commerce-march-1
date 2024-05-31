@@ -255,6 +255,11 @@
   height: 370px;
 }
 
+.header-responsive-advertise-img{
+  object-fit: contain;
+  height: 380px;
+}
+
 .header-advertisment-slider{
   width: 990px;
   overflow: hidden;
