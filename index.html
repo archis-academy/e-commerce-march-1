@@ -19,13 +19,72 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
 
   <body>
     <div class="navbar-container">
       <div class="navbar-box">
-        <div class="navbar-three-line-btn">
-          <img src="images/line-3-svgrepo-com.svg" alt="" />
+        <div id="navbar-three-line-btn" class="navbar-three-line-btn">
+          <div><img src="images/line-3-svgrepo-com.svg" alt="" /></div>
+          <!-- <div class="three-line-categories-container">
+          <div class="header-categories-box">
+            <div class="header-categories">
+              <p class="header-categories-title">Woman’s Fashion</p>
+              <svg
+                width="8"
+                height="13"
+                viewBox="0 0 8 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Men’s Fashion</p>
+              <svg
+                width="8"
+                height="13"
+                viewBox="0 0 8 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.95 6.63597L0 1.68597L1.414 0.271973L7.778 6.63597L1.414 13L0 11.586L4.95 6.63597Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Electronics</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Home & Lifestyle</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Medicine</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Sports & Outdoor</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Baby’s & Toys</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Groceries & Pets</p>
+            </div>
+            <div class="header-categories">
+              <p class="header-categories-title">Health & Beauty</p>
+            </div>
+          </div> -->
         </div>
         <div class="navbar-title-box">
           <h2 class="navbar-title-exclusive">Exclusive</h2>
@@ -91,7 +150,7 @@
       </svg>
     </div>
 
-    <!-- <div class="homepage-header-categories-and-slider-container">
+    <div class="homepage-header-categories-and-slider-container">
       <div class="homepage-header-categories-and-slider-box">
         <div class="header-categories-container">
           <div class="header-categories-box">
@@ -167,7 +226,48 @@
             </svg>
           </div>
         </div>
-        <div class="header-slider-box">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="header-slider-img"
+                src="images/SamsungMobile-Banner.png"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="header-slider-img"
+                src="images/Msi-Banner.png"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="header-slider-img"
+                src="images/iPadPro-Banner.png"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="header-slider-img"
+                src="images/AirPods-Banner.png"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="header-slider-img"
+                src="images/SamsungTv-Banner.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- <div class="header-slider-box">
           <div class="header-slider-img-boxes">
             <div class="header-slider-img-box">
               <img
@@ -292,9 +392,9 @@
               />
             </svg>
           </div>
-        </div>
+        </div> -->
       </div>
-    </div> -->
+    </div>
 
     <div class="homepage-browse-by-category">
       <div class="hompage-browse">
@@ -567,6 +667,7 @@
       </a>
     </div>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

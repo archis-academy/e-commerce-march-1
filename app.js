@@ -1,34 +1,50 @@
-let currentIndex = 0;
-const sliderImages = document.querySelector(".header-slider-img-boxes");
-const sliderImagesLength = sliderImages.getElementsByTagName("div").length;
-const sliderBtns = document.querySelectorAll(".slider-btn-svg");
-sliderBtns[currentIndex].classList.add("active");
+function categoriesDropdown() {}
 
-function slideTo(index) {
-  sliderBtns[currentIndex].classList.remove("active");
-  const sliderImagesWidth = document.querySelector(
-    ".header-slider-img-box"
-  ).offsetWidth;
-  const currentWidth = index * sliderImagesWidth;
-  sliderImages.style.transform = `translateX(${-currentWidth}px)`;
-
-  currentIndex = (currentIndex + 1) % sliderImagesLength;
-  sliderBtns[index].classList.add("active");
-
-  currentIndex = index;
-}
-
-const autoSlideInterval = setInterval(() => {
-  const nextIndex = (currentIndex + 1) % sliderImagesLength;
-  slideTo(nextIndex);
-}, 3000);
-
-sliderBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    slideTo(index);
-    // clearInterval(autoSlideInterval);
-  });
+var swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
+
+// let currentIndex = 0;
+// const sliderImages = document.querySelector(".header-slider-img-boxes");
+// const sliderImagesLength = sliderImages.getElementsByTagName("div").length;
+// const sliderBtns = document.querySelectorAll(".slider-btn-svg");
+// sliderBtns[currentIndex].classList.add("active");
+
+// function slideTo(index) {
+//   sliderBtns[currentIndex].classList.remove("active");
+//   const sliderImagesWidth = document.querySelector(
+//     ".header-slider-img-box"
+//   ).offsetWidth;
+//   const currentWidth = index * sliderImagesWidth;
+//   sliderImages.style.transform = `translateX(${-currentWidth}px)`;
+
+//   currentIndex = (currentIndex + 1) % sliderImagesLength;
+//   sliderBtns[index].classList.add("active");
+
+//   currentIndex = index;
+// }
+
+// const autoSlideInterval = setInterval(() => {
+//   const nextIndex = (currentIndex + 1) % sliderImagesLength;
+//   slideTo(nextIndex);
+// }, 3000);
+
+// sliderBtns.forEach((btn, index) => {
+//   btn.addEventListener("click", () => {
+//     slideTo(index);
+//     // clearInterval(autoSlideInterval);
+//   });
+// });
 
 //Best Selling and Explore Products Starts
 const sellingProductsContainer = document.querySelector(
