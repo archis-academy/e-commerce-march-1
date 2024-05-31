@@ -64,7 +64,8 @@
   justify-content: space-between;
   margin-top: 10px;
   gap: 15px;
-  width: 1340px;
+  max-width: 1340px;
+  flex: 1;
 }
 
 .navbar-exclusive-p{
