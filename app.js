@@ -77,7 +77,11 @@ async function displayProducts() {
       return `<div class="todaysProductsContainer">
           <div class="hm-todays-products">
             <div class="hm-todays-products-img">
-              <img class="todays-products-img" src="${product.image}" />
+            <div class="todays-wrapper">
+            <img class="todays-products-img" src="${product.image}" />
+            <span class="todays-discount-amount">-50%</span>
+             </div>
+              
               <button class= "todays-product-cart-add-btn">Add to Cart</button>
               <div class="todays-icons-container">
                 <div
