@@ -67,6 +67,17 @@
   justify-content: center;
 }
 
+.todays-products-container{
+  display: flex;
+  background-color: #db4444;
+  justify-content: center;
+
+}
+
+.delete-cart-icon{
+  display: none;
+}
+
 .todays-wrapper {
   position: relative;
 }

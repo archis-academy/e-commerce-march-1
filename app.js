@@ -39,26 +39,27 @@ function startCountdown() {
 
 startCountdown();
 
-const todaysProductsContainer = document.querySelector(
-  "#todaysProductsContainer"
-);
-
-//Homepage Today's-Products Finish
 
 //Best Selling Starts
 const sellingProductsContainer = document.querySelector(
   "#best-selling-api-products"
 );
 
+const todaysProductsContainer = document.querySelector(
+  "#todaysProductsContainer"
+);
+
 let tempBestSelling = [];
-let temptodays = [];
+let tempTodays = [];
 let tempExploreProducts = [];
 let wishListProducts = [];
 let cartProducts = [];
 let bestSellingProducts = [];
 let products = [];
 let scrollAmount = 0;
+let firstFourProducts = [];
 const productBox = document.getElementById("explore-products-box");
+
 
 async function getApıProducts() {
   const apiResponse = await fetch("https://fakestoreapi.com/products", {
@@ -68,26 +69,28 @@ async function getApıProducts() {
   return apiProducts;
 }
 
+
 async function displayProducts() {
   const allProducts = await getApıProducts();
-  const firstFourProducts = allProducts.slice(0, 4);
+  firstFourProducts = allProducts.slice(0, 4);
   console.log(firstFourProducts);
-  const productsHTML = firstFourProducts
+  const tempTodays = firstFourProducts
     .map((product) => {
-      return `<div class="todaysProductsContainer">
+      return `<div class="todaysProductsContainer" id="todaysProducts">
           <div class="hm-todays-products">
             <div class="hm-todays-products-img">
             <div class="todays-wrapper">
             <img class="todays-products-img" src="${product.image}" />
             <span class="todays-discount-amount">-50%</span>
              </div>
-              
-              <button class= "todays-product-cart-add-btn">Add to Cart</button>
+              <div id="todaysButtonContainer_${product.id}" onclick="addToCart(${product.id} ,firstFourProducts)" class="todays-products-container">
+                <button  class="todays-product-cart-add-btn">Add to Cart</button>
+              </div>  
               <div class="todays-icons-container">
                 <div
                   onclick="addToWishlist(${
                     product.id
-                  }, todaysProductsContainer)"
+                  }, firstFourProducts)"
                   class="todays-wishlist-icon"
                 >
                   <svg
@@ -107,9 +110,15 @@ async function displayProducts() {
                       stroke-linejoin="round"
                     />
                   </svg>
-                </div>
+                </div>   
+                <div class="delete-cart-icon"   id="delete-cart-icon_${product.id}">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg width="23px"  height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 3L13.5 5.5M13.5 5.5L16 8M13.5 5.5L16 3M13.5 5.5L11 8M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+               </div>           
               </div>
-            </div>
+            </div>       
             <div class="todays-products-features">
               <p class="todays-titles">${product.title}</p>
               <div class="todays-discount">
@@ -133,10 +142,11 @@ async function displayProducts() {
         </div>`;
     })
     .join("");
-  todaysProductsContainer.innerHTML = productsHTML;
+  todaysProductsContainer.innerHTML = tempTodays;
 
   changeCartSvg(todaysProductsContainer);
   changeWishlistSvg(todaysProductsContainer);
+ 
 
   for (let i = 5; i < 9; i++) {
     bestSellingProducts[i - 5] = allProducts[i];
@@ -250,8 +260,8 @@ async function displayProducts() {
     .join("");
   productBox.innerHTML = tempExploreProducts;
 
-  checkStoredCartSvgs(products, productBox);
-  checkStoredWishlistSvgs(products, productBox);
+  checkStoredCartSvgs();
+  checkStoredWishlistSvgs();
   changeCartSvg(productBox);
   changeWishlistSvg(productBox);
 }
@@ -336,7 +346,7 @@ function addToWishlist(productId, products) {
   }
 }
 
-function checkStoredWishlistSvgs(exploreProducts, exploreProductsContainer) {
+function checkStoredWishlistSvgs() {
   const colorizedWishlistProducts =
     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
 
@@ -344,22 +354,27 @@ function checkStoredWishlistSvgs(exploreProducts, exploreProductsContainer) {
     const checkBestSellingArray = bestSellingProducts.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
-    const checkExploreProductsArray = exploreProducts.some(
+    const checkExploreProductsArray = products.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
+    const todaysProductsArray = firstFourProducts.some((arrayProduct) => arrayProduct.id === product.id);
 
     const bestSellingWishlistSvgs = sellingProductsContainer.querySelector(
       `#wishlist_${product.id}`
     );
-    const exploreProductsWishlistSvgs = exploreProductsContainer.querySelector(
+    const exploreProductsWishlistSvgs = productBox.querySelector(
       `#wishlist_${product.id}`
     );
+    const todaysProductsWishlistSvgs = todaysProductsContainer.querySelector(`#wishlist_${product.id}`);
 
     if (checkBestSellingArray) {
       bestSellingWishlistSvgs.style.fill = "crimson";
     }
     if (checkExploreProductsArray) {
       exploreProductsWishlistSvgs.style.fill = "crimson";
+    }
+    if (todaysProductsArray) {
+      todaysProductsWishlistSvgs.style.fill = "crimson";
     }
   });
 }
@@ -395,39 +410,53 @@ function removeFromWishlist(productId) {
   );
 }
 
+
+
+
 function addToCart(productId, products) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-
+  
   const clickedForCart = products.find((product) => product.id === productId);
   const checkCartProduct = cartProducts.some(
     (product) => product.id === productId
-  );
+  );   
 
   if (!checkCartProduct) {
     localStorage.setItem(
       "cartProducts",
       JSON.stringify([...cartProducts, clickedForCart])
     );
-  } else {
+  } else if(products !== firstFourProducts){
     removeFromCart(productId);
   }
+
+  const iconContainer = todaysProductsContainer.querySelector(`#delete-cart-icon_${productId}`)
+  console.log(productId)
+  
+  const todaysButton = todaysProductsContainer.querySelector(`#todaysButtonContainer_${productId}`);
+  todaysButton.onclick = null;
+  console.log(todaysButton.onclick)
+  iconContainer.style.display = "block";
+
+  todaysButton.innerHTML = 
+  `<p><a href="cart.html"> Go To Cart </a></p>`;
 }
 
-function checkStoredCartSvgs(exploreProducts, exploreProductsContainer) {
+function checkStoredCartSvgs() {
   const colorizedCartProducts =
     JSON.parse(localStorage.getItem("cartProducts")) || [];
   colorizedCartProducts.map((product) => {
     const bestSelllingCartDivs = sellingProductsContainer.querySelector(
       `#cart_${product.id}`
     );
-    const exploreProductsCartsDivs = exploreProductsContainer.querySelector(
+    const exploreProductsCartsDivs = productBox.querySelector(
       `#cart_${product.id}`
     );
 
     const checkBestSellingArray = bestSellingProducts.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
-    const checkExploreProductsArray = exploreProducts.some(
+    const checkExploreProductsArray = products.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
 
