@@ -39,7 +39,6 @@ function startCountdown() {
 
 startCountdown();
 
-
 //Best Selling Starts
 const sellingProductsContainer = document.querySelector(
   "#best-selling-api-products"
@@ -60,7 +59,6 @@ let scrollAmount = 0;
 let firstFourProducts = [];
 const productBox = document.getElementById("explore-products-box");
 
-
 async function getApıProducts() {
   const apiResponse = await fetch("https://fakestoreapi.com/products", {
     mode: "cors",
@@ -69,11 +67,11 @@ async function getApıProducts() {
   return apiProducts;
 }
 
-
 async function displayProducts() {
   const allProducts = await getApıProducts();
-  firstFourProducts = allProducts.
-  tempTodays = firstFourProducts //temptodays const olarak tekrar tanımlanmamalı, yukarda let olarak zaten tanımlanmış, böyle kalmalı
+  firstFourProducts = allProducts.slice(16, 20);
+
+  tempTodays = firstFourProducts
     .map((product) => {
       return `<div class="todaysProductsContainer" id="todaysProducts">
           <div class="hm-todays-products">
@@ -82,14 +80,18 @@ async function displayProducts() {
               <img class="todays-products-img" src="${product.image}" />
               <span class="todays-discount-amount">-50%</span>
              </div>
-              <div id="todaysButtonContainer_${product.id}" onclick="addToCart(${product.id},firstFourProducts); displayTodaysDeleteCartIcon(${product.id})" class="todays-products-container">
+              <div id="todaysButtonContainer_${
+                product.id
+              }" onclick="addToCart(${
+        product.id
+      },firstFourProducts); displayTodaysDeleteCartIcon(${
+        product.id
+      })" class="todays-products-container">
                 <button  class="todays-product-cart-add-btn">Add to Cart</button>
               </div>  
               <div class="todays-icons-container">
                 <div
-                  onclick="addToWishlist(${
-                    product.id
-                  }, firstFourProducts)"
+                  onclick="addToWishlist(${product.id}, firstFourProducts)"
                   class="todays-wishlist-icon"
                 >
                   <svg
@@ -110,7 +112,11 @@ async function displayProducts() {
                     />
                   </svg>
                 </div>   
-                <div class="delete-cart-icon" onclick="removeFromCart(${product.id}); displayAddToCartAtTodaysProducts(${product.id})" id="delete-cart-icon_${product.id}">
+                <div class="delete-cart-icon" onclick="removeFromCart(${
+                  product.id
+                }); displayAddToCartAtTodaysProducts(${
+        product.id
+      })" id="delete-cart-icon_${product.id}">
                  <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 3L13.5 5.5M13.5 5.5L16 8M13.5 5.5L16 3M13.5 5.5L11 8M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -138,13 +144,16 @@ async function displayProducts() {
             </div>
           </div>
         </div>`;
-    }).join("");
-    //removeFromCart onclick çağrısı, delete-cart-icon divine eklendi, tıklayınca silme işlemi gerçekleşiyor
+    })
+    .join("");
+
+  console.log(tempTodays);
+  //removeFromCart onclick çağrısı, delete-cart-icon divine eklendi, tıklayınca silme işlemi gerçekleşiyor
   todaysProductsContainer.innerHTML = tempTodays;
 
   changeCartSvg(todaysProductsContainer);
   changeWishlistSvg(todaysProductsContainer);
- 
+
   for (let i = 5; i < 9; i++) {
     bestSellingProducts[i - 5] = allProducts[i];
   }
@@ -168,8 +177,8 @@ async function displayProducts() {
                  <div  onclick="addToCart(${
                    product.id
                  },bestSellingProducts)"  id="cart_${
-                            product.id
-                      }"  class="selling-card-icon-container">
+        product.id
+      }"  class="selling-card-icon-container">
                     <svg width="24px" height="24px" class="selling-card-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -201,6 +210,7 @@ async function displayProducts() {
             </div>`;
     })
     .join("");
+
   sellingProductsContainer.innerHTML = tempBestSelling;
 
   changeCartSvg(sellingProductsContainer);
@@ -354,7 +364,9 @@ function checkStoredWishlistSvgs() {
     const checkExploreProductsArray = products.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
-    const todaysProductsArray = firstFourProducts.some((arrayProduct) => arrayProduct.id === product.id);
+    const todaysProductsArray = firstFourProducts.some(
+      (arrayProduct) => arrayProduct.id === product.id
+    );
 
     const bestSellingWishlistSvgs = sellingProductsContainer.querySelector(
       `#wishlist_${product.id}`
@@ -362,7 +374,9 @@ function checkStoredWishlistSvgs() {
     const exploreProductsWishlistSvgs = productBox.querySelector(
       `#wishlist_${product.id}`
     );
-    const todaysProductsWishlistSvgs = todaysProductsContainer.querySelector(`#wishlist_${product.id}`);
+    const todaysProductsWishlistSvgs = todaysProductsContainer.querySelector(
+      `#wishlist_${product.id}`
+    );
 
     if (checkBestSellingArray) {
       bestSellingWishlistSvgs.style.fill = "crimson";
@@ -409,33 +423,38 @@ function removeFromWishlist(productId) {
 
 //diğer kısımları bozmaması için, delete-cart-iconu göstericek kodlar ayrı bir fonksiyona alındı,fonksiyon onclick olarak eklendi
 function displayTodaysDeleteCartIcon(productId) {
-  const iconContainer = todaysProductsContainer.querySelector(`#delete-cart-icon_${productId}`);
-   
-  const todaysButton = todaysProductsContainer.querySelector(`#todaysButtonContainer_${productId}`);
-  todaysButton.disabled =  true;
+  const iconContainer = todaysProductsContainer.querySelector(
+    `#delete-cart-icon_${productId}`
+  );
+
+  const todaysButton = todaysProductsContainer.querySelector(
+    `#todaysButtonContainer_${productId}`
+  );
+  todaysButton.disabled = true;
   iconContainer.style.display = "block";
 
-  todaysButton.innerHTML = 
-  `<p><a href="cart.html"> Go To Cart </a></p>`;
-};
+  todaysButton.innerHTML = `<p><a href="cart.html"> Go To Cart </a></p>`;
+}
 
 function addToCart(productId, products) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  console.log(cartProducts)
-  const clickedForCart = products.find((product) => parseInt(product.id) === parseInt(productId));
+  console.log(cartProducts);
+  const clickedForCart = products.find(
+    (product) => parseInt(product.id) === parseInt(productId)
+  );
   const checkCartProduct = cartProducts.some(
     (product) => parseInt(product.id) === parseInt(productId)
-  );   
+  );
 
   if (!checkCartProduct) {
     localStorage.setItem(
       "cartProducts",
       JSON.stringify([...cartProducts, clickedForCart])
     );
-  } else if(products != firstFourProducts){
+  } else if (products != firstFourProducts) {
     removeFromCart(productId);
-  }  
-};
+  }
+}
 
 function checkStoredCartSvgs() {
   const colorizedCartProducts =
@@ -495,26 +514,29 @@ function changeCartSvg(any_Container) {
 
 //carttan çıkarınca tekrar todays kısmını eski haline getireccek kodlar fonksiyon olarak eklendi, onclick ile çalışıyor
 function displayAddToCartAtTodaysProducts(productId) {
-  const todaysButton = todaysProductsContainer.querySelector(`#todaysButtonContainer_${productId}`);
-  const iconContainer = todaysProductsContainer.querySelector(`#delete-cart-icon_${productId}`)
+  const todaysButton = todaysProductsContainer.querySelector(
+    `#todaysButtonContainer_${productId}`
+  );
+  const iconContainer = todaysProductsContainer.querySelector(
+    `#delete-cart-icon_${productId}`
+  );
   iconContainer.style.display = "none";
-  
+
   todaysButton.innerHTML = `<button  class="todays-product-cart-add-btn">Add to Cart</button>`;
   todaysButton.disabled = false;
 }
 
 function removeFromCart(productId) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  
-  //cart products tekrar localStoragedan çekilerek, tek basımda 2 kere silme hatası düzeltildi
 
+  //cart products tekrar localStoragedan çekilerek, tek basımda 2 kere silme hatası düzeltildi
 
   const checkCartIndex = cartProducts.findIndex(
     (product) => parseInt(product.id) === parseInt(productId)
   );
 
   cartProducts.splice(checkCartIndex, 1);
-  console.log(cartProducts)
+  console.log(cartProducts);
   localStorage.setItem("cartProducts", JSON.stringify([...cartProducts]));
 }
 
