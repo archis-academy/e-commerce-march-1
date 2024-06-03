@@ -148,7 +148,7 @@ async function displayProducts() {
     .join("");
 
   console.log(tempTodays);
-  //removeFromCart onclick çağrısı, delete-cart-icon divine eklendi, tıklayınca silme işlemi gerçekleşiyor
+
   todaysProductsContainer.innerHTML = tempTodays;
 
   changeCartSvg(todaysProductsContainer);
@@ -421,7 +421,6 @@ function removeFromWishlist(productId) {
   );
 }
 
-//diğer kısımları bozmaması için, delete-cart-iconu göstericek kodlar ayrı bir fonksiyona alındı,fonksiyon onclick olarak eklendi
 function displayTodaysDeleteCartIcon(productId) {
   const iconContainer = todaysProductsContainer.querySelector(
     `#delete-cart-icon_${productId}`
@@ -433,7 +432,7 @@ function displayTodaysDeleteCartIcon(productId) {
   todaysButton.disabled = true;
   iconContainer.style.display = "block";
 
-  todaysButton.innerHTML = `<p><a href="cart.html"> Go To Cart </a></p>`;
+  todaysButton.innerHTML = `<p><a class="goToCartBox" href="cart.html"> Go To Cart </a></p>`;
 }
 
 function addToCart(productId, products) {
@@ -512,7 +511,6 @@ function changeCartSvg(any_Container) {
   });
 }
 
-//carttan çıkarınca tekrar todays kısmını eski haline getireccek kodlar fonksiyon olarak eklendi, onclick ile çalışıyor
 function displayAddToCartAtTodaysProducts(productId) {
   const todaysButton = todaysProductsContainer.querySelector(
     `#todaysButtonContainer_${productId}`
@@ -528,8 +526,6 @@ function displayAddToCartAtTodaysProducts(productId) {
 
 function removeFromCart(productId) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-
-  //cart products tekrar localStoragedan çekilerek, tek basımda 2 kere silme hatası düzeltildi
 
   const checkCartIndex = cartProducts.findIndex(
     (product) => parseInt(product.id) === parseInt(productId)
