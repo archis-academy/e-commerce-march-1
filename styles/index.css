@@ -58,10 +58,10 @@ html {
   width: 0;
   height: 2px;
   background-color: black;
-  transition: width 0.5s ease; /* Geçiş efekti tanımla */
+  transition: width 0.5s ease;
 }
 .navbar-title-btns:hover::after {
-  width: 100%; /* Çizgiyi genişlet */
+  width: 100%;
 }
 .navbar-titles {
   font-family: "Poppins", sans-serif;
@@ -91,6 +91,28 @@ html {
   width: 130px;
   justify-content: space-between;
 }
+.navbar-wishlist-btn {
+  position: relative;
+}
+.navbar-btn-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #db4444;
+  width: 15px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.navbar-cart-btn {
+  position: relative;
+}
 .navbar-line-box {
   max-width: 1920px;
   display: flex;
@@ -105,7 +127,9 @@ html {
 .homepage-header-categories-and-slider-box {
   max-width: 1320px;
   display: flex;
+  gap: 40px;
   justify-content: space-between;
+  align-items: center;
 }
 .header-categories-container {
   display: flex;
@@ -138,36 +162,41 @@ html {
   width: 0;
   height: 2px;
   background-color: black;
-  transition: width 0.5s ease; /* Geçiş efekti tanımla */
+  transition: width 0.3s ease;
 }
 .header-categories-title:hover::after {
-  width: 100%; /* Çizgiyi genişlet */
+  width: 100%;
 }
 .swiper-container {
   overflow: hidden;
-  max-width: 1030px; /* Slider'ın maksimum genişliğini 1030px olarak ayarladık */
-  width: 100%; /* Slider'ın genişliğini %100 olarak belirledik */
-  margin: 0 auto; /* Sayfanın ortasına hizalamak için otomatik margin ekledik */
-  height: 300px;
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
   position: relative;
 }
 .swiper-slide {
-  /* Center the text vertically */
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
+  width: 100% !important;
+  height: auto;
+  margin: 0;
+  padding-right: 35px;
+  padding-top: 30px;
 }
 .header-slider-img {
-  width: auto; /* Resimlerin genişliğini otomatik olarak ayarlar */
-  max-width: 100%; /* Resimlerin maksimum genişliğini %100 olarak ayarlar */
-  height: auto; /* Resimlerin oranlarını korur */
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 .swiper-pagination {
-  position: absolute; /* Pagination'ı mutlak bir pozisyona ayarlıyoruz */
-  bottom: 10px; /* Slider'ın altından 10 piksel yukarıda */
-  left: 0; /* Slider'ın sol kenarında */
-  right: 0; /* Slider'ın sağ kenarında */
-  text-align: center; /* Sayfalama düğmelerini yatayda ortalamak için */
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  --swiper-theme-color: #db4444;
 }
 
 /* .header-slider-box {
@@ -249,6 +278,9 @@ html {
     right: 2%;
     height: 54px;
     align-items: center;
+  }
+  .header-categories {
+    gap: 0;
   }
   .header-categories-box {
     display: none;

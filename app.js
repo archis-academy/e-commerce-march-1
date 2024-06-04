@@ -11,8 +11,27 @@ var swiper = new Swiper(".swiper-container", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+    bulletClass: "swiper-pagination-bullet",
   },
 });
+
+function getWishlistAndCartLength() {
+  const wishlistProducts =
+    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  const wishlistProductsLength = wishlistProducts.length;
+  const wishlistBtnDiv = document.querySelectorAll("#wishlist-btn-number");
+  wishlistBtnDiv.forEach((div) => {
+    div.innerHTML = `<p class=""> ${wishlistProductsLength} </p>`;
+  });
+
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const cartProductsLenght = cartProducts.length;
+  const cartBtnDiv = document.querySelectorAll("#cart-btn-number");
+  cartBtnDiv.forEach((div) => {
+    div.innerHTML = `<p class=""> ${cartProductsLenght} </p>`;
+  });
+}
+getWishlistAndCartLength();
 
 // let currentIndex = 0;
 // const sliderImages = document.querySelector(".header-slider-img-boxes");
