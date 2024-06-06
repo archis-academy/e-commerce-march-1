@@ -12,8 +12,67 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
+
   <body>
+    <!-- homepage Todays start -->
+    <div class="hm-todays">
+      <div class="hm-todays-countdown">
+        <div class="hm-todays-countdown-box">
+          <div class="hm-todays-text-title">
+            <div class="hm-todays-orenge-box"></div>
+            <h5 class="todays-text">Today's</h5>
+          </div>
+          <div class="hm-todays-subtitle">
+            <h4 class="todays-flash-sales-h4">Flash Sales</h4>
+            <div id="todays-countdown-text" class="hm-todays-countdown-text">
+              <div class="todays-countdown-day">
+                <p class="todays-countdown-text">Days</p>
+                <p id="todays-countdown-days" class="todays-countdown"></p>
+              </div>
+              <div class="todays-countdown-hours">
+                <p class="todays-countdown-text">Hours</p>
+                <p id="todays-countdown-hours" class="todays-countdown"></p>
+              </div>
+              <div class="todays-countdown-minutes">
+                <p class="todays-countdown-text">Minutes</p>
+                <p id="todays-countdown-minutes" class="todays-countdown"></p>
+              </div>
+              <div class="todays-countdown-seconds">
+                <p class="todays-countdown-text">Seconds</p>
+                <p id="todays-countdown-seconds" class="todays-countdown"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hm-todays-btn">
+          <img
+            class="hm-todays-btn-left"
+            src="images/Fill With Left Arrow.svg"
+            alt="left-arrow"
+          />
+          <img
+            src="images/Fill with Right Arrow.svg"
+            alt="explore-right-arrow"
+          />
+        </div>
+      </div>
+      <div id="todaysProductsContainer" class="hm-todays-products">
+
+
+      </div>
+      <div class="hm-todays-products-btn">
+        <button>View All Products</button>
+      </div>
+    </div>
+    <!-- homepage Todays end  -->
     <div class="homepage-browse-by-category">
       <div class="hompage-browse">
         <div class="hompage-title">
@@ -88,6 +147,25 @@
         </div>
       </div>
     </div>
+
+    <!--Best Selling Starts-->
+    <div class="best-selling-container">
+      <div>
+        <div class="best-selling-orange-box-container">
+          <div class="best-selling-orange-box"></div>
+          <p class="best-selling-first-title">This Month</p>
+        </div>
+        <div class="best-selling-titles-container">
+          <h3 class="best-selling-main-title">Best Selling Products</h3>
+          <button class="best-selling-button">View All</button>
+        </div>
+      </div>
+      <div
+        class="best-selling-api-products-container"
+        id="best-selling-api-products"
+      ></div>
+    </div>
+    <!--Best Selling Ends-->
 
     <div class="hompage-featured-product">
       <div class="hompage-featured">
@@ -265,6 +343,184 @@
         <img src="images/arrow.svg" alt="arrow" />
       </a>
     </div>
+
+    <!--Footer-Starts -->
+    <div class="footer-container">
+      <div class="footer-content-container">
+        <div class="footer-title-ınput-container">
+          <p class="footer-exclusive-title">Exclusive</p>
+          <p class="footer-subscribe-p footer-poppins-p">Subscribe</p>
+          <p class="footer-poppins-p">Get 10% of your first order</p>
+          <div class="footer-input-send-svg-container">
+            <input
+              type="text"
+              class="footer-input"
+              placeholder="Enter your email"
+            />
+            <svg
+              class="footer-send-svg"
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.91196 11.9998H3.99996L2.02296 4.1348C2.0103 4.0891 2.00259 4.04216 1.99996 3.9948C1.97796 3.2738 2.77196 2.7738 3.45996 3.1038L22 11.9998L3.45996 20.8958C2.77996 21.2228 1.99596 20.7368 1.99996 20.0288C2.00198 19.9655 2.0131 19.9029 2.03296 19.8428L3.49996 14.9998"
+                stroke="#FAFAFA"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="footer-support-container">
+          <p class="footer-poppins-p footer-titles-p">Support</p>
+          <p class="footer-poppins-p">
+            111 Bijoy sarani,Dhaka <br />
+            Dh 1515,Bangladesh
+          </p>
+          <p class="footer-poppins-p">exclusive@gmail.com</p>
+          <p class="footer-poppins-p">+88015-88888-9999</p>
+        </div>
+        <div class="footer-account-container">
+          <p class="footer-poppins-p footer-titles-p">Account</p>
+          <p class="footer-poppins-p">
+            <a href="" class="footer-links" target="_blank"> My Account </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="login.html" class="footer-links" target="_blank"
+              >Login / Register</a
+            >
+          </p>
+          <p class="footer-poppins-p">
+            <a href="cart.html" class="footer-links" target="_blank"> Cart </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="wishlist.html" class="footer-links" target="_blank">
+              Wishlist
+            </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="index.html" class="footer-links" target="_blank"> Shop </a>
+          </p>
+        </div>
+        <div class="footer-quick-lik-container">
+          <p class="footer-poppins-p footer-titles-p">Quick Link</p>
+          <p class="footer-poppins-p">
+            <a href="" class="footer-links" target="_blank"> Privacy Policy </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="" class="footer-links" target="_blank"> Terms Of Use </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="" class="footer-links" target="_blank"> FAQ </a>
+          </p>
+          <p class="footer-poppins-p">
+            <a href="" class="footer-links" target="_blank"> Contact </a>
+          </p>
+        </div>
+        <div class="footer-downlad-container">
+          <p class="footer-poppins-p footer-titles-p">Downlad App</p>
+          <div class="footer-download-imgs-container">
+            <p class="footer-poppins-p footer-save-p">
+              Save $3 with App New User Only
+            </p>
+            <div class="footer-svg-qr-container">
+              <img src="images/qr-code.png" alt="" />
+              <div class="footer-app-imgs-container">
+                <img
+                  src="images/google-play.png"
+                  class="footer-play-app-img"
+                  alt=""
+                />
+                <img
+                  src="images/app-store.png"
+                  class="footer-apple-app-img"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="footer-social-media-svgs-container">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13 10H17.5L17 12H13V21H11V12H7V10H11V8.128C11 6.345 11.186 5.698 11.534 5.046C11.875 4.40181 12.4018 3.87501 13.046 3.534C13.698 3.186 14.345 3 16.128 3C16.65 3 17.108 3.05 17.5 3.15V5H16.128C14.804 5 14.401 5.078 13.99 5.298C13.686 5.46 13.46 5.686 13.298 5.99C13.078 6.401 13 6.804 13 8.128V10Z"
+                fill="white"
+              />
+            </svg>
+            <?xml version="1.0" ?>
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #ffffff;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                </style>
+              </defs>
+              <g id="ic-social-media-twitter">
+                <path
+                  class="cls-1"
+                  d="M29.24,7.92a11.24,11.24,0,0,1-3.17.8A5.79,5.79,0,0,0,28.45,5.8,11.12,11.12,0,0,1,25,7.13,5,5,0,0,0,21.17,5.4a5.34,5.34,0,0,0-5.43,5.3,3.69,3.69,0,0,0,.13,1.19A14.47,14.47,0,0,1,5,6.46a4.22,4.22,0,0,0-.8,2.65A5.53,5.53,0,0,0,6.6,13.62a7.33,7.33,0,0,1-2.39-.8V13a4.94,4.94,0,0,0,4.11,5.17,5.09,5.09,0,0,1-1.46.13,3,3,0,0,1-1.06-.13,5.29,5.29,0,0,0,5,3.71,10.92,10.92,0,0,1-6.75,2.25A4.52,4.52,0,0,1,2.76,24a15.81,15.81,0,0,0,9.4,2.65c9.93,0,14.44-8.22,14.44-15.24V10.7A10.38,10.38,0,0,0,29.24,7.92Z"
+                />
+              </g>
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 3H7C5.93913 3 4.92172 3.42143 4.17157 4.17157C3.42143 4.92172 3 5.93913 3 7V17C3 18.0609 3.42143 19.0783 4.17157 19.8284C4.92172 20.5786 5.93913 21 7 21H17C18.0609 21 19.0783 20.5786 19.8284 19.8284C20.5786 19.0783 21 18.0609 21 17V7C21 5.93913 20.5786 4.92172 19.8284 4.17157C19.0783 3.42143 18.0609 3 17 3Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 16C13.0609 16 14.0783 15.5786 14.8284 14.8284C15.5786 14.0783 16 13.0609 16 12C16 10.9391 15.5786 9.92172 14.8284 9.17157C14.0783 8.42143 13.0609 8 12 8C10.9391 8 9.92172 8.42143 9.17157 9.17157C8.42143 9.92172 8 10.9391 8 12C8 13.0609 8.42143 14.0783 9.17157 14.8284C9.92172 15.5786 10.9391 16 12 16V16Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17.5 7.5C17.7652 7.5 18.0196 7.39464 18.2071 7.20711C18.3946 7.01957 18.5 6.76522 18.5 6.5C18.5 6.23478 18.3946 5.98043 18.2071 5.79289C18.0196 5.60536 17.7652 5.5 17.5 5.5C17.2348 5.5 16.9804 5.60536 16.7929 5.79289C16.6054 5.98043 16.5 6.23478 16.5 6.5C16.5 6.76522 16.6054 7.01957 16.7929 7.20711C16.9804 7.39464 17.2348 7.5 17.5 7.5Z"
+                fill="white"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.5 9.05C12.417 8.113 13.611 7.5 15 7.5C16.4587 7.5 17.8576 8.07946 18.8891 9.11091C19.9205 10.1424 20.5 11.5413 20.5 13V20.5H18.5V13C18.5 12.0717 18.1313 11.1815 17.4749 10.5251C16.8185 9.86875 15.9283 9.5 15 9.5C14.0717 9.5 13.1815 9.86875 12.5251 10.5251C11.8687 11.1815 11.5 12.0717 11.5 13V20.5H9.5V8H11.5V9.05ZM4.5 6C4.10218 6 3.72064 5.84196 3.43934 5.56066C3.15804 5.27936 3 4.89782 3 4.5C3 4.10218 3.15804 3.72064 3.43934 3.43934C3.72064 3.15804 4.10218 3 4.5 3C4.89782 3 5.27936 3.15804 5.56066 3.43934C5.84196 3.72064 6 4.10218 6 4.5C6 4.89782 5.84196 5.27936 5.56066 5.56066C5.27936 5.84196 4.89782 6 4.5 6ZM3.5 8H5.5V20.5H3.5V8Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer-Ends -->
 
     <script src="app.js"></script>
   </body>
