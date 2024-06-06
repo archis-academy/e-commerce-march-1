@@ -432,7 +432,7 @@ function displayTodaysDeleteCartIcon(productId) {
   todaysButton.disabled = true;
   iconContainer.style.display = "block";
 
-  todaysButton.innerHTML = `<p><a class="goToCartBox" href="cart.html"> Go To Cart </a></p>`;
+  todaysButton.innerHTML = `<a class="goToCartBox" href="cart.html"> Go To Cart </a>`;
 }
 
 function addToCart(productId, products) {
@@ -472,12 +472,17 @@ function checkStoredCartSvgs() {
     const checkExploreProductsArray = products.some(
       (arrayProduct) => arrayProduct.id === product.id
     );
-
+    const checkTodaysArray = firstFourProducts.some(
+      (arrayProduct) => arrayProduct.id === product.id
+    );
     if (checkBestSellingArray) {
       bestSelllingCartDivs.innerHTML = `<i class="selling-card-tick-icon fa-sharp fa-solid fa-check"></i>`;
     }
     if (checkExploreProductsArray) {
       exploreProductsCartsDivs.innerHTML = `<i class="selling-card-tick-icon fa-sharp fa-solid fa-check"></i>`;
+    }
+    if (checkTodaysArray) {
+      displayTodaysDeleteCartIcon(product.id);
     }
   });
 }
