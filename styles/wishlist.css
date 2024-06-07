@@ -37,7 +37,7 @@
   width: 100%;
   padding: 2% 8%;
 }
-.todays-product-cart-add-btn {
+.wishlist-product-cart-add-btn {
   width: 100%;
   display: none;
   background-color: #000;
@@ -79,7 +79,7 @@
 .fa-trash-alt::before {
   font-size: 20px;
 }
-.todays-products-container {
+.wishlist-products-container {
   display: none;
   background-color: black;
   justify-content: center;
@@ -92,7 +92,7 @@
   text-decoration: none;
 }
 
-.todays-product-cart-add-btn {
+.wishlist-product-cart-add-btn {
   width: 100%;
   display: none;
   background-color: #000;

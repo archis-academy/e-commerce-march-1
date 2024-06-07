@@ -14,8 +14,8 @@ function renderWishlistProducts() {
                 <div class="wishlist-bag">
                     <i class="far fa-trash-alt" onclick="deleteFromWishlist(${id})"></i>
                     <img class="wishlist-images" src="${image}">
-                <div id="todaysButtonContainer_${id}" onclick="addToCart(${id},wishlistProducts); displayTodaysDeleteCartIcon(${id})" class="todays-products-container">
-                <button  class="todays-product-cart-add-btn">Add to Cart</button>
+                <div id="wishlistButtonContainer_${id}" onclick="addToCart(${id},wishlistProducts); displaywishlistDeleteCartIcon(${id})" class="wishlist-products-container">
+                <button  class="wishlist-product-cart-add-btn">Add to Cart</button>
               </div>  
                 </div>
                 <div class="bag-text">
@@ -58,13 +58,13 @@ function addToCart(productId, products) {
     removeFromCart(productId);
   }
 }
-function displayTodaysDeleteCartIcon(productId) {
-  const todaysButton = wishlistContainer.querySelector(
-    `#todaysButtonContainer_${productId}`
+function displaywishlistDeleteCartIcon(productId) {
+  const wishlistButton = wishlistContainer.querySelector(
+    `#wishlistButtonContainer_${productId}`
   );
-  todaysButton.disabled = true;
+  wishlistButton.disabled = true;
 
-  todaysButton.innerHTML = `<a class="goToCartBox" href="cart.html"> Go To Cart </a>`;
+  wishlistButton.innerHTML = `<a class="goToCartBox" href="cart.html"> Go To Cart </a>`;
 }
 function checkStoredWishlistSvgs() {
   const colorizedWishlistProducts =
@@ -77,7 +77,7 @@ function checkStoredWishlistSvgs() {
         (arrayProduct) => arrayProduct.id === product.id
       );
       if (isCartProduct) {
-        displayTodaysDeleteCartIcon(product.id);
+        displaywishlistDeleteCartIcon(product.id);
       }
     });
   }
