@@ -1,8 +1,8 @@
 /*Homepage Header Starts*/
-
-.homepage-header-container {
+.header-blurer{
   filter: blur(0px);
   transition: all 2s ease-in-out;
+  height: 100vh;
 }
 
 .header-black-div {
@@ -245,7 +245,6 @@
 }
 
 .sidebar-closer{
-  /* display: none; */
   margin-top: 10px;
   border-radius: 50%;
   background-color: rgba(243, 243, 243, 1);

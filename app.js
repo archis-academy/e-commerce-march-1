@@ -266,7 +266,6 @@ function applyPopularSearch(allProducts) {
  
    popularSearches.forEach((search) => {
     search.addEventListener(("click"),() => {
-     console.log("kndfl")
      searchBar.value = search.textContent;
     
      filteredProducts = [];
@@ -302,25 +301,25 @@ function sidebarActivities() {
   const sidebarOpener = document.querySelector("#sidebar-opener");
   const sidebarCloser = document.querySelector("#sidebar-closer");
   const sidebar = document.querySelector("#header-sidebar");
+  const blurer = document.querySelector(".header-blurer");
 
   sidebarOpener.addEventListener(("click") , () => {
     sidebar.classList.add("open-sidebar");
-    header.classList.add("sidebar-header");
+    blurer.classList.add("sidebar-header");
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   });
   
   sidebarCloser.addEventListener(("click") , () => {
      sidebar.classList.remove("open-sidebar");
-     header.classList.remove("sidebar-header");
-     document.documentElement.style.overflow = 'scroll';
-     document.body.style.overflow = 'scroll';
+     blurer.classList.remove("sidebar-header");
+     document.documentElement.style.overflow = 'auto';
+     document.body.style.overflow = 'auto';
   });
 
 }
 
 sidebarActivities();
-
 function getWishlistCartLength() {
   const wishlist = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   const wishlistLength = wishlist.length;
