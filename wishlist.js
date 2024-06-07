@@ -12,7 +12,7 @@ function renderWishlistProducts() {
       return `
             <div class="wishlistProductsPage" id="${id}">
                 <div class="wishlist-bag">
-                    <i class="far fa-trash-alt" onclick="deleteFromWishlist(${id})"></i>
+                    <i class="far fa-trash-alt" onclick="deleteFromWishlist(${id})"><img src="images/Fill Eye.png" alt="fill-eye"></i>
                     <img class="wishlist-images" src="${image}">
                 <div id="wishlistButtonContainer_${id}" onclick="addToCart(${id},wishlistProducts); displaywishlistDeleteCartIcon(${id})" class="wishlist-products-container">
                 <button  class="wishlist-product-cart-add-btn">Add to Cart</button>
@@ -27,6 +27,7 @@ function renderWishlistProducts() {
     })
     .join("");
 }
+
 function deleteFromWishlist(productId) {
   const wishlistProducts =
     JSON.parse(localStorage.getItem("wishlistProducts")) || [];
@@ -66,22 +67,20 @@ function displaywishlistDeleteCartIcon(productId) {
 
   wishlistButton.innerHTML = `<a class="goToCartBox" href="cart.html"> Go To Cart </a>`;
 }
-function checkStoredWishlistSvgs() {
-  const colorizedWishlistProducts =
-    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
-  function checkStoredCartSvgs() {
-    const colorizedCartProducts =
-      JSON.parse(localStorage.getItem("cartProducts")) || [];
-    colorizedCartProducts.map((product) => {
-      const isCartProduct = wishlistProducts.some(
-        (arrayProduct) => arrayProduct.id === product.id
-      );
-      if (isCartProduct) {
-        displaywishlistDeleteCartIcon(product.id);
-      }
-    });
-  }
+
+function checkStoredCartSvgs() {
+  const colorizedCartProducts =
+    JSON.parse(localStorage.getItem("cartProducts")) || [];
+  colorizedCartProducts.map((product) => {
+    const isCartProduct = wishlistProducts.some(
+      (arrayProduct) => arrayProduct.id === product.id
+    );
+    if (isCartProduct) {
+      displaywishlistDeleteCartIcon(product.id);
+    }
+  });
 }
+
 function allAddtoCart(wishlistProducts) {
   let isCartProducts = [];
   let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
@@ -97,5 +96,5 @@ function allAddtoCart(wishlistProducts) {
 }
 
 renderWishlistProducts();
-checkStoredWishlistSvgs();
+checkStoredCartSvgs();
 //hompage wishlist page js end//
