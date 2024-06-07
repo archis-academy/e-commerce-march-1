@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>
@@ -47,6 +46,7 @@
 
                 .cls-1 {
                   stroke-linejoin: bevel;
+                  stroke: black;
                 }
 
                 .cls-2 {
@@ -56,7 +56,7 @@
               </style>
             </defs>
             <g id="ic-contact-mail">
-              <rect class="cls-1" x="2" y="5" width="20" height="14" rx="2" />
+              <rect class="" x="2" y="5" width="20" height="14" rx="2" />
               <path class="cls-2" d="M2.58,5.59l8.23,8.22a2,2,0,0,0,2.83,0l8-8" />
             </g>
           </svg>
@@ -97,9 +97,8 @@
         </div>
         <div class="header-sidebar-categories-and-dropdown">
           <p class="header-poppins-p header-categories-p"> Womens's Fashion </p>
-          <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+          <?xml version="1.0"  encoding="utf-8"?>
+          <svg width="24px" class="" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
@@ -107,8 +106,7 @@
         <div class="header-sidebar-categories-and-dropdown">
           <p class="header-poppins-p header-categories-p"> Mens's Fashion </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+          <svg width="24px" class="" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
@@ -218,7 +216,7 @@
         <p class="header-poppins-p responsive-poppins-p"><a href="index.html" class="header-link"></a> Home </p>
         <p class="header-poppins-p responsive-poppins-p"><a href="" class="header-link"></a> Contact </p>
         <p class="header-poppins-p responsive-poppins-p"><a href="" class="header-link"></a> About </p>
-        <p class="header-poppins-p responsive-poppins-p"><a href="register.html" class="header-link"></a> Sign Up </p>
+        <p class="header-poppins-p responsive-poppins-p"><a href="" class="header-link"></a> Help </p>
       </div>
       <div class="responsive-icons-container">
         <div class="icon-number-responsive-container">
@@ -245,7 +243,7 @@
               d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
               stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <div class="icon-number icon-responsive cart-number" id="cart-length"></div>    
+          <div class="icon-number icon-responsive cart-number" id="cart-length"></div>
         </div>
         <?xml version="1.0" encoding="utf-8"?>
         <svg xmlns="http://www.w3.org/2000/svg" fill="grey" class="header-responsive-icon" width="32px" height="32px"
@@ -262,7 +260,8 @@
           <p class="header-poppins-p"><a href="index.html" class="header-link"></a> Home </p>
           <p class="header-poppins-p"><a href="" class="header-link"></a> Contact </p>
           <p class="header-poppins-p"><a href="" class="header-link"></a> About </p>
-          <p class="header-poppins-p"><a href="register.html" class="header-link"></a> Sign Up </p>
+          <p class="header-poppins-p responsive-poppins-p"><a href="" class="header-link"></a> Help </p>
+
         </div>
         <div class="navbar-input-container">
           <?xml version="1.0" encoding="UTF-8"?>
@@ -282,73 +281,142 @@
               </g>
             </g>
           </svg>
+
           <div class="input-search-icon-container">
-            <input type="search" class="header-input" placeholder="What are you looking for?">
+            <input type="search" class="header-input header-search" id="search-products"
+              placeholder="What are you looking for?">
             <svg width="24" class="header-search-icon" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M20 20L16.2223 16.2156M18.3158 11.1579C18.3158 13.0563 17.5617 14.8769 16.2193 16.2193C14.8769 17.5617 13.0563 18.3158 11.1579 18.3158C9.2595 18.3158 7.43886 17.5617 6.0965 16.2193C4.75413 14.8769 4 13.0563 4 11.1579C4 9.2595 4.75413 7.43886 6.0965 6.0965C7.43886 4.75413 9.2595 4 11.1579 4C13.0563 4 14.8769 4.75413 16.2193 6.0965C17.5617 7.43886 18.3158 9.2595 18.3158 11.1579V11.1579Z"
                 stroke="black" stroke-width="1.5" stroke-linecap="round" />
             </svg>
-          </div>
-          <div class="icon-number-container">
-            <svg width="32px" class="header-icon" height="32px" viewBox="0 0 32 32" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
-                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <div class="icon-number" id="wishlist-length"></div>
-          </div>
-          <div class="icon-number-container">
-            <svg width="32px" class="header-icon" height="32px" viewBox="0 0 32 32" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
-                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
-                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
-                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <div class="icon-number cart-number" id="cart-length">
-
+            <div id="search-dropdown" class="header-search-dropdown">
+              <div class="popular-searches-title-container" id="search-products">
+                <p id="search-products" class="popular-searches-title">Popular Searches</p>
+                <?xml version="1.0" id="search-products" encoding="utf-8"?>
+                <svg width="25px" height="25px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto"
+                  preserveAspectRatio="xMidYMid meet">
+                  <radialGradient id="IconifyId17ecdb2904d178eab8626" cx="68.884" cy="124.296" r="70.587"
+                    gradientTransform="matrix(-1 -.00434 -.00713 1.6408 131.986 -79.345)"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset=".314" stop-color="#ff9800"></stop>
+                    <stop offset=".662" stop-color="#ff6d00"></stop>
+                    <stop offset=".972" stop-color="#f44336"></stop>
+                  </radialGradient>
+                  <path
+                    d="M35.56 40.73c-.57 6.08-.97 16.84 2.62 21.42c0 0-1.69-11.82 13.46-26.65c6.1-5.97 7.51-14.09 5.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1 1.37-3.03c9.86.44 25.84 3.18 32.63 20.22c2.98 7.48 3.2 15.21 1.78 23.07c-.9 5.02-4.1 16.18 3.2 17.55c5.21.98 7.73-3.16 8.86-6.14c.47-1.24 2.1-1.55 2.98-.56c8.8 10.01 9.55 21.8 7.73 31.95c-3.52 19.62-23.39 33.9-43.13 33.9c-24.66 0-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71 14.89-45.11c1.18-1.08 3.11-.12 2.95 1.5z"
+                    fill="url(#IconifyId17ecdb2904d178eab8626)"></path>
+                  <radialGradient id="IconifyId17ecdb2904d178eab8627" cx="64.921" cy="54.062" r="73.86"
+                    gradientTransform="matrix(-.0101 .9999 .7525 .0076 26.154 -11.267)" gradientUnits="userSpaceOnUse">
+                    <stop offset=".214" stop-color="#fff176"></stop>
+                    <stop offset=".328" stop-color="#fff27d"></stop>
+                    <stop offset=".487" stop-color="#fff48f"></stop>
+                    <stop offset=".672" stop-color="#fff7ad"></stop>
+                    <stop offset=".793" stop-color="#fff9c4"></stop>
+                    <stop offset=".822" stop-color="#fff8bd" stop-opacity=".804"></stop>
+                    <stop offset=".863" stop-color="#fff6ab" stop-opacity=".529"></stop>
+                    <stop offset=".91" stop-color="#fff38d" stop-opacity=".209"></stop>
+                    <stop offset=".941" stop-color="#fff176" stop-opacity="0"></stop>
+                  </radialGradient>
+                  <path
+                    d="M76.11 77.42c-9.09-11.7-5.02-25.05-2.79-30.37c.3-.7-.5-1.36-1.13-.93c-3.91 2.66-11.92 8.92-15.65 17.73c-5.05 11.91-4.69 17.74-1.7 24.86c1.8 4.29-.29 5.2-1.34 5.36c-1.02.16-1.96-.52-2.71-1.23a16.09 16.09 0 0 1-4.44-7.6c-.16-.62-.97-.79-1.34-.28c-2.8 3.87-4.25 10.08-4.32 14.47C40.47 113 51.68 124 65.24 124c17.09 0 29.54-18.9 19.72-34.7c-2.85-4.6-5.53-7.61-8.85-11.88z"
+                    fill="url(#IconifyId17ecdb2904d178eab8627)"></path>
+                </svg>
+              </div>
+              <div id="search-products" class="popular-searches-container">
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Jacket </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Cotton </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> SSD </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Monitor </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Gold </p>
+              </div>
             </div>
           </div>
-          <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="grey" class="header-icon" width="32px" height="32px"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-          </svg>
+          <div class="icon-number-container">
+            <a href="wishlist.html">
+              <svg width="32px" class="header-icon" height="32px" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
+                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="icon-number" id="wishlist-length"></div>
+            </a>
+          </div>
+          <div class="icon-number-container">
+            <a href="cart.html">
+              <svg width="32px" class="header-icon" height="32px" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="icon-number cart-number" id="cart-length">
+
+              </div>
+            </a>
+          </div>
+          <div class="header-account-icon">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(219, 68, 68, 1)" class="header-icon" width="32px"
+              height="32px" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+            </svg>
+          </div>
+          <div class="account-dropdown">
+            <div class="account-content">
+              <p class="header-poppins-p">Manage My Account</p>
+            </div>
+            <div class="account-content">
+              <p class="header-poppins-p">My Orders</p>
+            </div>
+            <div class="account-content">
+              <p class="header-poppins-p">Manage My Cancellations</p>
+            </div>
+            <div class="account-content">
+              <p class="header-poppins-p">Manage My Reviews</p>
+            </div>
+            <div class="account-content">
+              <p class="header-poppins-p">Logout</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="header-categories-advertise-container">
       <div class="header-categories">
-        <div class="header-categories-and-dropdown header-first-category">
+        <div class="header-categories-and-dropdown header-first-category" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Womens's Fashion </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
+          <svg width="24px" height="24px" class="category-svg" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container1" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Mens's Fashion </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
+          <svg width="24px" height="24px" class="category-svg" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container2" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Electronics </p>
           <?xml version="1.0" encoding="utf-8"?>
           <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
@@ -356,8 +424,9 @@
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container3" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Home & Lifestyle </p>
           <?xml version="1.0" encoding="utf-8"?>
           <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
@@ -365,26 +434,29 @@
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container4" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Medicine </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
+          <svg width="24px" class="header-right-dropdown category-svg" height="24px" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container5" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Sports & Outdoor </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
+          <svg width="24px" class="header-right-dropdown " category-svg" height="24px" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container6" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Baby's & Toys </p>
           <?xml version="1.0" encoding="utf-8"?>
           <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
@@ -392,8 +464,9 @@
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container7" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Grocerirs & Pets </p>
           <?xml version="1.0" encoding="utf-8"?>
           <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
@@ -401,21 +474,21 @@
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container8" class="categories-products-container"></div>
         </div>
-        <div class="header-categories-and-dropdown ">
+        <div class="header-categories-and-dropdown" id="categories-dropdown">
           <p class="header-poppins-p header-categories-p"> Health & Beuty </p>
           <?xml version="1.0" encoding="utf-8"?>
-          <svg width="24px" class="header-right-dropdown" height="24px" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+          <svg width="24px" class="header-right-dropdown" class="category-svg" height="24px" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+          <div id="category-products-container9" class="categories-products-container"></div>
         </div>
       </div>
       <div class="header-advertisment-slider" id="header-advertisment-container">
-        <div class="header-sliding-advertives-container" id="slides-imgs-container">
-      
-        </div>
+        <div class="header-sliding-advertives-container" id="slides-imgs-container"></div>
         <div class="radio-center-container">
           <div class="header-advertise-click-radio-container">
             <div class="click-radio click-radio1" id="1"></div>
@@ -645,7 +718,7 @@
       <img src="images/arrow.svg" alt="arrow" />
     </a>
   </div>
-  
+
   <!--Footer-Starts -->
   <div class="footer-container">
     <div class="footer-content-container">
@@ -703,13 +776,21 @@
               fill="white" />
           </svg>
           <?xml version="1.0" ?>
-          <svg width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">          
-          <defs>   
-          <style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style>
-          </defs>        
-          <g id="ic-social-media-twitter">        
-          <path class="cls-1" d="M29.24,7.92a11.24,11.24,0,0,1-3.17.8A5.79,5.79,0,0,0,28.45,5.8,11.12,11.12,0,0,1,25,7.13,5,5,0,0,0,21.17,5.4a5.34,5.34,0,0,0-5.43,5.3,3.69,3.69,0,0,0,.13,1.19A14.47,14.47,0,0,1,5,6.46a4.22,4.22,0,0,0-.8,2.65A5.53,5.53,0,0,0,6.6,13.62a7.33,7.33,0,0,1-2.39-.8V13a4.94,4.94,0,0,0,4.11,5.17,5.09,5.09,0,0,1-1.46.13,3,3,0,0,1-1.06-.13,5.29,5.29,0,0,0,5,3.71,10.92,10.92,0,0,1-6.75,2.25A4.52,4.52,0,0,1,2.76,24a15.81,15.81,0,0,0,9.4,2.65c9.93,0,14.44-8.22,14.44-15.24V10.7A10.38,10.38,0,0,0,29.24,7.92Z"/>
-          </g> 
+          <svg width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #ffffff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+              </style>
+            </defs>
+            <g id="ic-social-media-twitter">
+              <path class="cls-1"
+                d="M29.24,7.92a11.24,11.24,0,0,1-3.17.8A5.79,5.79,0,0,0,28.45,5.8,11.12,11.12,0,0,1,25,7.13,5,5,0,0,0,21.17,5.4a5.34,5.34,0,0,0-5.43,5.3,3.69,3.69,0,0,0,.13,1.19A14.47,14.47,0,0,1,5,6.46a4.22,4.22,0,0,0-.8,2.65A5.53,5.53,0,0,0,6.6,13.62a7.33,7.33,0,0,1-2.39-.8V13a4.94,4.94,0,0,0,4.11,5.17,5.09,5.09,0,0,1-1.46.13,3,3,0,0,1-1.06-.13,5.29,5.29,0,0,0,5,3.71,10.92,10.92,0,0,1-6.75,2.25A4.52,4.52,0,0,1,2.76,24a15.81,15.81,0,0,0,9.4,2.65c9.93,0,14.44-8.22,14.44-15.24V10.7A10.38,10.38,0,0,0,29.24,7.92Z" />
+            </g>
           </svg>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

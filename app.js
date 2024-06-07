@@ -2,6 +2,47 @@
 let firstAdvertise;
 let existingInterval;
 let intervalTime = 6000;
+let manCategory = {
+  category: "men's clothing",
+  products : []
+};
+let womanCategory = {
+  category: "womens's clothing",
+  products : []
+};
+let jeweleryCategory = {
+  category: "jewelery",
+  products : []
+};
+let electronicsCategory = {
+  category: "electronics",
+  products : []
+};
+let homeLifestyleCategory = {
+  category: "",
+  products : []
+};
+let medicineCategory = {
+  category: "",
+  products : []
+};
+let sportsCategory = {
+  category: "",
+  products : []
+};
+let toysCategory = {
+  category: "",
+  products : []
+};
+let petCategory = {
+  category: "",
+  products : []
+};
+let healthCategory = {
+  category: "",
+  products : []
+};
+let allCategories = [womanCategory,manCategory,electronicsCategory,jeweleryCategory,medicineCategory,sportsCategory,toysCategory,petCategory,healthCategory];
 
 function checkAdvertiseImages() {
   const advertiseContainer = document.querySelector("#slides-imgs-container");
@@ -104,7 +145,158 @@ function setClickToSlides() {
 
 setClickToSlides();
 
+function displayCategoryProducts() {
+  let i = 1;
+  allCategories.map((category) => {
+    console.log(category.products)
+    const categoryDiv = document.querySelector(`#category-products-container${i}`);
+    if (category.products.length !== 0) {
+      category.products.map((product) => {
+        categoryDiv.innerHTML +=
+        `<div class="category-dropdown">
+           <div class="category-products-features-container">
+              <img src="${product.image}" class="category-products-img"/>
+              <p class="category-titles"> ${product.title}</p>
+            </div>  
+         </div>`
+      })
+    }
+    else {
+      categoryDiv.innerHTML = 
+          `<p class="empty-category-p header-poppins-p"> We do not have any products <br> in this category yet <br> But don't worry! <br> They are coming soon </p>`;
+      categoryDiv.style.height = "auto";
+      categoryDiv.style.right = "-200px"
+      
+    }
+    i++;
+  });
+};
 
+function determineProductCategories(allProducts) {
+  let m = 0;
+  let j = 0;
+  let w = 0;
+  let e = 0;
+  allProducts.map((product) => {
+    switch (product.category) {
+      case "men's clothing":
+        manCategory.products[m] = product;
+        m++;
+        break;
+      case "jewelery":
+        jeweleryCategory.products[j] = product;
+        j++;
+        break;
+      case "women's clothing":
+        womanCategory.products[w] = product;
+        w++;
+        break;
+      case "electronics":
+        electronicsCategory.products[e] = product;
+        e++;
+        break;
+    };
+  });
+};
+
+let filteredProducts = [];
+function displaySearchedProducts(allProducts) {
+  const searchBar = document.querySelector(".header-search");
+  const searchDropdown = document.querySelector("#search-dropdown");  
+  allProducts.map((product) => {
+    searchDropdown.innerHTML += `<div class="search-products" id="search-products">
+           <div class="category-products-features-container" id="search-products">          
+              <img src="${product.image}" id="search-products" class="category-products-img"/>
+              <p class="category-titles" id="search-products"> ${product.title} </p>
+            </div>  
+         </div>`
+  });
+ 
+  searchBar.addEventListener(("keyup") , () => {
+    searchDropdown.innerHTML = 
+    `     <div class="popular-searches-title-container" id="search-products">
+           <p id="search-products" class="popular-searches-title">Popular Searches</p>
+           <?xml version="1.0" id="search-products" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+           <svg width="25px" height="25px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet"><radialGradient id="IconifyId17ecdb2904d178eab8626" cx="68.884" cy="124.296" r="70.587" gradientTransform="matrix(-1 -.00434 -.00713 1.6408 131.986 -79.345)" gradientUnits="userSpaceOnUse"><stop offset=".314" stop-color="#ff9800"></stop><stop offset=".662" stop-color="#ff6d00"></stop><stop offset=".972" stop-color="#f44336"></stop></radialGradient><path d="M35.56 40.73c-.57 6.08-.97 16.84 2.62 21.42c0 0-1.69-11.82 13.46-26.65c6.1-5.97 7.51-14.09 5.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1 1.37-3.03c9.86.44 25.84 3.18 32.63 20.22c2.98 7.48 3.2 15.21 1.78 23.07c-.9 5.02-4.1 16.18 3.2 17.55c5.21.98 7.73-3.16 8.86-6.14c.47-1.24 2.1-1.55 2.98-.56c8.8 10.01 9.55 21.8 7.73 31.95c-3.52 19.62-23.39 33.9-43.13 33.9c-24.66 0-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71 14.89-45.11c1.18-1.08 3.11-.12 2.95 1.5z" fill="url(#IconifyId17ecdb2904d178eab8626)"></path><radialGradient id="IconifyId17ecdb2904d178eab8627" cx="64.921" cy="54.062" r="73.86" gradientTransform="matrix(-.0101 .9999 .7525 .0076 26.154 -11.267)" gradientUnits="userSpaceOnUse"><stop offset=".214" stop-color="#fff176"></stop><stop offset=".328" stop-color="#fff27d"></stop><stop offset=".487" stop-color="#fff48f"></stop><stop offset=".672" stop-color="#fff7ad"></stop><stop offset=".793" stop-color="#fff9c4"></stop><stop offset=".822" stop-color="#fff8bd" stop-opacity=".804"></stop><stop offset=".863" stop-color="#fff6ab" stop-opacity=".529"></stop><stop offset=".91" stop-color="#fff38d" stop-opacity=".209"></stop><stop offset=".941" stop-color="#fff176" stop-opacity="0"></stop></radialGradient><path d="M76.11 77.42c-9.09-11.7-5.02-25.05-2.79-30.37c.3-.7-.5-1.36-1.13-.93c-3.91 2.66-11.92 8.92-15.65 17.73c-5.05 11.91-4.69 17.74-1.7 24.86c1.8 4.29-.29 5.2-1.34 5.36c-1.02.16-1.96-.52-2.71-1.23a16.09 16.09 0 0 1-4.44-7.6c-.16-.62-.97-.79-1.34-.28c-2.8 3.87-4.25 10.08-4.32 14.47C40.47 113 51.68 124 65.24 124c17.09 0 29.54-18.9 19.72-34.7c-2.85-4.6-5.53-7.61-8.85-11.88z" fill="url(#IconifyId17ecdb2904d178eab8627)"></path></svg>
+          </div> 
+           <div id="search-products" class="popular-searches-container">     
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Jacket </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Cotton </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> SSD </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Monitor </p>
+                <p class="header-poppins-p popular-searches-p" id="search-products"> Gold </p>
+            </div>`;
+   searchDropdown.style.display = "flex";
+   popularSearches = searchDropdown.querySelectorAll(".popular-searches-p");
+   filteredProducts = [];
+   filteredProducts = allProducts.filter((anyProduct) => anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase()));
+   displayFilteredProducts(filteredProducts,searchDropdown);
+   applyPopularSearch(allProducts)
+  });
+ 
+  window.onclick = function(event) {
+   if (!event.target.matches('#search-dropdown') && !event.target.matches(`#search-products`)) {
+      searchDropdown.style.display = "none";
+   }
+   else{
+    searchDropdown.style.display = "flex";
+   }
+ };
+};
+
+function displayFilteredProducts(products,searchDropdown) {
+  products.map((product) => {
+    searchDropdown.innerHTML += 
+         `<div class="search-products" id="search-products">
+           <div class="category-products-features-container" id="search-products">          
+              <img src="${product.image}" id="search-products" class="category-products-img"/>
+              <p class="category-titles" id="search-products"> ${product.title} </p>
+            </div>  
+         </div>`
+   });
+};
+
+function applyPopularSearch(allProducts) {
+  const searchDropdown = document.querySelector("#search-dropdown");  
+  let popularSearches = [];
+  popularSearches = searchDropdown.querySelectorAll(".popular-searches-p");
+  const searchBar = document.querySelector(".header-search");
+  console.log(searchDropdown.style.display === "flex")
+  console.log(popularSearches)
+ 
+   popularSearches.forEach((search) => {
+    search.addEventListener(("click"),() => {
+     console.log("kndfl")
+     searchBar.value = search.textContent;
+    
+     filteredProducts = [];
+     searchDropdown.innerHTML = 
+     `    <div class="popular-searches-title-container" id="search-products">
+             <p id="search-products" class="popular-searches-title">Popular Searches</p>
+             <?xml version="1.0" id="search-products" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+             <svg width="25px" height="25px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet"><radialGradient id="IconifyId17ecdb2904d178eab8626" cx="68.884" cy="124.296" r="70.587" gradientTransform="matrix(-1 -.00434 -.00713 1.6408 131.986 -79.345)" gradientUnits="userSpaceOnUse"><stop offset=".314" stop-color="#ff9800"></stop><stop offset=".662" stop-color="#ff6d00"></stop><stop offset=".972" stop-color="#f44336"></stop></radialGradient><path d="M35.56 40.73c-.57 6.08-.97 16.84 2.62 21.42c0 0-1.69-11.82 13.46-26.65c6.1-5.97 7.51-14.09 5.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1 1.37-3.03c9.86.44 25.84 3.18 32.63 20.22c2.98 7.48 3.2 15.21 1.78 23.07c-.9 5.02-4.1 16.18 3.2 17.55c5.21.98 7.73-3.16 8.86-6.14c.47-1.24 2.1-1.55 2.98-.56c8.8 10.01 9.55 21.8 7.73 31.95c-3.52 19.62-23.39 33.9-43.13 33.9c-24.66 0-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71 14.89-45.11c1.18-1.08 3.11-.12 2.95 1.5z" fill="url(#IconifyId17ecdb2904d178eab8626)"></path><radialGradient id="IconifyId17ecdb2904d178eab8627" cx="64.921" cy="54.062" r="73.86" gradientTransform="matrix(-.0101 .9999 .7525 .0076 26.154 -11.267)" gradientUnits="userSpaceOnUse"><stop offset=".214" stop-color="#fff176"></stop><stop offset=".328" stop-color="#fff27d"></stop><stop offset=".487" stop-color="#fff48f"></stop><stop offset=".672" stop-color="#fff7ad"></stop><stop offset=".793" stop-color="#fff9c4"></stop><stop offset=".822" stop-color="#fff8bd" stop-opacity=".804"></stop><stop offset=".863" stop-color="#fff6ab" stop-opacity=".529"></stop><stop offset=".91" stop-color="#fff38d" stop-opacity=".209"></stop><stop offset=".941" stop-color="#fff176" stop-opacity="0"></stop></radialGradient><path d="M76.11 77.42c-9.09-11.7-5.02-25.05-2.79-30.37c.3-.7-.5-1.36-1.13-.93c-3.91 2.66-11.92 8.92-15.65 17.73c-5.05 11.91-4.69 17.74-1.7 24.86c1.8 4.29-.29 5.2-1.34 5.36c-1.02.16-1.96-.52-2.71-1.23a16.09 16.09 0 0 1-4.44-7.6c-.16-.62-.97-.79-1.34-.28c-2.8 3.87-4.25 10.08-4.32 14.47C40.47 113 51.68 124 65.24 124c17.09 0 29.54-18.9 19.72-34.7c-2.85-4.6-5.53-7.61-8.85-11.88z" fill="url(#IconifyId17ecdb2904d178eab8627)"></path></svg>
+          </div> 
+         <div id="search-products" class="popular-searches-container">     
+          <p class="header-poppins-p popular-searches-p" id="search-products"> Jacket </p>
+          <p class="header-poppins-p popular-searches-p" id="search-products"> Cotton </p>
+          <p class="header-poppins-p popular-searches-p" id="search-products"> SSD </p>
+          <p class="header-poppins-p popular-searches-p" id="search-products"> Monitor </p>
+          <p class="header-poppins-p popular-searches-p" id="search-products"> Gold </p>
+         </div>`;
+     filteredProducts = allProducts.filter((anyProduct) =>  anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase()));
+     displayFilteredProducts(filteredProducts,searchDropdown);
+     applyPopularSearch(allProducts);
+    });
+   }); 
+};
+
+function showAccountDropdown() {
+  const accountSvg = document.querySelector(".header-account-icon");
+  const accountDropdown = document.querySelector(".account-dropdown")
+  accountSvg.addEventListener(("click") , () => {
+    accountDropdown.classList.toggle("show-account");
+  });
+};
 
 function sidebarActivities() {
   const sidebarOpener = document.querySelector("#sidebar-opener");
@@ -260,6 +452,11 @@ async function displayProducts() {
  checkStoredWishlistSvgs(products,productBox);
  changeCartSvg(productBox);
  changeWishlistSvg(productBox);
+ determineProductCategories(allProducts);
+ displayCategoryProducts();
+ displaySearchedProducts(allProducts);
+ applyPopularSearch(allProducts);
+ showAccountDropdown();
 };
 
 function discount(any_products) {
