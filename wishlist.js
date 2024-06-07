@@ -1,5 +1,5 @@
 //hompage wishlist page js start//
-
+let wishlistProducts = [];
 const wishlistContainer = document.querySelector("#wishlistContainer");
 const wishlistCount = document.querySelector("#wishlistCount");
 function renderWishlistProducts() {
@@ -10,11 +10,13 @@ function renderWishlistProducts() {
     .map((item) => {
       const { id, image, title, price } = item;
       return `
-            <div class="wishlist-products-page" id="${id}">
+            <div class="wishlistProductsPage" id="${id}">
                 <div class="wishlist-bag">
                     <i class="far fa-trash-alt" onclick="deleteFromWishlist(${id})"></i>
                     <img class="wishlist-images" src="${image}">
-                    <button class="ad-to-cart"><i class="far fa-shopping-cart"></i>Add To Cart</button>
+                <div id="todaysButtonContainer_${id}" onclick="addToCart(${id},wishlistProducts); displayTodaysDeleteCartIcon(${id})" class="todays-products-container">
+                <button  class="todays-product-cart-add-btn">Add to Cart</button>
+              </div>  
                 </div>
                 <div class="bag-text">
                     <h4>${title}</h4>
@@ -37,5 +39,63 @@ function deleteFromWishlist(productId) {
   );
   renderWishlistProducts();
 }
+function addToCart(productId, products) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  console.log(cartProducts);
+  const clickedForCart = products.find(
+    (product) => parseInt(product.id) === parseInt(productId)
+  );
+  const checkCartProduct = cartProducts.some(
+    (product) => parseInt(product.id) === parseInt(productId)
+  );
+
+  if (!checkCartProduct) {
+    localStorage.setItem(
+      "cartProducts",
+      JSON.stringify([...cartProducts, clickedForCart])
+    );
+  } else if (products != wishlistProducts) {
+    removeFromCart(productId);
+  }
+}
+function displayTodaysDeleteCartIcon(productId) {
+  const todaysButton = wishlistContainer.querySelector(
+    `#todaysButtonContainer_${productId}`
+  );
+  todaysButton.disabled = true;
+
+  todaysButton.innerHTML = `<a class="goToCartBox" href="cart.html"> Go To Cart </a>`;
+}
+function checkStoredWishlistSvgs() {
+  const colorizedWishlistProducts =
+    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  function checkStoredCartSvgs() {
+    const colorizedCartProducts =
+      JSON.parse(localStorage.getItem("cartProducts")) || [];
+    colorizedCartProducts.map((product) => {
+      const isCartProduct = wishlistProducts.some(
+        (arrayProduct) => arrayProduct.id === product.id
+      );
+      if (isCartProduct) {
+        displayTodaysDeleteCartIcon(product.id);
+      }
+    });
+  }
+}
+function allAddtoCart(wishlistProducts) {
+  let isCartProducts = [];
+  let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  wishlistProducts.map((item) => {
+    if (!cartProducts.some((arrayProduct) => arrayProduct.id === item.id)) {
+      isCartProducts.push(item);
+    }
+  });
+  localStorage.setItem(
+    "cartProducts",
+    JSON.stringify([...cartProducts, ...isCartProducts])
+  );
+}
+
 renderWishlistProducts();
+checkStoredWishlistSvgs();
 //hompage wishlist page js end//

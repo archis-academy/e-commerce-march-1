@@ -37,6 +37,15 @@
   width: 100%;
   padding: 2% 8%;
 }
+.todays-product-cart-add-btn {
+  width: 100%;
+  display: none;
+  background-color: #000;
+  border: none;
+  color: white;
+  font-size: 12px;
+  padding: 10px 0;
+}
 .wishlist-products {
   display: flex;
   gap: 30px;
@@ -70,20 +79,27 @@
 .fa-trash-alt::before {
   font-size: 20px;
 }
-.ad-to-cart {
-  width: 100%;
-  height: 41px;
-  background-color: #000000;
-  color: #fff;
-  font-family: "poppins", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  display: flex;
-  gap: 10px;
+.todays-products-container {
+  display: none;
+  background-color: black;
   justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  font-size: 12px;
+}
+.goToCartBox {
+  color: white;
+  padding: 10px 0px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.todays-product-cart-add-btn {
+  width: 100%;
+  display: none;
+  background-color: #000;
+  border: none;
+  color: white;
+  font-size: 12px;
+  padding: 10px 0;
 }
 .wishlist-images {
   width: 100%;
@@ -104,21 +120,7 @@
   font-size: 20px;
   cursor: pointer;
 }
-.wishlist-bag .ad-to-cart {
-  width: 100%;
-  height: 41px;
-  background-color: #000000;
-  color: #fff;
-  font-family: "poppins", sans;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+
 .bag-text {
   padding: 14px 0;
   display: flex;
