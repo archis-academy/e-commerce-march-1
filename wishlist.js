@@ -3,8 +3,7 @@ let wishlistProducts = [];
 const wishlistContainer = document.querySelector("#wishlistContainer");
 const wishlistCount = document.querySelector("#wishlistCount");
 function renderWishlistProducts() {
-  const wishlistProducts =
-    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  wishlistProducts = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   wishlistCount.innerHTML = `Wishlist (${wishlistProducts.length})`;
   wishlistContainer.innerHTML = wishlistProducts
     .map((item) => {
@@ -81,12 +80,13 @@ function checkStoredCartSvgs() {
   });
 }
 
-function allAddtoCart(wishlistProducts) {
+function allAddtoCart() {
   let isCartProducts = [];
-  let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
   wishlistProducts.map((item) => {
     if (!cartProducts.some((arrayProduct) => arrayProduct.id === item.id)) {
       isCartProducts.push(item);
+      displaywishlistDeleteCartIcon(item.id);
     }
   });
   localStorage.setItem(
