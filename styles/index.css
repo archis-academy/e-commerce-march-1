@@ -789,6 +789,10 @@
  .click-radio:hover {
   background-color: black;
  }
+
+ .header-advertise-img:hover .header-advertise-click-radio-container {
+   display: none;
+ }
 }
 
 @media (max-width: 505px) {

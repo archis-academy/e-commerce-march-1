@@ -147,7 +147,13 @@ function setClickToSlides() {
      radio.addEventListener(("click") , () => {
         firstAdvertise.style.marginLeft = `${(parseInt(radio.id) - 1) * -20}%`;
         clickRadios.forEach(radio => radio.style.backgroundColor = 'transparent');
-        radio.style.backgroundColor = "#DB4444";
+
+        let windowWidth = window.innerWidth;
+        if (parseInt(windowWidth) > 549) {
+         radio.style.backgroundColor = "#DB4444";
+        } else {
+         radio.style.backgroundColor = "black";
+        }
       
         let tempRadioId = parseInt(radio.id);
         let radioId;
