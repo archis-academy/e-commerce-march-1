@@ -39,6 +39,7 @@ function IsLogin() {
       alert("Password is incorrect. Please try again.");
     } else {
       alert("Successfully Logged in!");
+      localStorage.setItem("isLogin" , JSON.stringify(true));
       window.location.assign("index.html");
     }
   }
