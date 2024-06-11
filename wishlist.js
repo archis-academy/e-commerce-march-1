@@ -1,4 +1,20 @@
 //hompage wishlist page js start//
+function loginActivities() {
+  let login = JSON.parse(localStorage.getItem("isLogin")) || false;
+  if (!login) {
+    window.location.assign("login.html");
+  }
+  const logOutButton =  document.querySelector(".logout-p")
+  logOutButton.addEventListener(("click") , () => {
+    login = false;
+    localStorage.setItem("isLogin" , JSON.stringify(login));
+  });
+};
+
+loginActivities();
+
+
+
 let filteredProducts = [];
 const searchDropdown = document.querySelector("#search-dropdown"); 
 let searchApiProducts = searchDropdown.querySelector(".search-api-products");
@@ -73,7 +89,6 @@ function applyPopularSearch(allProducts) {
   let popularSearches = [];
   popularSearches = searchDropdown.querySelectorAll(".popular-searches-p");
   const searchBar = document.querySelector(".header-search");
-  console.log(popularSearches)
  
    popularSearches.forEach((search) => {
     search.addEventListener(("click"),() => {
@@ -84,7 +99,6 @@ function applyPopularSearch(allProducts) {
      filteredProducts = [];
      filteredProducts = allProducts.filter((anyProduct) =>  anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase().trim()));
      searchApiProducts = searchDropdown.querySelector(".search-api-products"); 
-     console.log(filteredProducts)
      displayFilteredProducts(filteredProducts,searchApiProducts);
      applyPopularSearch(allProducts);
     });
@@ -141,11 +155,9 @@ function dropdownOnclickActions() {
   window.onclick = function(event) {
     if (!event.target.matches('#account-dropdown') && !event.target.matches("#header-account-icon")) {
        accountDropdown.classList.remove("show-account");
-       console.log("lsaş")
     }
     else if(event.target.matches("#header-account-icon")){
       accountDropdown.classList.toggle("show-account");
-      console.log("şladsfşkFDŞK")
     }
         
     if (!event.target.matches('#search-dropdown') && !event.target.matches(`#search-products`) ) {
@@ -202,7 +214,6 @@ function deleteFromWishlist(productId) {
 }
 function addToCart(productId, products) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  console.log(cartProducts);
   const clickedForCart = products.find(
     (product) => parseInt(product.id) === parseInt(productId)
   );

@@ -1,4 +1,19 @@
 //Cart starts
+function loginActivities() {
+  let login = JSON.parse(localStorage.getItem("isLogin")) || false;
+  if (!login) {
+    window.location.assign("login.html");
+  }
+  const logOutButton =  document.querySelector(".logout-p")
+  logOutButton.addEventListener(("click") , () => {
+    login = false;
+    localStorage.setItem("isLogin" , JSON.stringify(login));
+  });
+};
+
+loginActivities();
+
+
 let filteredProducts = [];
 const searchDropdown = document.querySelector("#search-dropdown"); 
 let searchApiProducts = searchDropdown.querySelector(".search-api-products");
@@ -141,11 +156,9 @@ function dropdownOnclickActions() {
   window.onclick = function(event) {
     if (!event.target.matches('#account-dropdown') && !event.target.matches("#header-account-icon")) {
        accountDropdown.classList.remove("show-account");
-       console.log("lsaş")
     }
     else if(event.target.matches("#header-account-icon")){
       accountDropdown.classList.toggle("show-account");
-      console.log("şladsfşkFDŞK")
     }
         
     if (!event.target.matches('#search-dropdown') && !event.target.matches(`#search-products`) ) {

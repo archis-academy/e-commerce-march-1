@@ -303,7 +303,6 @@ function applyPopularSearch(allProducts) {
   let popularSearches = [];
   popularSearches = searchDropdown.querySelectorAll(".popular-searches-p");
   const searchBar = document.querySelector(".header-search");
-  console.log(popularSearches)
  
    popularSearches.forEach((search) => {
     search.addEventListener(("click"),() => {
@@ -314,7 +313,6 @@ function applyPopularSearch(allProducts) {
      filteredProducts = [];
      filteredProducts = allProducts.filter((anyProduct) =>  anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase().trim()));
      searchApiProducts = searchDropdown.querySelector(".search-api-products"); 
-     console.log(filteredProducts)
      displayFilteredProducts(filteredProducts,searchApiProducts);
      applyPopularSearch(allProducts);
     });
@@ -367,7 +365,6 @@ sidebarActivities();
 function getWishlistCartLength() {
   const wishlist = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   const wishlistLength = wishlist.length;
-  console.log(wishlistLength);
 
   const cart = JSON.parse(localStorage.getItem("cartProducts")) || [];
   const cartLength = cart.length;
@@ -844,7 +841,6 @@ function displayTodaysDeleteCartIcon(productId) {
 
 function addToCart(productId, products) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  console.log(cartProducts);
   const clickedForCart = products.find(
     (product) => parseInt(product.id) === parseInt(productId)
   );
@@ -946,7 +942,6 @@ function removeFromCart(productId) {
   );
 
   cartProducts.splice(checkCartIndex, 1);
-  console.log(cartProducts);
   localStorage.setItem("cartProducts", JSON.stringify([...cartProducts]));
 }
 
