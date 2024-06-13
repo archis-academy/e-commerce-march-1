@@ -362,6 +362,7 @@ function sidebarActivities() {
 }
 
 sidebarActivities();
+
 function getWishlistCartLength() {
   const wishlist = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
   const wishlistLength = wishlist.length;
@@ -374,6 +375,7 @@ function getWishlistCartLength() {
   const cartNumberDiv = document.querySelectorAll("#cart-length");
   if (parseInt(wishlistLength) !== 0) {
     wishlistNumberDiv.forEach((div) => {
+      div.style.display = "flex";
       div.innerHTML = `<p class=""> ${wishlistLength} </p>`
     });
   }
@@ -382,8 +384,10 @@ function getWishlistCartLength() {
      div.style.display = "none";
    });
   }
+
   if (parseInt(cartLength) !== 0) {   
    cartNumberDiv.forEach((div) => {
+     div.style.display = "flex";
      div.innerHTML = `<p class=""> ${cartLength} </p>`
    });
   }

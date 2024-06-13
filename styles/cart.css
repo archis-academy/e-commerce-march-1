@@ -1,8 +1,8 @@
 
-.cart-main-container {
-    max-width: 1100px;
+.cart-content-container {
+    max-width: 1150px;
     margin: auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .cart-home-cart-p-container{
@@ -136,6 +136,7 @@
     border: 1.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 7px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .cart-products-coupon-total-container{
@@ -162,6 +163,7 @@
     border-radius: 7px;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .cart-total-container{
@@ -219,6 +221,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 1);
     padding: 18px 0;
     display: none;
+}
+
+.cart-remove-icon-container {
+    cursor: pointer;
 }
 
 .cart-coupon-remove-container{
