@@ -1,3 +1,406 @@
+function loginActivities() {
+  let login = JSON.parse(localStorage.getItem("isLogin")) || false;
+  if (!login) {
+    window.location.assign("login.html");
+  }
+  const logOutButton =  document.querySelector(".logout-p")
+  logOutButton.addEventListener(("click") , () => {
+    login = false;
+    localStorage.setItem("isLogin" , JSON.stringify(login));
+  });
+};
+
+loginActivities();
+
+//Header Starts
+let firstAdvertise;
+let existingInterval;
+let intervalTime = 6000;
+let manCategory = {
+  category: "men's clothing",
+  products : []
+};
+let womanCategory = {
+  category: "womens's clothing",
+  products : []
+};
+let jeweleryCategory = {
+  category: "jewelery",
+  products : []
+};
+let electronicsCategory = {
+  category: "electronics",
+  products : []
+};
+let homeLifestyleCategory = {
+  category: "",
+  products : []
+};
+let medicineCategory = {
+  category: "",
+  products : []
+};
+let sportsCategory = {
+  category: "",
+  products : []
+};
+let toysCategory = {
+  category: "",
+  products : []
+};
+let petCategory = {
+  category: "",
+  products : []
+};
+let healthCategory = {
+  category: "",
+  products : []
+};
+let allCategories = [womanCategory,manCategory,electronicsCategory,jeweleryCategory,medicineCategory,sportsCategory,toysCategory,petCategory,healthCategory];
+const advertiseContainer = document.querySelector("#slides-imgs-container");
+
+function checkAdvertiseImages() {
+  let windowWidth = window.innerWidth;
+  for (let i = 1; i < 6; i++) {
+    if (parseInt(windowWidth) > 549) {
+      advertiseContainer.innerHTML += 
+    ` <div class="header-advertise-img-container header-first-advertise" id="header-first-advertise">
+       <img class="header-advertise-img" src="images/advertise${i}.png" alt="">
+     </div>
+     `
+    } else {
+      advertiseContainer.innerHTML += 
+      ` <div class="header-advertise-img-container header-first-advertise" id="header-first-advertise">
+         <img class="header-advertise-img" src="images/responsiveAdvertise${i}.png" alt="">
+       </div>`
+    }  
+  }
+ 
+  firstAdvertise =  advertiseContainer.querySelector("#header-first-advertise");
+}
+
+checkAdvertiseImages();
+window.addEventListener(("resize") , () => {
+  advertiseContainer.innerHTML = ``;
+  checkAdvertiseImages();
+})
+
+let advertiseCounter = 1;
+let transparentCounter = 1;
+let clickedIntervalTime = 10000;
+const showRadio = document.querySelector(`.click-radio${advertiseCounter}`);
+const hiddenRadios = document.querySelectorAll(".advertise-radio");
+const clickRadios = document.querySelectorAll(`.click-radio`);
+let windowWidth;
+
+const firstRadio = document.querySelector(`.click-radio1`);
+windowWidth = window.innerWidth;
+if (parseInt(windowWidth) > 549) {
+ firstRadio.style.backgroundColor = "#DB4444";
+} else {
+ firstRadio.style.backgroundColor = "black";
+}
+
+function setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,time) {
+  if (existingInterval) {
+    clearInterval(existingInterval);
+  }
+  
+  existingInterval = setInterval(() => {
+   if (advertiseCounter === 6) {
+     let lastRadioCounter = (advertiseCounter - 1 );
+     advertiseCounter = 1;
+     firstAdvertise.style.marginLeft = "0";
+     const lastRadio = document.querySelector(`.click-radio${(lastRadioCounter)}`);
+     lastRadio.style.backgroundColor = "transparent";
+     transparentCounter = 1;
+   }
+
+   const showRadio = document.querySelector(`.click-radio${advertiseCounter}`);
+   clickRadios.forEach(radio => radio.style.backgroundColor = 'transparent');
+   let windowWidth = window.innerWidth;
+   if (parseInt(windowWidth) > 549) {
+    showRadio.style.backgroundColor = "#DB4444";
+   } else {
+    showRadio.style.backgroundColor = "black";
+   }
+ 
+   if (advertiseCounter > 1) {
+     const currentMarginLeft = parseFloat(firstAdvertise.style.marginLeft) || 0;
+     firstAdvertise.style.marginLeft = `${currentMarginLeft - 20}%`;
+     const transparentRadio = document.querySelector(`.click-radio${transparentCounter}`)
+     transparentRadio.style.backgroundColor = "transparent";
+     transparentCounter++;
+   }
+   advertiseCounter++;
+  
+   setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,intervalTime);
+ }, time);
+};
+
+setTimeToSlides(advertiseCounter,transparentCounter,clickRadios,intervalTime);
+
+function setClickToSlides() {
+  clickRadios.forEach((radio) => {
+     radio.addEventListener(("click") , () => {
+        firstAdvertise.style.marginLeft = `${(parseInt(radio.id) - 1) * -20}%`;
+        clickRadios.forEach(radio => radio.style.backgroundColor = 'transparent');
+
+        windowWidth = window.innerWidth;
+        if (parseInt(windowWidth) > 549) {
+         radio.style.backgroundColor = "#DB4444";
+        } else {
+         radio.style.backgroundColor = "black";
+        }
+       
+        let tempRadioId = parseInt(radio.id);
+        let radioId;
+        let tempTransparentCounter = parseInt(radio.id);
+        let transparentCounter;
+           
+        if (tempTransparentCounter === 1) {
+          transparentCounter = 1;
+        }
+        else {
+          transparentCounter = (tempTransparentCounter - 1);
+        }
+
+        if (tempRadioId === 1) {
+          radioId = 1;
+        } else {
+          radioId = (tempRadioId + 1)
+        }
+        if (radio.id != 1) {
+          setTimeToSlides( radioId ,transparentCounter,clickRadios,clickedIntervalTime);
+        }
+        else{
+          setTimeToSlides(radioId ,transparentCounter,clickRadios,intervalTime);
+          //Because, first internal is already waiting for 12 seconds when we click to first radio
+        }
+     });
+   });
+};
+
+setClickToSlides();
+
+function displayCategoryProducts() {
+  let i = 1;
+  allCategories.map((category) => {
+    const categoryDivs = document.querySelectorAll(`#category-products-container${i}`);
+    if (category.products.length !== 0) {
+      category.products.map((product) => {
+        categoryDivs.forEach((div) => {
+          div.innerHTML +=
+         `<div class="category-dropdown">
+           <div class="category-products-features-container">
+              <img src="${product.image}" class="category-products-img"/>
+              <p class="category-titles"> ${product.title}</p>
+            </div>  
+         </div>`
+        })
+      })
+    }
+    else {
+      categoryDivs.forEach((div) => {
+        div.innerHTML = 
+        `<p class="empty-category-p header-poppins-p"> We do not have any products <br> in this category yet <br> But don't worry! <br> They are coming soon </p>`;
+        div.style.height = "auto";
+        div.style.right = "-200px"
+      }) 
+    }
+    i++;
+  });
+};
+
+function determineProductCategories(allProducts) {
+  let m = 0;
+  let j = 0;
+  let w = 0;
+  let e = 0;
+  allProducts.map((product) => {
+    switch (product.category) {
+      case "men's clothing":
+        manCategory.products[m] = product;
+        m++;
+        break;
+      case "jewelery":
+        jeweleryCategory.products[j] = product;
+        j++;
+        break;
+      case "women's clothing":
+        womanCategory.products[w] = product;
+        w++;
+        break;
+      case "electronics":
+        electronicsCategory.products[e] = product;
+        e++;
+        break;
+    };
+  });
+};
+
+let filteredProducts = [];
+const searchDropdown = document.querySelector("#search-dropdown"); 
+let searchApiProducts = searchDropdown.querySelector(".search-api-products");
+const searchSvg = document.querySelector(".search-svg");
+const deleteSvg = document.querySelector(".search-delete-svg");
+let searchValue = "";
+
+function displaySearchedProducts(allProducts) {
+  const searchBar = document.querySelector(".header-search");
+  searchApiProducts.innerHTML = ``;
+  allProducts.map((product) => {
+    searchApiProducts.innerHTML += `<div class="search-products" id="search-products">
+           <div class="category-products-features-container" id="search-products">          
+              <img src="${product.image}" id="search-products" class="category-products-img"/>
+              <p class="category-titles" id="search-products"> ${product.title} </p>
+            </div>  
+         </div>`
+  });
+ 
+  searchBar.addEventListener(("keyup") , () => {
+   searchDropdown.style.display = "flex";
+   searchValue = searchBar.value
+   hideSearchSvg(searchValue);
+   filteredProducts = [];
+   filteredProducts = allProducts.filter((anyProduct) => anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase().trim()));
+   displayFilteredProducts(filteredProducts,searchApiProducts);
+   applyPopularSearch(allProducts)
+  });
+
+  deleteSvg.addEventListener(("click") , () => {
+    searchBar.value = "";
+    searchSvg.style.display = "block";
+    deleteSvg.style.display = "none";
+    displaySearchedProducts(allProducts);
+  });
+};
+
+function hideSearchSvg(value) {
+  if (value !== "") {
+     searchSvg.style.display = "none";
+     deleteSvg.style.display = "block";
+   } else {
+    searchSvg.style.display = "block";
+    deleteSvg.style.display = "none";
+   }
+}
+
+function displayFilteredProducts(products,searchApiProducts) {
+  searchApiProducts.innerHTML = ``;
+  products.map((product) => {
+    searchApiProducts.innerHTML += 
+         `<div class="search-products" id="search-products">
+           <div class="category-products-features-container" id="search-products">          
+              <img src="${product.image}" id="search-products" class="category-products-img"/>
+              <p class="category-titles" id="search-products"> ${product.title} </p>
+            </div>  
+         </div>`
+   });
+};
+
+function applyPopularSearch(allProducts) {
+  let popularSearches = [];
+  popularSearches = searchDropdown.querySelectorAll(".popular-searches-p");
+  const searchBar = document.querySelector(".header-search");
+ 
+   popularSearches.forEach((search) => {
+    search.addEventListener(("click"),() => {
+     searchBar.value = search.textContent;
+     searchValue = searchBar.value;
+     hideSearchSvg(searchValue);
+     
+     filteredProducts = [];
+     filteredProducts = allProducts.filter((anyProduct) =>  anyProduct.title.toLowerCase().includes(searchBar.value.toLowerCase().trim()));
+     searchApiProducts = searchDropdown.querySelector(".search-api-products"); 
+     displayFilteredProducts(filteredProducts,searchApiProducts);
+     applyPopularSearch(allProducts);
+    });
+   }); 
+};
+
+function dropdownOnclickActions() {
+  const accountDropdown = document.querySelector("#account-dropdown")
+  
+  window.onclick = function(event) {
+    if (!event.target.matches('#account-dropdown') && !event.target.matches("#header-account-icon")) {
+       accountDropdown.classList.remove("show-account");
+    }
+    else if(event.target.matches("#header-account-icon")){
+      accountDropdown.classList.toggle("show-account");
+    }
+        
+    if (!event.target.matches('#search-dropdown') && !event.target.matches(`#search-products`) ) {
+      searchDropdown.style.display = "none";
+    }
+    else{
+     searchDropdown.style.display = "flex";
+    }  
+  };
+};
+
+function sidebarActivities() {
+  const sidebarOpener = document.querySelector("#sidebar-opener");
+  const sidebarCloser = document.querySelector("#sidebar-closer");
+  const sidebar = document.querySelector("#header-sidebar");
+  const blurer = document.querySelector(".header-blurer");
+
+  sidebarOpener.addEventListener(("click") , () => {
+    sidebar.classList.add("open-sidebar");
+    blurer.classList.add("sidebar-header");
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  });
+  
+  sidebarCloser.addEventListener(("click") , () => {
+     sidebar.classList.remove("open-sidebar");
+     blurer.classList.remove("sidebar-header");
+     document.documentElement.style.overflow = 'auto';
+     document.body.style.overflow = 'auto';
+  });
+
+}
+
+sidebarActivities();
+
+function getWishlistCartLength() {
+  const wishlist = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  const wishlistLength = wishlist.length;
+
+  const cart = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const cartLength = cart.length;
+
+
+  const wishlistNumberDiv = document.querySelectorAll("#wishlist-length");
+  const cartNumberDiv = document.querySelectorAll("#cart-length");
+  if (parseInt(wishlistLength) !== 0) {
+    wishlistNumberDiv.forEach((div) => {
+      div.style.display = "flex";
+      div.innerHTML = `<p class=""> ${wishlistLength} </p>`
+    });
+  }
+  else {
+   wishlistNumberDiv.forEach((div) => {
+     div.style.display = "none";
+   });
+  }
+
+  if (parseInt(cartLength) !== 0) {   
+   cartNumberDiv.forEach((div) => {
+     div.style.display = "flex";
+     div.innerHTML = `<p class=""> ${cartLength} </p>`
+   });
+  }
+  else {
+    cartNumberDiv.forEach((div) => {
+      div.style.display = "none";
+    });
+  }
+};
+
+getWishlistCartLength();
+
+
 //Homepage Today's-Products Start
 const countdownElement = document.getElementById("countdown");
 const daysElement = document.getElementById("days");
@@ -39,7 +442,7 @@ function startCountdown() {
 
 startCountdown();
 
-//Best Selling Starts
+//Best Selling and Explore Products Start
 const sellingProductsContainer = document.querySelector(
   "#best-selling-api-products"
 );
@@ -146,8 +549,6 @@ async function displayProducts() {
         </div>`;
     })
     .join("");
-
-  console.log(tempTodays);
 
   todaysProductsContainer.innerHTML = tempTodays;
 
@@ -262,16 +663,19 @@ async function displayProducts() {
           </div>      
          </div>        
      </div>
-   </div> `;
-    })
-    .join("");
-  productBox.innerHTML = tempExploreProducts;
-
-  checkStoredCartSvgs();
-  checkStoredWishlistSvgs();
-  changeCartSvg(productBox);
-  changeWishlistSvg(productBox);
-}
+   </div> ` }).join("");
+   productBox.innerHTML = tempExploreProducts;
+ 
+ checkStoredCartSvgs(products,productBox);
+ checkStoredWishlistSvgs(products,productBox);
+ changeCartSvg(productBox);
+ changeWishlistSvg(productBox);
+ determineProductCategories(allProducts);
+ displayCategoryProducts();
+ displaySearchedProducts(allProducts);
+ applyPopularSearch(allProducts);
+ dropdownOnclickActions();
+};
 
 function discount(any_products) {
   return any_products.price - (any_products.price * 30) / 100;
@@ -349,9 +753,13 @@ function addToWishlist(productId, products) {
       JSON.stringify([...wishListProducts, clickedProduct])
     );
   } else {
-    removeFromWishlist(productId);
-  }
+      removeFromWishlist(productId);
+  };
+
+  getWishlistCartLength();
+
 }
+
 
 function checkStoredWishlistSvgs() {
   const colorizedWishlistProducts =
@@ -437,7 +845,6 @@ function displayTodaysDeleteCartIcon(productId) {
 
 function addToCart(productId, products) {
   cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  console.log(cartProducts);
   const clickedForCart = products.find(
     (product) => parseInt(product.id) === parseInt(productId)
   );
@@ -453,6 +860,8 @@ function addToCart(productId, products) {
   } else if (products != firstFourProducts) {
     removeFromCart(productId);
   }
+
+  getWishlistCartLength();
 }
 
 function checkStoredCartSvgs() {
@@ -537,11 +946,10 @@ function removeFromCart(productId) {
   );
 
   cartProducts.splice(checkCartIndex, 1);
-  console.log(cartProducts);
   localStorage.setItem("cartProducts", JSON.stringify([...cartProducts]));
 }
 
-//Best Selling and Explore Products Ends
+//Best Selling and Explore Products End
 
 function changeColor(browse) {
   let hompageBrowseBox = browse;
